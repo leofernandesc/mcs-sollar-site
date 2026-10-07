@@ -18,7 +18,7 @@ const variantClasses = {
 <a
   href={getWhatsAppUrl(intent)}
   class:list={[
-    "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-center text-sm font-semibold transition-colors",
+    "whatsapp-link inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-md px-5 py-3 text-center text-sm font-semibold transition-colors",
     variantClasses,
     variant === "floating" && "sm:hidden",
   ]}
@@ -26,3 +26,11 @@ const variantClasses = {
 >
   {label}
 </a>
+
+<style>
+  .whatsapp-link:focus-visible {
+    box-shadow:
+      0 0 0 3px var(--color-brand-cream),
+      0 0 0 6px var(--color-brand-navy);
+  }
+</style>

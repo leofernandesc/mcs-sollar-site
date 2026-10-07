@@ -2,6 +2,8 @@
 import SiteLayout from "../layouts/site-layout.astro";
 import SiteHeader from "../components/sections/site-header.astro";
 import HeroSection from "../components/sections/hero-section.astro";
+import ServicesSection from "../components/sections/services-section.astro";
+import ProcessSection from "../components/sections/process-section.astro";
 import { pageContent } from "../data/content";
 ---
 
@@ -9,5 +11,7 @@ import { pageContent } from "../data/content";
   <SiteHeader />
   <main id="main-content" tabindex="-1">
     <HeroSection />
+    <ServicesSection />
+    <ProcessSection />
   </main>
 </SiteLayout>
