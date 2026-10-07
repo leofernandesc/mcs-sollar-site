@@ -1,0 +1,28 @@
+---
+import { getWhatsAppUrl, type WhatsAppIntent } from "../../utils/whatsapp-url";
+
+interface Props {
+  intent: WhatsAppIntent;
+  label: string;
+  variant?: "primary" | "secondary" | "floating";
+}
+
+const { intent, label, variant = "primary" } = Astro.props;
+const variantClasses = {
+  primary: "bg-brand-navy text-white hover:opacity-90",
+  secondary: "border border-brand-navy text-brand-navy hover:bg-white/60",
+  floating: "fixed right-4 z-50 bg-brand-navy text-white shadow-md hover:opacity-90",
+}[variant];
+---
+
+<a
+  href={getWhatsAppUrl(intent)}
+  class:list={[
+    "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-center text-sm font-semibold transition-colors",
+    variantClasses,
+    variant === "floating" && "sm:hidden",
+  ]}
+  style={variant === "floating" ? "bottom: max(1rem, env(safe-area-inset-bottom));" : undefined}
+>
+  {label}
+</a>

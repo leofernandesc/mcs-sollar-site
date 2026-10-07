@@ -1,15 +1,19 @@
 ---
 import SiteLayout from "../layouts/site-layout.astro";
+import PageContainer from "../components/ui/page-container.astro";
+import SectionHeading from "../components/ui/section-heading.astro";
+import { pageContent } from "../data/content";
 ---
 
-<SiteLayout title="MCS Sollar | Estrutura inicial">
-  <main class="mx-auto flex min-h-screen max-w-3xl flex-col justify-center gap-4 p-6">
-    <h1 class="text-3xl font-bold tracking-tight text-sky-800">
-      Astro + Tailwind CSS prontos
-    </h1>
-    <p class="text-base leading-7 text-slate-700">
-      Página placeholder para validar a fundação. O site institucional será desenvolvido em uma
-      próxima etapa.
-    </p>
+<SiteLayout title={pageContent.seo.title} description={pageContent.seo.description}>
+  <main id="main-content" tabindex="-1" class="flex min-h-screen items-center py-section">
+    <PageContainer>
+      <SectionHeading
+        headingLevel={1}
+        eyebrow="Estrutura inicial"
+        title="Astro + Tailwind CSS prontos"
+        description="Página placeholder para demonstrar a fundação do projeto. O conteúdo institucional será desenvolvido em uma próxima etapa."
+      />
+    </PageContainer>
   </main>
 </SiteLayout>
