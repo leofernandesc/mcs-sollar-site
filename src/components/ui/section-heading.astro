@@ -1,13 +1,15 @@
 ---
 interface Props {
   title: string;
+  id?: string;
   description?: string;
   eyebrow?: string;
   headingLevel?: 1 | 2 | 3;
 }
 
-const { title, description, eyebrow, headingLevel = 2 } = Astro.props;
-const HeadingTag = `h${headingLevel}`;
+const { title, id, description, eyebrow, headingLevel = 2 } = Astro.props;
+const headingTags = { 1: "h1", 2: "h2", 3: "h3" } as const;
+const HeadingTag = headingTags[headingLevel];
 const headingSize = {
   1: "text-4xl sm:text-5xl lg:text-6xl",
   2: "text-3xl sm:text-4xl",
@@ -19,7 +21,7 @@ const headingSize = {
   {eyebrow && (
     <p class="mb-3 text-sm font-semibold tracking-wide text-brand-navy">{eyebrow}</p>
   )}
-  <HeadingTag class:list={[headingSize, "text-balance"]}>{title}</HeadingTag>
+  <HeadingTag id={id} class:list={[headingSize, "text-balance"]}>{title}</HeadingTag>
   {description && (
     <p class="mt-4 max-w-2xl text-base leading-7 text-ink sm:text-lg">{description}</p>
   )}

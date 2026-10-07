@@ -1,0 +1,114 @@
+---
+import PageContainer from "../ui/page-container.astro";
+import WhatsAppLink from "../ui/whatsapp-link.astro";
+import { business } from "../../data/business";
+import { pageContent } from "../../data/content";
+---
+
+<header class="relative z-20 border-b border-brand-navy/15 bg-brand-cream">
+  <PageContainer class="py-3">
+    <div class="flex items-center justify-between gap-3 lg:gap-6">
+      <a href="#inicio" class="inline-flex shrink-0 items-center gap-2 text-brand-navy">
+        <svg
+          viewBox="0 0 64 54"
+          class="h-10 w-12 shrink-0"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2.5"
+            class="text-brand-solar"
+          >
+            <path d="M32 3v7M15 9l4 6M49 9l-4 6M8 22h8M56 22h-8" />
+          </g>
+          <path d="M20 23a12 12 0 0 1 24 0v1H20z" class="fill-brand-solar" />
+          <g class="fill-brand-navy">
+            <path d="M14 28h12l-2 6H12zM29 28h10v6H27zM40 28h12l2 6H42z" />
+            <path d="M10 37h15l-2 7H8zM28 37h10v7H26zM41 37h15l3 7H39z" />
+          </g>
+        </svg>
+        <span class="text-base font-bold tracking-wide sm:text-lg">{business.name}</span>
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Navegação principal">
+        <ul class="flex items-center gap-3 xl:gap-5">
+          {pageContent.navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="inline-flex min-h-11 items-center px-1 text-sm font-medium text-ink transition-colors hover:text-brand-navy"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 lg:ml-0">
+        <div class="hidden lg:block">
+          <WhatsAppLink intent="contact" label="Fale pelo WhatsApp" />
+        </div>
+
+        <details class="relative lg:hidden">
+          <summary
+            class="menu-trigger inline-flex min-h-11 cursor-pointer list-none items-center justify-center gap-2 rounded-md border border-brand-navy/25 px-3 font-semibold text-brand-navy transition-colors hover:bg-white/60"
+            aria-controls="mobile-navigation"
+          >
+            <span>Menu</span>
+            <svg
+              viewBox="0 0 24 24"
+              class="h-5 w-5"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="1.8"
+              />
+            </svg>
+          </summary>
+
+          <div
+            id="mobile-navigation"
+            class="absolute right-0 top-full mt-2 w-72 max-w-[calc(100vw-2rem)] border border-brand-navy/15 bg-brand-cream p-4 shadow-lg"
+          >
+            <nav aria-label="Navegação móvel">
+              <ul class="divide-y divide-brand-navy/10">
+                {pageContent.navigation.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="flex min-h-11 items-center px-2 font-medium text-ink hover:text-brand-navy"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div class="mt-4 border-t border-brand-navy/15 pt-4">
+              <WhatsAppLink intent="contact" label="Fale pelo WhatsApp" />
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </PageContainer>
+</header>
+
+<style>
+  .menu-trigger::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu-trigger::marker {
+    content: "";
+  }
+</style>

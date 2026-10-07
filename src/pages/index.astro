@@ -1,19 +1,13 @@
 ---
 import SiteLayout from "../layouts/site-layout.astro";
-import PageContainer from "../components/ui/page-container.astro";
-import SectionHeading from "../components/ui/section-heading.astro";
+import SiteHeader from "../components/sections/site-header.astro";
+import HeroSection from "../components/sections/hero-section.astro";
 import { pageContent } from "../data/content";
 ---
 
 <SiteLayout title={pageContent.seo.title} description={pageContent.seo.description}>
-  <main id="main-content" tabindex="-1" class="flex min-h-screen items-center py-section">
-    <PageContainer>
-      <SectionHeading
-        headingLevel={1}
-        eyebrow="Estrutura inicial"
-        title="Astro + Tailwind CSS prontos"
-        description="Página placeholder para demonstrar a fundação do projeto. O conteúdo institucional será desenvolvido em uma próxima etapa."
-      />
-    </PageContainer>
+  <SiteHeader />
+  <main id="main-content" tabindex="-1">
+    <HeroSection />
   </main>
 </SiteLayout>
