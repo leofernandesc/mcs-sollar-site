@@ -1,0 +1,28 @@
+---
+import { business } from "../../data/business";
+import { pageContent } from "../../data/content";
+import PageContainer from "../ui/page-container.astro";
+import SectionHeading from "../ui/section-heading.astro";
+---
+
+<section
+  id="sobre"
+  aria-labelledby="about-heading"
+  class="border-t border-brand-navy/10 bg-white py-section"
+>
+  <PageContainer>
+    <div class="grid gap-7 md:grid-cols-12 md:items-end md:gap-10">
+      <div class="md:col-span-5">
+        <SectionHeading
+          id="about-heading"
+          eyebrow={business.locationDisplay}
+          title={pageContent.about.title}
+        />
+      </div>
+
+      <p class="max-w-2xl text-base leading-7 text-ink md:col-span-6 md:col-start-7 sm:text-lg sm:leading-8">
+        {pageContent.about.description}
+      </p>
+    </div>
+  </PageContainer>
+</section>

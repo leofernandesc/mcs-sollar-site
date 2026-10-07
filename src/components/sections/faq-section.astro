@@ -1,0 +1,32 @@
+---
+import { pageContent } from "../../data/content";
+import PageContainer from "../ui/page-container.astro";
+import SectionHeading from "../ui/section-heading.astro";
+---
+
+<section
+  id="duvidas"
+  aria-labelledby="faq-heading"
+  class="border-t border-brand-navy/10 bg-brand-cream py-section"
+>
+  <PageContainer>
+    <div class="grid gap-8 md:grid-cols-12 md:gap-10">
+      <div class="md:col-span-4">
+        <SectionHeading id="faq-heading" title="Dúvidas frequentes" />
+      </div>
+
+      <div class="divide-y divide-brand-navy/15 border-y border-brand-navy/15 md:col-span-7 md:col-start-6">
+        {pageContent.faq.map((item) => (
+          <details>
+            <summary class="min-h-16 cursor-pointer py-5 text-base font-semibold leading-7 text-brand-navy marker:text-brand-solar focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-navy sm:text-lg">
+              {item.question}
+            </summary>
+            <p class="max-w-2xl pb-5 pr-6 text-base leading-7 text-ink">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </PageContainer>
+</section>
