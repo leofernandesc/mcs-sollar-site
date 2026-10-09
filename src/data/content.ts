@@ -9,6 +9,7 @@ export const pageContent = {
   navigation: [
     { label: "Início", href: "#inicio" },
     { label: "Serviços", href: "#servicos" },
+    { label: "Projetos", href: "#projetos" },
     { label: "Atendimento", href: "#atendimento" },
     { label: "Sobre", href: "#sobre" },
     { label: "Dúvidas", href: "#duvidas" },
@@ -40,6 +41,25 @@ export const pageContent = {
         "Manutenção de sistemas fotovoltaicos para residências e empresas.",
     },
   ],
+  projects: {
+    title: "Trabalhos realizados",
+    description:
+      "Alguns registros de sistemas fotovoltaicos realizados pela MCS Sollar.",
+    items: [
+      {
+        alt: "Painéis solares sobre o telhado de uma residência.",
+        caption: "Sistema fotovoltaico em imóvel residencial.",
+      },
+      {
+        alt: "Módulos solares sobre uma cobertura de telhas cerâmicas.",
+        caption: "Instalação sobre cobertura cerâmica.",
+      },
+      {
+        alt: "Fileiras de módulos solares em uma estrutura montada no solo.",
+        caption: "Sistema fotovoltaico em estrutura no solo.",
+      },
+    ],
+  },
   service: {
     title: "Como solicitar um orçamento",
     description:
