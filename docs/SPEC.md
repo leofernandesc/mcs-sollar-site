@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual oficial foi aplicada na etapa 2A; a revisão dos textos comerciais segue na etapa 2B. Domínio e hospedagem seguem TBD na documentação do projeto.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual foi aplicada na etapa 2A e a proposta de conteúdo da etapa 2B está na interface, pendente de revisão editorial antes da publicação. Domínio e hospedagem seguem TBD na documentação do projeto.
 
 ## Objetivo do projeto
 
@@ -48,12 +48,12 @@ Imagens ilustrativas podem acompanhar apresentação e serviços, com identifica
 
 ## Conteúdo comercial e atendimento
 
-O site ainda usa os textos institucionais iniciais centralizados nos módulos de conteúdo. As propostas abaixo orientarão a entrega de conteúdo e serão revisadas antes da publicação; não representam credenciais ou resultados comerciais.
+Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser revisados antes da publicação. Não representam credenciais ou resultados comerciais.
 
-- **H1 proposto:** “Energia solar em Manaus para sua residência ou empresa”.
-- **Apresentação proposta:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
-- **Ação do Hero:** “Solicitar orçamento” como CTA único da seção.
-- **Serviços e Sobre:** explicar a finalidade dos três serviços e a atuação residencial e comercial, sem adicionar procedimentos ou especialidades não confirmados.
+- **H1 atual:** “Energia solar em Manaus para sua residência ou empresa”.
+- **Apresentação atual:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
+- **Ação principal do Hero:** “Solicitar orçamento”; a ação secundária leva à seção de serviços. Há apenas um CTA de WhatsApp no grupo visual.
+- **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.
 - **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
 
 Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A entrega de atendimento explicará como informar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
@@ -109,7 +109,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Evoluir conteúdo, marca e trabalhos reais em entregas revisadas, preservando SEO local, acessibilidade e desempenho. Mídias reais dependem de curadoria e autorização; conteúdo ainda não aplicado deve permanecer identificado como planejado.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Conteúdo comercial inicial e identidade visual foram aplicados em entregas separadas; trabalhos reais dependem de curadoria e autorização. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
