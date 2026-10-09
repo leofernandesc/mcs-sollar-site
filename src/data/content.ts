@@ -84,9 +84,9 @@ export const pageContent = {
     imageAlt:
       "Fachada comercial com identificação da MCS e cartaz da MCS Sollar.",
     imageCaption: "Fachada comercial com identificação da empresa.",
-    panelImageAlt:
-      "Módulos fotovoltaicos sobre uma cobertura com telhas cerâmicas.",
-    panelImageCaption: "Módulos fotovoltaicos sobre uma cobertura.",
+    inverterImageAlt:
+      "Inversor fotovoltaico instalado ao lado de componentes de proteção elétrica.",
+    inverterImageCaption: "Registro de instalação de inversor fotovoltaico.",
     safetyImageAlt:
       "Placa com alerta de risco de choque elétrico em geração própria.",
     safetyImageCaption:

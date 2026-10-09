@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import facadeDetail from "../../assets/images/about/mcs-sollar-facade.webp";
-import photovoltaicPanels from "../../assets/images/about/photovoltaic-panels.webp";
+import inverterInstallation from "../../assets/images/hero/solar-inverter-installation.webp";
 import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
@@ -32,8 +32,8 @@ import SectionHeading from "../ui/section-heading.astro";
         <figure class="col-span-2 md:col-span-2">
           <div class="overflow-hidden rounded-md">
             <Image
-              src={photovoltaicPanels}
-              alt={pageContent.about.panelImageAlt}
+              src={inverterInstallation}
+              alt={pageContent.about.inverterImageAlt}
               widths={[360, 540, 720, 960]}
               sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 50vw, 100vw"
               format="webp"
@@ -44,7 +44,7 @@ import SectionHeading from "../ui/section-heading.astro";
             />
           </div>
           <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
-            {pageContent.about.panelImageCaption}
+            {pageContent.about.inverterImageCaption}
           </figcaption>
         </figure>
 
