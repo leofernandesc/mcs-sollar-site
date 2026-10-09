@@ -50,7 +50,7 @@ Imagens ilustrativas podem acompanhar apresentação e serviços, com identifica
 
 Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser revisados antes da publicação. Não representam credenciais ou resultados comerciais.
 
-- **H1 atual:** “Energia solar em Manaus para sua residência ou empresa”.
+- **H1 atual:** “Energia solar para sua residência ou empresa”; o eyebrow do Hero informa “Manaus, AM”.
 - **Apresentação atual:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
 - **Ação principal do Hero:** “Solicitar orçamento”; a ação secundária leva à seção de serviços. Há apenas um CTA de WhatsApp no grupo visual.
 - **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.

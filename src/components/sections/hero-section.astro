@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/solar-panels-illustrative.webp";
+import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
 import SectionHeading from "../ui/section-heading.astro";
@@ -21,6 +22,7 @@ const imageCreditUrl = "https://unsplash.com/photos/a-solar-panel-on-the-roof-of
         <SectionHeading
           id="hero-title"
           headingLevel={1}
+          eyebrow={business.locationDisplay}
           title={pageContent.hero.title}
           description={pageContent.hero.description}
         />

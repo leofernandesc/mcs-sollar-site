@@ -25,7 +25,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | --- | --- | --- |
 | 0 — Auditoria | Inspecionar implementação, documentação, Git e acervo; identificar divergências. Auditoria estrutural concluída. | Baseline identificado e build aprovado; revisão visual de novas mudanças ocorrerá em cada entrega. |
 | 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Concluída na branch de planejamento. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
-| 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Aplicação implementada; revisão visual final depende da validação do preview. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
+| 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Revisada em capturas de 375, 768 e 1440 px; escala da logo e H1 ajustados. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
 | 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada, pendente de revisão antes da publicação. | Serviço, público, localização e próximo passo claros; texto aprovado antes da publicação. |
 | 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. Fluxo e mensagem estruturada implementados; revisão do texto ainda necessária antes da publicação. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
 | 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
@@ -40,7 +40,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 
 Textos aplicados na etapa 2B como proposta editorial, ainda sujeitos à revisão antes da publicação:
 
-- **H1:** “Energia solar em Manaus para sua residência ou empresa”.
+- **H1:** “Energia solar para sua residência ou empresa”, com “Manaus, AM” destacado no eyebrow do Hero.
 - **Descrição:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
 - **CTA principal:** “Solicitar orçamento”, com a intenção de orçamento no WhatsApp.
 - A ação secundária do Hero leva à seção de serviços; não é outro CTA de WhatsApp. O contato geral continuará no cabeçalho e em Atendimento, em seções distintas.
