@@ -44,6 +44,10 @@ export const pageContent = {
         "Alicate amperímetro em primeiro plano, com componentes elétricos ao fundo.",
       imageCaption:
         "Medição com alicate amperímetro em componentes do sistema fotovoltaico.",
+      supportingImageAlt:
+        "Placa com alerta de risco de choque elétrico em geração própria.",
+      supportingImageCaption:
+        "Sinalização de risco elétrico em uma instalação fotovoltaica.",
     },
     {
       title: business.services[2],
@@ -82,8 +86,11 @@ export const pageContent = {
     description:
       "A MCS Sollar atende residências e empresas em Manaus com projetos, instalações e manutenção em energia solar. Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
     imageAlt:
-      "Cartaz de energia solar na fachada comercial identificada com a marca MCS.",
-    imageCaption: "Recorte da identificação da MCS Sollar na fachada comercial.",
+      "Fachada comercial com identificação da MCS e cartaz da MCS Sollar.",
+    imageCaption: "Fachada comercial com identificação da empresa.",
+    panelImageAlt:
+      "Módulos fotovoltaicos sobre uma cobertura com telhas cerâmicas.",
+    panelImageCaption: "Módulos fotovoltaicos sobre uma cobertura.",
   },
   faq: [
     {
