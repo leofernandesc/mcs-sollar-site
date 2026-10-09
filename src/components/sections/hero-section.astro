@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/solar-panels-illustrative.webp";
-import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
 import SectionHeading from "../ui/section-heading.astro";
@@ -22,16 +21,21 @@ const imageCreditUrl = "https://unsplash.com/photos/a-solar-panel-on-the-roof-of
         <SectionHeading
           id="hero-title"
           headingLevel={1}
-          eyebrow={business.locationDisplay}
           title={pageContent.hero.title}
           description={pageContent.hero.description}
         />
 
-        <div class="mt-7">
+        <div class="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
           <WhatsAppLink
             intent="quote"
             label={pageContent.hero.quotationLabel}
           />
+          <a
+            href="#servicos"
+            class="inline-flex min-h-11 items-center font-semibold text-brand-navy underline decoration-brand-navy/40 underline-offset-4 hover:decoration-brand-navy"
+          >
+            {pageContent.hero.servicesLabel}
+          </a>
         </div>
       </div>
 

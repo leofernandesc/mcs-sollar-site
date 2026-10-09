@@ -12,7 +12,7 @@ Evoluir a homepage existente para apresentar melhor os serviços, demonstrar tra
 - Astro, Tailwind CSS, TypeScript onde útil, npm, uma homepage e componentes estáticos. Sem backend, banco de dados, CMS, autenticação ou JavaScript de aplicação no cliente.
 - Público inicial: residências e empresas em Manaus, AM. Serviços: projetos, instalações e manutenção em energia solar.
 - Conversão principal aprovada: solicitar orçamento pelo WhatsApp. Contato geral é secundário; Instagram continua um canal secundário já implementado.
-- A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final. A logo oficial e a paleta extraída foram integradas na etapa 2A; a revisão dos textos continua na etapa 2B.
+- A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final. A logo e a paleta foram integradas na etapa 2A. Os textos da etapa 2B estão na interface como proposta editorial e aguardam revisão antes da publicação.
 - Logo oficial: `src/assets/images/brand/mcs-sollar-official.jpeg`, cópia sem alterações do JPEG recebido, com sol e painéis, azul-marinho, dourado e creme.
 - Acervo recebido: 43 imagens e 9 vídeos, além de um arquivo ZIP. Disponibilidade não comprova autoria, autorização ou dados de um projeto; a seleção será validada pelo responsável.
 - Domínio, hospedagem e configuração de publicação: TBD na documentação do projeto. Não presumir produção a partir do preview ou do GitHub.
@@ -26,7 +26,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 0 — Auditoria | Inspecionar implementação, documentação, Git e acervo; identificar divergências. Auditoria estrutural concluída. | Baseline identificado e build aprovado; revisão visual de novas mudanças ocorrerá em cada entrega. |
 | 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Concluída na branch de planejamento. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
 | 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Aplicação implementada; revisão visual final depende da validação do preview. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
-| 2B — Conteúdo comercial | Revisar Hero, Serviços e Sobre; destacar Manaus, público e orçamento personalizado. | Serviço, público, localização e próximo passo claros; textos revisados antes da publicação. |
+| 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada, pendente de revisão antes da publicação. | Serviço, público, localização e próximo passo claros; texto aprovado antes da publicação. |
 | 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
 | 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
 | 4B — Fotos e trabalhos reais | Após 4A e a revisão da marca, integrar a seleção, criar a seção de trabalhos e substituir a imagem ilustrativa do Hero quando adequada. | Conteúdo autêntico, descrições confirmadas e carregamento preservado. |
@@ -38,12 +38,12 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 
 ## Direção editorial
 
-Propostas para a etapa 2B, ainda não aplicadas:
+Textos aplicados na etapa 2B como proposta editorial, ainda sujeitos à revisão antes da publicação:
 
 - **H1:** “Energia solar em Manaus para sua residência ou empresa”.
-- **Descrição:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
+- **Descrição:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
 - **CTA principal:** “Solicitar orçamento”, com a intenção de orçamento no WhatsApp.
-- O Hero terá apenas esse CTA; o contato geral continuará no cabeçalho e em Atendimento, em seções distintas.
+- A ação secundária do Hero leva à seção de serviços; não é outro CTA de WhatsApp. O contato geral continuará no cabeçalho e em Atendimento, em seções distintas.
 
 Explicar a finalidade de projetos, instalações e manutenção sem repetir uma chamada de contato em todas as descrições. Não incluir homologação, financiamento, visitas, reparos específicos ou outras especialidades sem confirmação. Sobre deve apresentar a atuação e o atendimento, sem estatísticas artificiais.
 
