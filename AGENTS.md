@@ -8,10 +8,11 @@ Astro source lives in `src/`: routes in `pages/`, shared shells in `layouts/`, r
 
 - `npm install` — install dependencies from `package-lock.json`.
 - `npm run dev` — start the Astro development server.
-- `npm run build` — generate the static site in `dist/`.
+- `npm run check` — validate Astro files and TypeScript with `astro check`.
+- `npm run build` — run type checking, then generate the static site in `dist/`.
 - `npm run preview` — preview the generated production build locally.
 
-No automated test command is configured yet. Run the production build before submitting changes and document additional checks when they are added.
+No automated test suite is configured yet. Run check and the production build before submitting changes and document additional checks when they are added.
 
 ## Coding Style & Naming Conventions
 
@@ -23,7 +24,7 @@ There is no test framework or coverage requirement yet. Add tests with the first
 
 ## Commit & Pull Request Guidelines
 
-The repository has no commit history, so no local message convention is established. Use short imperative messages, optionally with a Conventional Commit prefix such as `feat: add landing page` or `fix: correct mobile navigation`. Pull requests should explain the user-visible change, list validation performed, link any related issue, and include screenshots for visual changes.
+Existing commits use Conventional Commit prefixes (`chore:`, `feat:`, `fix:`). Follow that convention with short imperative messages such as `feat: add landing page` or `fix: correct mobile navigation`. Review the staged diff and include only intended files. Pull requests should explain the user-visible change, list validation performed, link any related issue, and include screenshots for visual changes.
 
 ## Security & Configuration
 

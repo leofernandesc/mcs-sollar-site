@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: requisitos atualizados com as respostas do responsável. Textos e direção visual abaixo são propostas para revisão. Idioma: português brasileiro (`pt-BR`). A fundação do projeto foi criada; o site institucional ainda não foi implementado.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). Textos, marca e favicon provisórios aguardam aprovação final; domínio e hospedagem seguem pendentes.
 
 ## Objetivo do projeto
 
@@ -17,18 +17,19 @@ Pessoas que buscam serviços de energia solar em Manaus. A prioridade entre clie
 - Número informado e corrigido pelo responsável: **+55 92 99996-0878**; formato do link: `5592999960878`.
 - Mensagem do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”**
 - Contato geral abre a conversa sem mensagem obrigatória. Um clique não comprova uma conversa ou orçamento concluído. Testar o destino real antes da publicação.
+- Instagram confirmado: **[@mcssollar](https://www.instagram.com/mcssollar/)**. Acesso no cabeçalho desktop, menu móvel e rodapé, como ação secundária à conversão pelo WhatsApp. Links abrem na mesma aba, sem feed incorporado.
 
 ## Estrutura inicial da página
 
 Página única, com navegação por seções:
 
-1. **Cabeçalho:** marca, menu e contato.
+1. **Cabeçalho:** marca, menu, WhatsApp e Instagram.
 2. **Apresentação:** energia solar em Manaus, resumo dos serviços e chamadas para ação.
 3. **Serviços:** projetos, instalações e manutenção.
 4. **Como solicitar atendimento:** orientação para iniciar conversa e explicar a necessidade.
 5. **Sobre a MCS Sollar:** apresentação institucional breve.
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
-7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa.
+7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
 Imagens ilustrativas podem acompanhar apresentação e serviços. Portfólio e depoimentos só entram quando houver material real autorizado; não criar projetos fictícios. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
 
@@ -39,6 +40,7 @@ Imagens ilustrativas podem acompanhar apresentação e serviços. Portfólio e d
 - Paleta proposta: azul profundo `#0B3D5C`, laranja solar `#F59A16`, fundo creme `#FFF5E8` e texto escuro `#172A34`. Validar contraste nas combinações utilizadas.
 - Tipografia sem serifa, legível e profissional; evitar reproduzir a tipografia condensada do anúncio em textos longos.
 - A recriação fiel da marca foi autorizada como opção; qualquer versão deverá ser revisada antes da publicação.
+- O cabeçalho usa um símbolo SVG de sol sobre painéis; `public/favicon.svg` adapta esse símbolo para tamanhos pequenos. Ambos permanecem provisórios, pendentes de aprovação final.
 - Fotografias devem ter licença adequada e identificação de “Imagem ilustrativa” junto ao conteúdo. Não apresentá-las como instalações da empresa.
 
 ## Textos iniciais para revisão
@@ -89,7 +91,7 @@ Meta Lighthouse mobile ≥ 90 em desempenho. Metas de Core Web Vitals: LCP ≤ 2
 
 Stack confirmada: **Astro**, **Tailwind CSS** e **TypeScript onde útil**, com saída exclusivamente estática. Preferir componentes Astro renderizados no build e evitar JavaScript desnecessário no cliente; a arquitetura inicial usa controles HTML nativos e não exige scripts de aplicação no navegador.
 
-Sem backend, autenticação, banco de dados ou CMS. O scaffold contém somente a configuração e uma página placeholder; a implementação institucional será feita depois. Atualizações de conteúdo ocorrerão nos arquivos do projeto, sem painel administrativo. A organização técnica está descrita em [ARCHITECTURE.md](ARCHITECTURE.md).
+Sem backend, autenticação, banco de dados ou CMS. A página implementada inclui cabeçalho, apresentação, serviços, atendimento, sobre, FAQ, contato e rodapé. Atualizações de conteúdo ocorrem nos arquivos do projeto, sem painel administrativo. A organização técnica está descrita em [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Hospedagem
 
