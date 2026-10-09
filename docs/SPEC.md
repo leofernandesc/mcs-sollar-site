@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. A galeria usa três fotos autorizadas e tratadas. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. As fotos e o trecho de vídeo atuais foram selecionados e tratados para publicação. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
 
 ## Objetivo do projeto
 
@@ -27,13 +27,13 @@ Página única, com navegação por seções:
 1. **Cabeçalho:** marca, menu, WhatsApp e Instagram.
 2. **Apresentação:** energia solar em Manaus, resumo dos serviços e chamadas para ação.
 3. **Serviços:** projetos, instalações e manutenção.
-4. **Trabalhos realizados:** galeria de três fotos autorizadas, sem nomes de clientes, endereço, potência ou localização específica.
+4. **Trabalhos realizados:** fotos e um trecho curto de vídeo, sem nome de cliente, endereço ou métricas de sistema.
 5. **Atendimento:** três orientações para compartilhar consumo, características do imóvel e iniciar a conversa de orçamento.
 6. **Sobre a MCS Sollar:** apresentação institucional breve.
 7. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 8. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas devem ser identificadas. A seção de trabalhos reais usa somente fotos cuja autoria e autorização foram confirmadas pelo responsável. Os arquivos publicados são derivados otimizados e sem metadados; uma foto de telhado foi recortada para excluir propriedades adjacentes e elementos identificáveis. Não criar projetos fictícios nem associar fotos a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
+Imagens ilustrativas devem ser identificadas. As fotos e o vídeo atuais foram indicados pelo responsável e publicados como derivados otimizados, sem metadados. Os recortes excluem elementos de identificação de equipamento, leitura de medidor, anotações e detalhes do entorno. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
 
 ## Identidade visual e imagens
 
@@ -111,7 +111,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui três registros fotográficos reais autorizados. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas e um trecho curto de vídeo local, sem reprodução automática. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -120,6 +120,6 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 ## Pendências
 
 - **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
-- **Mídias:** as três fotos publicadas foram autorizadas e tratadas para remover metadados; fotos adicionais dependem de curadoria. Vídeos foram adiados pelo responsável e só serão avaliados em outra entrega.
+- **Mídias:** fotos selecionadas pelo responsável foram recortadas e reprocessadas sem metadados. Um trecho curto de vídeo foi publicado sem áudio, com enquadramento limitado à estação de recarga e carregamento sob demanda. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.

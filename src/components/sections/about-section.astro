@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import facadeDetail from "../../assets/images/projects/mcs-sollar-facade-detail.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
@@ -11,18 +13,37 @@ import SectionHeading from "../ui/section-heading.astro";
   class="border-t border-brand-navy/10 bg-white py-section"
 >
   <PageContainer>
-    <div class="grid gap-7 md:grid-cols-12 md:items-end md:gap-10">
+    <div class="grid gap-8 md:grid-cols-12 md:items-center md:gap-10">
       <div class="md:col-span-5">
         <SectionHeading
           id="about-heading"
           eyebrow={business.locationDisplay}
           title={pageContent.about.title}
         />
+
+        <p class="mt-6 max-w-2xl text-base leading-7 text-ink sm:text-lg sm:leading-8">
+          {pageContent.about.description}
+        </p>
       </div>
 
-      <p class="max-w-2xl text-base leading-7 text-ink md:col-span-6 md:col-start-7 sm:text-lg sm:leading-8">
-        {pageContent.about.description}
-      </p>
+      <figure class="min-w-0 md:col-span-6 md:col-start-7">
+        <div class="mx-auto max-w-md overflow-hidden rounded-lg border border-brand-navy/10 bg-brand-cream md:ml-auto">
+          <Image
+            src={facadeDetail}
+            alt={pageContent.about.imageAlt}
+            widths={[320, 420, 640]}
+            sizes="(min-width: 64rem) 26rem, (min-width: 48rem) 40vw, calc(100vw - 2rem)"
+            format="webp"
+            quality={82}
+            loading="lazy"
+            decoding="async"
+            class="h-auto w-full"
+          />
+        </div>
+        <figcaption class="mx-auto mt-3 max-w-md text-sm leading-6 text-ink/80 md:ml-auto">
+          {pageContent.about.imageCaption}
+        </figcaption>
+      </figure>
     </div>
   </PageContainer>
 </section>

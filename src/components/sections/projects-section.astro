@@ -1,16 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import residentialRooftop from "../../assets/images/projects/residential-rooftop.webp";
-import ceramicRoofPanels from "../../assets/images/projects/ceramic-roof-panels.webp";
-import groundMountedArray from "../../assets/images/projects/ground-mounted-array.webp";
+import clampMeterDetail from "../../assets/images/projects/clamp-meter-detail.webp";
+import inverterMaintenance from "../../assets/images/projects/inverter-maintenance.webp";
+import safetyWarningLabel from "../../assets/images/projects/safety-warning-label.webp";
+import photovoltaicLayoutPreview from "../../assets/images/projects/photovoltaic-layout-preview.webp";
+import evChargerPoster from "../../assets/images/projects/ev-charger-poster.webp";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
 import SectionHeading from "../ui/section-heading.astro";
 
 const projects = [
-  { ...pageContent.projects.items[0], image: residentialRooftop },
-  { ...pageContent.projects.items[1], image: ceramicRoofPanels },
-  { ...pageContent.projects.items[2], image: groundMountedArray },
+  { ...pageContent.projects.items[0], image: clampMeterDetail },
+  { ...pageContent.projects.items[1], image: safetyWarningLabel },
+  { ...pageContent.projects.items[2], image: inverterMaintenance },
+  { ...pageContent.projects.items[3], image: photovoltaicLayoutPreview },
 ];
 ---
 
@@ -27,7 +30,7 @@ const projects = [
         description={pageContent.projects.description}
       />
 
-      <ul class="grid gap-7 md:grid-cols-3">
+      <ul class="grid gap-7 md:grid-cols-2 md:gap-9">
         {projects.map((project) => (
           <li>
             <figure>
@@ -35,8 +38,8 @@ const projects = [
                 <Image
                   src={project.image}
                   alt={project.alt}
-                  widths={[320, 480, 640, 800, 960]}
-                  sizes="(min-width: 80rem) 24rem, (min-width: 48rem) 30vw, calc(100vw - 2rem)"
+                  widths={[320, 480, 640, 800, 960, 1200]}
+                  sizes="(min-width: 80rem) 36rem, (min-width: 48rem) 44vw, calc(100vw - 2rem)"
                   format="webp"
                   quality={82}
                   loading="lazy"
@@ -51,6 +54,25 @@ const projects = [
           </li>
         ))}
       </ul>
+
+      <figure class="mx-auto max-w-3xl">
+        <div class="overflow-hidden rounded-lg border border-brand-navy/10 bg-black">
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster={evChargerPoster.src}
+            aria-label={pageContent.projects.videoLabel}
+            class="aspect-video w-full"
+          >
+            <source src="/videos/ev-charging-station.mp4" type="video/mp4" />
+            Seu navegador não oferece suporte à reprodução de vídeo.
+          </video>
+        </div>
+        <figcaption class="mt-3 text-sm leading-6 text-ink">
+          {pageContent.projects.videoCaption}
+        </figcaption>
+      </figure>
     </div>
   </PageContainer>
 </section>

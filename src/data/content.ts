@@ -19,6 +19,9 @@ export const pageContent = {
     title: "Energia solar para sua residência ou empresa",
     description:
       "A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.",
+    imageAlt:
+      "Inversor fotovoltaico instalado ao lado de componentes de proteção elétrica.",
+    imageCaption: "Registro de instalação de inversor fotovoltaico.",
     quotationLabel: "Solicitar orçamento",
     servicesLabel: "Conhecer nossos serviços",
   },
@@ -44,21 +47,31 @@ export const pageContent = {
   projects: {
     title: "Trabalhos realizados",
     description:
-      "Alguns registros de sistemas fotovoltaicos realizados pela MCS Sollar.",
+      "Registros de instalação, manutenção e planejamento de sistemas fotovoltaicos.",
     items: [
       {
-        alt: "Painéis solares sobre o telhado de uma residência.",
-        caption: "Sistema fotovoltaico em imóvel residencial.",
+        alt:
+          "Alicate amperímetro próximo a componentes elétricos de um sistema fotovoltaico.",
+        caption: "Medição com alicate amperímetro em um sistema fotovoltaico.",
       },
       {
-        alt: "Módulos solares sobre uma cobertura de telhas cerâmicas.",
-        caption: "Instalação sobre cobertura cerâmica.",
+        alt:
+          "Placa de advertência sobre risco de choque elétrico em sistema de geração própria.",
+        caption: "Sinalização de segurança em uma instalação fotovoltaica.",
       },
       {
-        alt: "Fileiras de módulos solares em uma estrutura montada no solo.",
-        caption: "Sistema fotovoltaico em estrutura no solo.",
+        alt:
+          "Inversor fotovoltaico e componentes elétricos durante uma atividade de manutenção.",
+        caption: "Registro de manutenção de inversor fotovoltaico.",
+      },
+      {
+        alt:
+          "Prévia tridimensional do posicionamento de módulos fotovoltaicos em uma cobertura.",
+        caption: "Visualização de posicionamento de módulos em cobertura.",
       },
     ],
+    videoLabel: "Trecho curto de uma estação de recarga veicular.",
+    videoCaption: "Registro em vídeo de uma estação de recarga veicular.",
   },
   service: {
     title: "Como solicitar um orçamento",
@@ -86,6 +99,9 @@ export const pageContent = {
     title: "Sobre a MCS Sollar",
     description:
       "A MCS Sollar atende residências e empresas em Manaus com projetos, instalações e manutenção em energia solar. Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
+    imageAlt:
+      "Cartaz de energia solar na fachada comercial identificada com a marca MCS.",
+    imageCaption: "Recorte da identificação da MCS Sollar na fachada comercial.",
   },
   faq: [
     {
