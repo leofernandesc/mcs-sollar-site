@@ -46,7 +46,7 @@ Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Os metadados atuais fic
 
 Um componente reutilizável de link de WhatsApp recebe a intenção de contato ou orçamento e usa o número centralizado. O utilitário de composição codifica a mensagem com `encodeURIComponent` durante o build; o resultado é um link HTML normal. Não duplicar telefone ou textos comerciais nos componentes.
 
-Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento será texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
+Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento é texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
 
 `instagram-link.astro` usa o perfil centralizado em `business.ts`, com variantes de cabeçalho e rodapé, ícone SVG decorativo e rótulo acessível. O link abre na mesma aba; não há feed, SDK, rastreamento nem recursos carregados do Instagram durante a visita ao site.
 
@@ -169,7 +169,7 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | --- | --- |
 | Conteúdo, layout, serviços e imagens | HTML/CSS gerados no build |
 | Links de navegação, WhatsApp e Instagram | Âncoras HTML estáticas |
-| Orientações e mensagem de orçamento estruturada | Evolução planejada; texto e links gerados no build, sem formulário |
+| Orientações e mensagem de orçamento estruturada | HTML e link de WhatsApp gerados no build; sem formulário |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
 | Título, descrição e metadados sociais básicos | Saída estática implementada |
 | Canonical, sitemap, robots e JSON-LD | Preparação da publicação; saída estática futura |
@@ -181,8 +181,8 @@ Preparar o conteúdo para Google Ads não autoriza instalar GA4, GTM, pixels ou 
 
 ## Riscos e verificações futuras
 
-- **Marca recebida:** a referência oficial é um JPEG; revisar sua aplicação e legibilidade antes da publicação.
-- **Contraste:** verificar as combinações reais, especialmente o acento laranja atual e o dourado planejado; manter foco e marcadores interativos com contraste suficiente.
+- **Marca recebida:** a logo oficial é um JPEG; revisar sua legibilidade em tamanhos móveis e desktop antes da publicação.
+- **Contraste:** o dourado aproximado da imagem não tem contraste suficiente sobre creme para texto funcional; foco e marcadores usam navy.
 - **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
 - **Origem de produção:** TBD impede finalizar canonical, sitemap e compartilhamento para lançamento.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.

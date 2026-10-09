@@ -8,7 +8,8 @@ export const business = {
   whatsapp: {
     number: "5592999960878",
     display: "+55 92 99996-0878",
-    quotationMessage: "Olá! Gostaria de solicitar um orçamento de energia solar.",
+    quotationMessage:
+      "Olá! Gostaria de solicitar um orçamento de energia solar.\n\nConsumo mensal ou valor aproximado da conta:\nTipo de telhado:\nLocalização do imóvel:",
   },
   instagram: {
     handle: "@mcssollar",

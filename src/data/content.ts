@@ -41,8 +41,26 @@ export const pageContent = {
     },
   ],
   service: {
-    title: "Como solicitar atendimento",
-    description: "Abra uma conversa no WhatsApp e conte qual serviço procura.",
+    title: "Como solicitar um orçamento",
+    description:
+      "Reúna algumas informações sobre o consumo e o imóvel para iniciar a conversa com a equipe da MCS Sollar.",
+    steps: [
+      {
+        title: "Informe o consumo",
+        description:
+          "Conte o consumo mensal em kWh ou o valor aproximado da conta de energia.",
+      },
+      {
+        title: "Descreva o imóvel",
+        description:
+          "Informe o tipo de telhado e a localização onde seria feita a instalação.",
+      },
+      {
+        title: "Converse com a equipe",
+        description:
+          "Com essas informações, a equipe poderá orientar os próximos passos para elaborar o orçamento.",
+      },
+    ],
   },
   about: {
     title: "Sobre a MCS Sollar",
