@@ -28,7 +28,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Revisada em capturas de 375, 768 e 1440 px; escala da logo e H1 ajustados. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
 | 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada, pendente de revisão antes da publicação. | Serviço, público, localização e próximo passo claros; texto aprovado antes da publicação. |
 | 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. Fluxo e mensagem estruturada implementados; revisão do texto ainda necessária antes da publicação. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
-| 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
+| 4A — Curadoria | Triagem visual inicial e revisão de privacidade realizadas em material mantido fora do Git; candidatos foram apresentados ao responsável. Nenhum arquivo do acervo foi copiado ao repositório. | Aguardando confirmação de autoria, autorização de publicação e informações dos trabalhos selecionados. |
 | 4B — Fotos e trabalhos reais | Após 4A e a revisão da marca, integrar a seleção, criar a seção de trabalhos e substituir a imagem ilustrativa do Hero quando adequada. | Conteúdo autêntico, descrições confirmadas e carregamento preservado. |
 | 4C — Vídeos opcionais | Após as fotos, avaliar utilidade comercial, privacidade, áudio e otimização dos vídeos selecionados. | Player acessível e sob demanda; inclusão não é requisito para lançar a homepage. |
 | 5 — FAQ e confiança | FAQ atualizado com dados confirmados; não há credenciais ou depoimentos aprovados para acrescentar. Revisão editorial antes da publicação ainda necessária. | Perguntas úteis respondidas sem credenciais ou condições inventadas; inserir provas somente após validação. |
@@ -89,6 +89,8 @@ Preservar os originais no acervo externo ao Git. Não copiar o ZIP, documentos, 
 - Recortar ou ocultar informações quando adequado em versões próprias para publicação, ou descartar o arquivo. Só integrar versões revisadas e autorizadas.
 - Apresentar a seleção para confirmação de autoria e autorização. Não inferir localização, potência, cliente ou agrupamento em projetos a partir das imagens.
 - Manter legendas de imagem ilustrativa até substituir o conteúdo por fotos reais validadas.
+
+**Estado da curadoria:** a triagem inicial foi feita em materiais privados fora do repositório, e a confirmação de autoria e autorização foi solicitada. Até a resposta, não publicar nem versionar imagens do acervo.
 
 Fotos aprovadas serão processadas pelo Astro, com tamanhos responsivos e dimensões reservadas. A seção de trabalhos ficará após Serviços, com âncora `#projetos`, preservando as âncoras atuais. Legendas e descrições usarão somente informações confirmadas; não criar detalhes para preencher cartões.
 
