@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Sobre reúne registros da fachada, de módulos fotovoltaicos e de uma placa de alerta em uma composição responsiva. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Sobre reúne duas fotos: instalação de inversor e sinalização de risco elétrico. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -68,7 +68,7 @@ Uma rota pública `/`, com navegação por fragmentos:
 | Contato | `contato` | WhatsApp e localização confirmada |
 | Rodapé | — | Identificação e links pertinentes |
 
-Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco; Sobre reúne fotos da fachada, dos módulos fotovoltaicos e da placa de alerta. Não afirmar que as imagens representam clientes ou projetos específicos. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco; Sobre reúne duas fotos, da instalação de inversor e da placa de sinalização de risco elétrico. Não afirmar que as imagens representam clientes ou projetos específicos. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
 
 ## 5. Organização de conteúdo e dados
 
@@ -122,7 +122,7 @@ Registrar origem, licença/autorização e condição ilustrativa de cada imagem
 
 O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos da seleção de portfólio. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
 
-As mídias aprovadas estão em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; `astro:assets` gera variantes responsivas em WebP. A imagem de Instalações usa o JPEG original aprovado, sem metadados, mantendo o visor nítido e a leitura exatamente como registrada, sem reconstrução ou alteração. As imagens de Instalações e Manutenção mantêm seus quadros completos. Marcas manuscritas acima da placa de alerta foram removidas do derivado. A placa aparece em Sobre como registro da sinalização visível, sem alegar conformidade ou certificação. A foto da fachada exclui as anotações dos medidores; a foto dos painéis exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
+As mídias aprovadas estão em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; `astro:assets` gera variantes responsivas em WebP. A imagem de Instalações usa o JPEG original aprovado, sem metadados, mantendo o visor nítido e a leitura exatamente como registrada, sem reconstrução ou alteração. As imagens de Instalações e Manutenção mantêm seus quadros completos. Marcas manuscritas acima da placa de alerta foram removidas do derivado. Sobre contém duas fotos: a instalação do inversor e a placa de sinalização de risco elétrico, apresentada como registro visual sem alegar conformidade ou certificação. A foto dos painéis usada no Hero exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
 
 ## 7. Estratégia responsiva
 

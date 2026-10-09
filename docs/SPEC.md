@@ -32,7 +32,7 @@ Página única, com navegação por seções:
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne registros da fachada, de módulos fotovoltaicos e de uma placa de alerta, sem afirmar conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado da placa. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto da fachada exclui anotações nos medidores; a dos painéis não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
+Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne duas fotos: a instalação de um inversor e uma placa de alerta, sem afirmar conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado da placa. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto dos painéis usada no Hero não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
 
 ## Identidade visual e imagens
 
@@ -44,8 +44,8 @@ Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos servi
 - Usar a logo oficial recebida, preservando sua composição e proporções. A versão JPEG fornecida está em `src/assets/images/brand/mcs-sollar-official.jpeg`; o Astro gera uma versão otimizada para o cabeçalho. O favicon é uma simplificação vetorial do símbolo, usando as cores aproximadas da marca.
 - Revisar a legibilidade da logo e a paleta nos tamanhos de tela suportados antes da publicação. O arquivo original continua sendo raster; não há versão vetorial ou transparente confirmada.
 - Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. As fotos reais selecionadas foram autorizadas pelo responsável; não inferir potência, localização, cliente ou quantidade de projetos.
-- Os derivados aprovados ficam em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; os originais permanecem no acervo externo. Remover metadados e revisar enquadramentos antes de publicar qualquer outra mídia.
-- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados.
+- As mídias aprovadas ficam em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; o JPEG original do alicate e a logo oficial são mantidos como originais aprovados sem metadados EXIF. Os demais originais não selecionados permanecem no acervo externo. Revisar enquadramentos e metadados antes de publicar outras mídias.
+- Preservar fora do repositório os originais não selecionados. Publicar somente mídias selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados.
 
 ## Conteúdo comercial e atendimento
 
@@ -110,7 +110,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre reúne registros da fachada, de módulos fotovoltaicos e da placa de alerta. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre contém duas fotos, da instalação de inversor e da placa de sinalização de risco elétrico. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -119,6 +119,6 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 ## Pendências
 
 - **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
-- **Mídias:** fotos selecionadas pelo responsável foram revisadas para publicação sem metadados. A imagem do alicate usa o original aprovado, com o visor legível e a leitura preservada exatamente como registrada; as imagens de Instalações e Manutenção mantêm o quadro completo. Marcas manuscritas foram removidas do derivado da placa, agora exibida em Sobre junto das fotos da fachada e dos painéis. A fachada exclui anotações nos medidores e a foto dos painéis omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
+- **Mídias:** fotos selecionadas pelo responsável foram revisadas para publicação sem metadados. A imagem do alicate usa o original aprovado, com o visor legível e a leitura preservada exatamente como registrada; as imagens de Instalações e Manutenção mantêm o quadro completo. Marcas manuscritas foram removidas do derivado da placa, agora exibida em Sobre ao lado da foto da instalação de inversor. A foto dos painéis usada no Hero omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.
