@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import inverterInstallation from "../../assets/images/hero/solar-inverter-installation.webp";
 import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
-import evChargingInstallation from "../../assets/images/about/solar-installation-ev-charger.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
@@ -16,60 +15,26 @@ import SectionHeading from "../ui/section-heading.astro";
 >
   <PageContainer>
     <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-10">
-      <div class="max-w-xl">
+      <div>
         <SectionHeading
           id="about-heading"
           eyebrow={business.locationDisplay}
           title={pageContent.about.title}
         />
 
-        <p class="mt-6 max-w-md text-xl font-medium leading-8 text-brand-navy sm:text-2xl sm:leading-9">
-          {pageContent.about.lead}
-        </p>
-
-        <ul
-          aria-label="Serviços de energia solar"
-          class="mt-6 grid grid-cols-3 gap-2 border-y border-brand-navy/15 py-3 lg:grid-cols-1 lg:gap-0 lg:border-y-0 lg:py-0"
-        >
-          {business.services.map((service) => (
-            <li class="text-center text-xs font-semibold text-brand-navy sm:text-sm lg:border-b lg:border-brand-navy/10 lg:py-3 lg:text-left lg:text-base last:lg:border-b-0">
-              {service}
-            </li>
-          ))}
-        </ul>
-
-        <p class="mt-5 max-w-md text-base leading-7 text-ink sm:text-lg sm:leading-8">
+        <p class="mt-6 max-w-2xl text-base leading-7 text-ink sm:text-lg sm:leading-8">
           {pageContent.about.description}
         </p>
       </div>
 
-      <div class="grid min-w-0 grid-cols-2 items-start gap-3 sm:gap-5">
-        <figure class="min-w-0">
-          <div class="overflow-hidden rounded-md">
-            <Image
-              src={evChargingInstallation}
-              alt={pageContent.about.evChargingImageAlt}
-              widths={[360, 540, 720, 960]}
-              sizes="(min-width: 64rem) 24vw, 45vw"
-              format="webp"
-              quality={84}
-              loading="lazy"
-              decoding="async"
-              class="h-auto w-full"
-            />
-          </div>
-          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
-            {pageContent.about.evChargingImageCaption}
-          </figcaption>
-        </figure>
-
-        <figure class="min-w-0">
+      <div class="grid min-w-0 grid-cols-5 items-start gap-3 sm:gap-5">
+        <figure class="col-span-3">
           <div class="overflow-hidden rounded-md">
             <Image
               src={inverterInstallation}
               alt={pageContent.about.inverterImageAlt}
               widths={[360, 540, 720, 960]}
-              sizes="(min-width: 64rem) 24vw, 45vw"
+              sizes="(min-width: 64rem) 28vw, 60vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -82,21 +47,21 @@ import SectionHeading from "../ui/section-heading.astro";
           </figcaption>
         </figure>
 
-        <figure class="col-span-2 min-w-0">
-          <div class="flex justify-center overflow-hidden rounded-md">
+        <figure class="col-span-2">
+          <div class="overflow-hidden rounded-md">
             <Image
               src={electricalSafetySign}
               alt={pageContent.about.safetyImageAlt}
               widths={[192, 256, 384, 480]}
-              sizes="(min-width: 64rem) 17rem, (min-width: 48rem) 18rem, 75vw"
+              sizes="(min-width: 64rem) 18vw, 40vw"
               format="webp"
               quality={84}
               loading="lazy"
               decoding="async"
-              class="h-auto max-h-80 w-auto max-w-full"
+              class="h-auto w-full"
             />
           </div>
-          <figcaption class="mt-2 text-center text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
             {pageContent.about.safetyImageCaption}
           </figcaption>
         </figure>
