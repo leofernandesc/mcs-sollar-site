@@ -44,10 +44,6 @@ export const pageContent = {
         "Alicate amperímetro em primeiro plano, com componentes elétricos ao fundo.",
       imageCaption:
         "Medição com alicate amperímetro em componentes do sistema fotovoltaico.",
-      supportingImageAlt:
-        "Placa com alerta de risco de choque elétrico em geração própria.",
-      supportingImageCaption:
-        "Sinalização de risco elétrico em uma instalação fotovoltaica.",
     },
     {
       title: business.services[2],
@@ -91,6 +87,10 @@ export const pageContent = {
     panelImageAlt:
       "Módulos fotovoltaicos sobre uma cobertura com telhas cerâmicas.",
     panelImageCaption: "Módulos fotovoltaicos sobre uma cobertura.",
+    safetyImageAlt:
+      "Placa com alerta de risco de choque elétrico em geração própria.",
+    safetyImageCaption:
+      "Sinalização de risco elétrico em uma instalação fotovoltaica.",
   },
   faq: [
     {

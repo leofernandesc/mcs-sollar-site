@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import projectPlan from "../../assets/images/services/photovoltaic-project-plan.webp";
 import installationMeasurement from "../../assets/images/services/installation-measurement.webp";
 import inverterMaintenance from "../../assets/images/services/inverter-maintenance.webp";
-import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
 import SectionHeading from "../ui/section-heading.astro";
@@ -29,7 +28,7 @@ const services = [
       />
 
       <ul class="grid gap-x-8 gap-y-8 md:grid-cols-3">
-        {services.map((service, index) => (
+        {services.map((service) => (
           <li class="border-t border-brand-navy/20 pt-5">
             <article>
               <h3 class="text-xl sm:text-2xl">{service.title}</h3>
@@ -54,26 +53,6 @@ const services = [
                   {service.imageCaption}
                 </figcaption>
               </figure>
-              {index === 1 && (
-                <figure class="mt-5 max-w-48">
-                  <div class="overflow-hidden rounded-md">
-                    <Image
-                      src={electricalSafetySign}
-                      alt={pageContent.services[1].supportingImageAlt}
-                      widths={[192, 256, 384]}
-                      sizes="12rem"
-                      format="webp"
-                      quality={84}
-                      loading="lazy"
-                      decoding="async"
-                      class="h-auto w-full"
-                    />
-                  </div>
-                  <figcaption class="mt-2 text-sm leading-6 text-ink/80">
-                    {pageContent.services[1].supportingImageCaption}
-                  </figcaption>
-                </figure>
-              )}
             </article>
           </li>
         ))}

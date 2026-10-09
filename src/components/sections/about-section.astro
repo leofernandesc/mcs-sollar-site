@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import facadeDetail from "../../assets/images/about/mcs-sollar-facade.webp";
 import photovoltaicPanels from "../../assets/images/about/photovoltaic-panels.webp";
+import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
@@ -14,7 +15,7 @@ import SectionHeading from "../ui/section-heading.astro";
   class="border-t border-brand-navy/10 bg-white py-section"
 >
   <PageContainer>
-    <div class="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-10">
       <div>
         <SectionHeading
           id="about-heading"
@@ -27,14 +28,14 @@ import SectionHeading from "../ui/section-heading.astro";
         </p>
       </div>
 
-      <div class="grid min-w-0 grid-cols-[1.2fr_1fr] items-center gap-4 sm:gap-6">
+      <div class="grid min-w-0 grid-cols-3 items-center gap-3 sm:gap-5">
         <figure>
           <div class="overflow-hidden rounded-md">
             <Image
               src={photovoltaicPanels}
               alt={pageContent.about.panelImageAlt}
               widths={[240, 360, 480, 640]}
-              sizes="(min-width: 64rem) 20rem, (min-width: 48rem) 24vw, 48vw"
+              sizes="(min-width: 64rem) 15rem, 34vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -42,7 +43,7 @@ import SectionHeading from "../ui/section-heading.astro";
               class="h-auto w-full"
             />
           </div>
-          <figcaption class="mt-3 text-sm leading-6 text-ink/80">
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
             {pageContent.about.panelImageCaption}
           </figcaption>
         </figure>
@@ -53,7 +54,7 @@ import SectionHeading from "../ui/section-heading.astro";
               src={facadeDetail}
               alt={pageContent.about.imageAlt}
               widths={[192, 256, 384, 480]}
-              sizes="(min-width: 64rem) 14rem, (min-width: 48rem) 20vw, 42vw"
+              sizes="(min-width: 64rem) 13rem, 34vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -61,8 +62,27 @@ import SectionHeading from "../ui/section-heading.astro";
               class="h-auto w-full"
             />
           </div>
-          <figcaption class="mt-3 text-sm leading-6 text-ink/80">
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
             {pageContent.about.imageCaption}
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={electricalSafetySign}
+              alt={pageContent.about.safetyImageAlt}
+              widths={[192, 256, 384, 480]}
+              sizes="(min-width: 64rem) 13rem, 34vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.safetyImageCaption}
           </figcaption>
         </figure>
       </div>

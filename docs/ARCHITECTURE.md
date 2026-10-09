@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Sobre usa fotos da fachada e de módulos fotovoltaicos; Instalações também inclui o registro de uma placa de alerta. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Sobre reúne registros da fachada, de módulos fotovoltaicos e de uma placa de alerta em uma composição responsiva. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -68,7 +68,7 @@ Uma rota pública `/`, com navegação por fragmentos:
 | Contato | `contato` | WhatsApp e localização confirmada |
 | Rodapé | — | Identificação e links pertinentes |
 
-Preservar os identificadores das seções que permanecem no site. As três fotos aparecem dentro dos blocos de serviço, sem afirmar que representam projetos específicos ou clientes. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco; Sobre reúne fotos da fachada, dos módulos fotovoltaicos e da placa de alerta. Não afirmar que as imagens representam clientes ou projetos específicos. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
 
 ## 5. Organização de conteúdo e dados
 
@@ -122,7 +122,7 @@ Registrar origem, licença/autorização e condição ilustrativa de cada imagem
 
 O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos da seleção de portfólio. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
 
-Os derivados WebP sem metadados são organizados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`. As imagens de Instalações e Manutenção mantêm seus quadros completos; o visor do alicate amperímetro é desfocado para não divulgar o valor medido. Marcas manuscritas acima da placa de alerta foram removidas do derivado. A placa aparece como registro da sinalização visível, sem alegar conformidade ou certificação. A foto da fachada exclui as anotações dos medidores; a foto dos painéis exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Os componentes usam `astro:assets` para gerar dimensões responsivas e carregamento tardio. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
+Os derivados WebP sem metadados são organizados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`. As imagens de Instalações e Manutenção mantêm seus quadros completos; o visor do alicate amperímetro é desfocado para não divulgar o valor medido. Marcas manuscritas acima da placa de alerta foram removidas do derivado. A placa aparece em Sobre como registro da sinalização visível, sem alegar conformidade ou certificação. A foto da fachada exclui as anotações dos medidores; a foto dos painéis exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Os componentes usam `astro:assets` para gerar dimensões responsivas e carregamento tardio. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
 
 ## 7. Estratégia responsiva
 
