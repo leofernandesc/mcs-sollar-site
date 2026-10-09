@@ -12,10 +12,12 @@ Evoluir a homepage existente para apresentar melhor os serviços, demonstrar tra
 - Astro, Tailwind CSS, TypeScript onde útil, npm, uma homepage e componentes estáticos. Sem backend, banco de dados, CMS, autenticação ou JavaScript de aplicação no cliente.
 - Público inicial: residências e empresas em Manaus, AM. Serviços: projetos, instalações e manutenção em energia solar.
 - Conversão principal aprovada: solicitar orçamento pelo WhatsApp. Contato geral é secundário; Instagram continua um canal secundário já implementado.
-- A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final. A logo e a paleta foram integradas na etapa 2A. Os textos da etapa 2B estão na interface como proposta editorial e aguardam revisão antes da publicação.
+- A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final. A logo e a paleta foram integradas na etapa 2A. A frase do Hero foi aprovada pelo responsável; a escala maior foi reduzida. Os demais textos comerciais continuam sujeitos à revisão antes da publicação.
 - Logo oficial: `src/assets/images/brand/mcs-sollar-official.jpeg`, cópia sem alterações do JPEG recebido, com sol e painéis, azul-marinho, dourado e creme.
-- Acervo recebido: 43 imagens e 9 vídeos, além de um arquivo ZIP. Disponibilidade não comprova autoria, autorização ou dados de um projeto; a seleção será validada pelo responsável.
-- Domínio, hospedagem e configuração de publicação: TBD na documentação do projeto. Não presumir produção a partir do preview ou do GitHub.
+- O responsável indicou as fotos para a página. Os derivados publicados não têm metadados; as fotos de Instalações e Manutenção mantêm o quadro completo, com o visor do alicate amperímetro desfocado. A foto da fachada exclui anotações dos medidores e a foto dos painéis não mostra a numeração vizinha nem uma pessoa na borda.
+- A captura da visualização do projeto enviada pelo responsável é usada como imagem estática. Vídeos foram removidos da versão atual a pedido do responsável.
+- A captura do aplicativo foi mantida fora do site por conter identificação de conta e métricas de um sistema; anúncios e flyer também ficaram fora até revisão das alegações comerciais. O acervo bruto continua fora do Git.
+- Preview atual no Cloudflare Pages: `https://mcs-sollar-site.pages.dev/`, provisório e com `noindex`; `robots.txt` permite rastreamento para leitura da diretiva. O domínio próprio e a configuração final de SEO continuam TBD.
 
 ## Entregas e dependências
 
@@ -26,13 +28,13 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 0 — Auditoria | Inspecionar implementação, documentação, Git e acervo; identificar divergências. Auditoria estrutural concluída. | Baseline identificado e build aprovado; revisão visual de novas mudanças ocorrerá em cada entrega. |
 | 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Concluída na branch de planejamento. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
 | 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Revisada em capturas de 375, 768 e 1440 px; escala da logo e H1 ajustados. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
-| 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada, pendente de revisão antes da publicação. | Serviço, público, localização e próximo passo claros; texto aprovado antes da publicação. |
+| 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada. O H1 foi aprovado e teve a escala maior reduzida. | Serviço, público, localização e próximo passo claros; revisar os demais textos antes da publicação. |
 | 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. Fluxo e mensagem estruturada implementados; revisão do texto ainda necessária antes da publicação. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
-| 4A — Curadoria | Triagem visual inicial e revisão de privacidade realizadas em material mantido fora do Git; candidatos foram apresentados ao responsável. Nenhum arquivo do acervo foi copiado ao repositório. | Aguardando confirmação de autoria, autorização de publicação e informações dos trabalhos selecionados. |
-| 4B — Fotos e trabalhos reais | Após 4A e a revisão da marca, integrar a seleção, criar a seção de trabalhos e substituir a imagem ilustrativa do Hero quando adequada. | Conteúdo autêntico, descrições confirmadas e carregamento preservado. |
-| 4C — Vídeos opcionais | Após as fotos, avaliar utilidade comercial, privacidade, áudio e otimização dos vídeos selecionados. | Player acessível e sob demanda; inclusão não é requisito para lançar a homepage. |
+| 4A — Curadoria | Seleção atual indicada pelo responsável; originais permanecem fora do Git. Derivados são revisados para privacidade antes da publicação. | Concluída para os arquivos incluídos; capturas do aplicativo e peças promocionais aguardam validação. |
+| 4B — Fotos em serviços | Hero trocado por foto de instalação; uma imagem aparece sob cada serviço e Sobre reúne registros da fachada, de módulos fotovoltaicos e da placa de alerta. | Implementada; as fotos de Instalações e Manutenção mantêm o quadro completo, o visor do alicate está desfocado e a navegação antiga de trabalhos foi removida. A placa é apenas um registro visual, sem alegação de conformidade. |
+| 4C — Vídeo | Vídeos de instalação/recarga não são publicados na versão atual. A captura da visualização de projeto é uma imagem estática enviada pelo responsável. | Fora da versão atual por decisão do responsável. |
 | 5 — FAQ e confiança | FAQ atualizado com dados confirmados; não há credenciais ou depoimentos aprovados para acrescentar. Revisão editorial antes da publicação ainda necessária. | Perguntas úteis respondidas sem credenciais ou condições inventadas; inserir provas somente após validação. |
-| 6 — SEO e publicação | Finalizar SEO já previsto após confirmar domínio e hospedagem; preparar a substituição do site antigo. | Build aprovado e configuração revisada; publicação depende de autorização própria. |
+| 6 — SEO e publicação | O preview Pages usa `noindex` e um `robots.txt` que permite rastreamento; não recebe canonical nem sitemap definitivos. Concluir SEO de produção após conectar o domínio próprio. | Domínio ainda TBD; antes da indexação, remover `noindex`, definir canonical e sitemap e validar metadados. |
 | 7 — Mensuração | Definir acompanhamento comercial manual, externo ao site. Integrações exigirão proposta técnica futura. | Distinguir cliques, conversas, leads qualificados e vendas, sem prometer atribuição automática. |
 | 8 — Página de campanha | Avaliar uma página específica somente se houver necessidade demonstrada. | Novo escopo aprovado; a evolução atual permanece com uma homepage. |
 
@@ -87,20 +89,18 @@ Preservar os originais no acervo externo ao Git. Não copiar o ZIP, documentos, 
 - Excluir documentos de conexão, capturas de aplicativos e peças de origem não confirmada da seleção de portfólio.
 - Revisar contatos, endereços, placas, identificadores de equipamentos, telas, reflexos e pessoas reconhecíveis nas fotos escolhidas; conferir também nomes de arquivos e metadados.
 - Recortar ou ocultar informações quando adequado em versões próprias para publicação, ou descartar o arquivo. Só integrar versões revisadas e autorizadas.
-- Apresentar a seleção para confirmação de autoria e autorização. Não inferir localização, potência, cliente ou agrupamento em projetos a partir das imagens.
-- Manter legendas de imagem ilustrativa até substituir o conteúdo por fotos reais validadas.
+- A seleção atual foi indicada pelo responsável. Para novas mídias, confirmar autoria e autorização antes da publicação; não inferir localização, potência, cliente ou agrupamento em projetos a partir das imagens.
+- Identificar como ilustrativas somente imagens que não sejam registros reais fornecidos e aprovados para uso.
 
-**Estado da curadoria:** a triagem inicial foi feita em materiais privados fora do repositório, e a confirmação de autoria e autorização foi solicitada. Até a resposta, não publicar nem versionar imagens do acervo.
+**Estado da curadoria:** o responsável indicou as fotos atuais para uso no site. Os originais permanecem no acervo externo. Os derivados WebP não têm metadados. As imagens de Instalações e Manutenção mantêm o enquadramento integral; o visor do alicate amperímetro foi desfocado. Marcas manuscritas na parede acima da placa de alerta foram removidas do derivado; a placa aparece em Sobre como registro visual, sem alegação de conformidade, junto às fotos da fachada e dos painéis. A foto da fachada exclui anotações nos medidores e a foto dos painéis exclui a numeração da casa vizinha e uma pessoa na borda. A captura estática da visualização do projeto foi enviada pelo responsável. Nenhuma legenda informa cliente, endereço, potência ou resultado de geração.
 
-Fotos aprovadas serão processadas pelo Astro, com tamanhos responsivos e dimensões reservadas. A seção de trabalhos ficará após Serviços, com âncora `#projetos`, preservando as âncoras atuais. Legendas e descrições usarão somente informações confirmadas; não criar detalhes para preencher cartões.
-
-Vídeos exigem revisão integral dos quadros e do áudio, seleção e compressão próprias. Astro não comprime vídeo. Usar arquivos otimizados e player HTML nativo, controles, poster e carregamento sob demanda; sem autoplay ou embeds externos. Fornecer legendas ou transcrição quando a fala for essencial. Não adicionar dependências ou publicar os vídeos brutos automaticamente.
+As imagens em `src/assets/` são processadas pelo Astro, com tamanhos responsivos e dimensões reservadas. Uma foto está associada a cada serviço, sem galeria independente ou âncora `#projetos`. Legendas e descrições usam somente características visíveis e aprovadas; não criar detalhes para preencher cartões. Vídeos permanecem fora da versão atual.
 
 ## Informações internas, SEO e campanhas
 
 Referências financeiras, ticket médio, capacidade operacional, verba publicitária e critérios numéricos de qualificação ficam fora de todo o repositório e dos recursos enviados ao navegador. Documentos versionados também seguem essa regra. Registrar apenas a política de não divulgar preços, valores mínimos, tabelas ou cálculos genéricos de investimento. A equipe fará a qualificação manualmente, sem bloqueio automático por consumo no site.
 
-Na etapa 6, configurar origem pública, canonical, sitemap, robots, metadados sociais completos e dados estruturados somente com fatos confirmados. Não inventar endereço ou avaliações. O site antigo poderá ter URLs inspecionadas apenas para preparar redirecionamentos; não reutilizar seu conteúdo. DNS, HTTPS e substituição do site em produção exigem verificação e autorização próprias.
+O endereço `pages.dev` é um preview provisório e recebe `noindex`; seu `robots.txt` permite rastreamento e não aponta sitemap. Não definir canonical ou sitemap para esse endereço. Na etapa 6, configurar a origem pública, canonical, sitemap, regras de robots, metadados sociais completos e dados estruturados somente com fatos confirmados, depois de conectar o domínio próprio. Não inventar endereço ou avaliações. O site antigo poderá ter URLs inspecionadas apenas para preparar redirecionamentos; não reutilizar seu conteúdo. DNS, HTTPS e substituição do site em produção exigem verificação e autorização próprias.
 
 Na etapa 7, separar clique no WhatsApp, conversa recebida, contato qualificado e venda no acompanhamento manual. Os nomes `whatsapp_contact_click` e `whatsapp_quote_click` são candidatos para uma futura proposta de mensuração, não eventos implementados. Um clique não comprova orçamento recebido ou venda.
 
@@ -114,4 +114,4 @@ Em cada alteração, executar `npm run check`, `npm run build` e `git diff --che
 
 Repetir Lighthouse após mudanças relevantes de marca, mídia ou desempenho, preservando as metas da SPEC; não prometer notas ou resultados de campo. Resumir arquivos alterados, evidências e endereço de visualização. Mudanças apenas documentais não exigem uma nova revisão visual ou Lighthouse do site.
 
-Permanecem TBD os procedimentos especializados, diferenciais, garantias, financiamento, credenciais e demais dados não fornecidos; também a identificação e autorização dos trabalhos selecionados e o destino definitivo de publicação. Avançar somente com informações confirmadas ou propostas editoriais claramente identificadas.
+Permanecem TBD os procedimentos especializados, diferenciais, garantias, financiamento, credenciais, detalhes específicos dos trabalhos e demais dados não fornecidos; também o domínio próprio. Avançar somente com informações confirmadas ou propostas editoriais claramente identificadas.

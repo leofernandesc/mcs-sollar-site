@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual foi aplicada na etapa 2A e a proposta de conteúdo da etapa 2B está na interface, pendente de revisão editorial antes da publicação. Domínio e hospedagem seguem TBD na documentação do projeto.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem no Hero, junto aos serviços e na seção Sobre; não há seção separada de trabalhos nem vídeo publicado. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
 
 ## Objetivo do projeto
 
@@ -32,7 +32,7 @@ Página única, com navegação por seções:
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas podem acompanhar apresentação e serviços, com identificação explícita. Há um acervo local recebido, ainda fora do site. A seção de trabalhos reais está planejada após Serviços, condicionada à seleção e à confirmação de autoria, autorização e informações de cada trabalho. Não criar projetos fictícios. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
+Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas como derivados otimizados, sem metadados. Sobre reúne registros da fachada, de módulos fotovoltaicos e de uma placa de alerta, sem afirmar conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado da placa. A foto do alicate mantém o quadro completo, com o visor de medição desfocado. A foto da fachada exclui anotações nos medidores; a dos painéis não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
 
 ## Identidade visual e imagens
 
@@ -43,14 +43,15 @@ Imagens ilustrativas podem acompanhar apresentação e serviços, com identifica
 - Tipografia sem serifa, legível e profissional; evitar reproduzir a tipografia condensada do anúncio em textos longos.
 - Usar a logo oficial recebida, preservando sua composição e proporções. A versão JPEG fornecida está em `src/assets/images/brand/mcs-sollar-official.jpeg`; o Astro gera uma versão otimizada para o cabeçalho. O favicon é uma simplificação vetorial do símbolo, usando as cores aproximadas da marca.
 - Revisar a legibilidade da logo e a paleta nos tamanhos de tela suportados antes da publicação. O arquivo original continua sendo raster; não há versão vetorial ou transparente confirmada.
-- Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. Fotos de trabalhos reais só podem receber essa atribuição após validação; não inferir potência, localização, cliente ou quantidade de projetos.
-- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados. A revisão de vídeos inclui imagem e áudio.
+- Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. As fotos reais selecionadas foram autorizadas pelo responsável; não inferir potência, localização, cliente ou quantidade de projetos.
+- Os derivados aprovados ficam em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; os originais permanecem no acervo externo. Remover metadados e revisar enquadramentos antes de publicar qualquer outra mídia.
+- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados.
 
 ## Conteúdo comercial e atendimento
 
 Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser revisados antes da publicação. Não representam credenciais ou resultados comerciais.
 
-- **H1 atual:** “Energia solar para sua residência ou empresa”; o eyebrow do Hero informa “Manaus, AM”.
+- **H1 aprovado:** “Energia solar para sua residência ou empresa”; o eyebrow do Hero informa “Manaus, AM”. A escala maior do título foi reduzida a pedido do responsável.
 - **Apresentação atual:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
 - **Ação principal do Hero:** “Solicitar orçamento”; a ação secundária leva à seção de serviços. Há apenas um CTA de WhatsApp no grupo visual.
 - **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.
@@ -85,7 +86,7 @@ Layout com prioridade para celular, sem rolagem horizontal a partir de 320 px; i
 - Título proposto: “MCS Sollar | Energia Solar em Manaus”. Descrição baseada nos três serviços confirmados.
 - Um H1, hierarquia lógica, HTML semântico e conteúdo útil em português com foco em Manaus.
 - Nome e telefone consistentes; não inventar endereço nem criar páginas artificiais de localidades.
-- URL canônica, sitemap, configuração de indexação e metadados sociais após definir o endereço público.
+- O preview `mcs-sollar-site.pages.dev` deve permanecer com `noindex` enquanto for provisório; `robots.txt` permite rastreamento para que os buscadores leiam a diretiva. URL canônica, sitemap e indexação pública aguardam a conexão do domínio próprio.
 - Dados estruturados compatíveis com as informações reais disponíveis, sem endereço ou avaliações fictícias.
 - Não prometer posições nos resultados de busca.
 
@@ -105,11 +106,11 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Hospedagem
 
-**Provedor: TBD. Domínio/URL pública: TBD.** Manter a arquitetura independente de fornecedor, com publicação dos arquivos gerados em `dist/` em um serviço de hospedagem estática com HTTPS. Não exigir adaptador, SDK ou runtime de servidor específico. Priorizar uma opção gratuita ao selecionar o provedor; a recomendação anterior não fixa uma escolha de hospedagem. O repositório ainda não registra um destino definitivo ou configuração de provedor. Substituir o site antigo requer confirmação da infraestrutura e autorização própria; ele não é fonte de conteúdo ou design.
+**Preview atual:** [mcs-sollar-site.pages.dev](https://mcs-sollar-site.pages.dev/) no Cloudflare Pages, endereço provisório. O domínio próprio e a URL definitiva permanecem TBD. Manter a arquitetura de produção independente de fornecedor, com arquivos estáticos em `dist/`, sem adaptador ou runtime específico. O preview deve usar `noindex`; remover essa diretiva e configurar canonical, sitemap e indexação quando o domínio final estiver conectado. Substituir o site antigo requer confirmação da infraestrutura e autorização própria; ele não é fonte de conteúdo ou design.
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Conteúdo comercial inicial e identidade visual foram aplicados em entregas separadas; trabalhos reais dependem de curadoria e autorização. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre reúne registros da fachada, de módulos fotovoltaicos e da placa de alerta. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -117,7 +118,7 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 
 ## Pendências
 
-- **Antes de publicar:** revisar a aplicação responsiva da logo e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
-- **Mídias:** confirmar a seleção de fotos, autoria, autorização e informações de cada trabalho após revisão de privacidade. Vídeos serão uma entrega posterior, condicionada à revisão de imagem e áudio.
+- **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
+- **Mídias:** fotos selecionadas pelo responsável foram reprocessadas sem metadados. As imagens de Instalações e Manutenção mantêm o quadro completo; o visor do alicate amperímetro foi desfocado. Marcas manuscritas foram removidas do derivado da placa, agora exibida em Sobre junto das fotos da fachada e dos painéis. A fachada exclui anotações nos medidores e a foto dos painéis omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.

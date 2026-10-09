@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import facadeDetail from "../../assets/images/about/mcs-sollar-facade.webp";
+import inverterInstallation from "../../assets/images/hero/solar-inverter-installation.webp";
+import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
@@ -11,18 +15,77 @@ import SectionHeading from "../ui/section-heading.astro";
   class="border-t border-brand-navy/10 bg-white py-section"
 >
   <PageContainer>
-    <div class="grid gap-7 md:grid-cols-12 md:items-end md:gap-10">
-      <div class="md:col-span-5">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-10">
+      <div>
         <SectionHeading
           id="about-heading"
           eyebrow={business.locationDisplay}
           title={pageContent.about.title}
         />
+
+        <p class="mt-6 max-w-2xl text-base leading-7 text-ink sm:text-lg sm:leading-8">
+          {pageContent.about.description}
+        </p>
       </div>
 
-      <p class="max-w-2xl text-base leading-7 text-ink md:col-span-6 md:col-start-7 sm:text-lg sm:leading-8">
-        {pageContent.about.description}
-      </p>
+      <div class="grid min-w-0 grid-cols-2 items-start gap-3 sm:gap-5 md:grid-cols-4">
+        <figure class="col-span-2 md:col-span-2">
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={inverterInstallation}
+              alt={pageContent.about.inverterImageAlt}
+              widths={[360, 540, 720, 960]}
+              sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 50vw, 100vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.inverterImageCaption}
+          </figcaption>
+        </figure>
+
+        <figure class="col-span-1 md:col-span-1">
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={facadeDetail}
+              alt={pageContent.about.imageAlt}
+              widths={[192, 256, 384, 480]}
+              sizes="(min-width: 64rem) 15vw, (min-width: 48rem) 25vw, 50vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.imageCaption}
+          </figcaption>
+        </figure>
+
+        <figure class="col-span-1 md:col-span-1">
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={electricalSafetySign}
+              alt={pageContent.about.safetyImageAlt}
+              widths={[192, 256, 384, 480]}
+              sizes="(min-width: 64rem) 15vw, (min-width: 48rem) 25vw, 50vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.safetyImageCaption}
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </PageContainer>
 </section>

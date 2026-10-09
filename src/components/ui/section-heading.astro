@@ -11,7 +11,7 @@ const { title, id, description, eyebrow, headingLevel = 2 } = Astro.props;
 const headingTags = { 1: "h1", 2: "h2", 3: "h3" } as const;
 const HeadingTag = headingTags[headingLevel];
 const headingSize = {
-  1: "text-4xl sm:text-5xl lg:text-6xl",
+  1: "text-4xl sm:text-5xl",
   2: "text-3xl sm:text-4xl",
   3: "text-2xl sm:text-3xl",
 }[headingLevel];

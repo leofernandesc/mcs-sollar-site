@@ -18,6 +18,9 @@ export const pageContent = {
     title: "Energia solar para sua residência ou empresa",
     description:
       "A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.",
+    imageAlt:
+      "Módulos fotovoltaicos instalados sobre uma cobertura com telhas cerâmicas.",
+    imageCaption: "Módulos fotovoltaicos sobre uma cobertura.",
     quotationLabel: "Solicitar orçamento",
     servicesLabel: "Conhecer nossos serviços",
   },
@@ -28,16 +31,28 @@ export const pageContent = {
       title: business.services[0],
       description:
         "Projetos de sistemas fotovoltaicos considerando o consumo de energia e as características do imóvel.",
+      imageAlt:
+        "Visualização tridimensional de uma cobertura com módulos fotovoltaicos.",
+      imageCaption:
+        "Visualização de uma cobertura com módulos fotovoltaicos.",
     },
     {
       title: business.services[1],
       description:
         "Instalação de sistemas de energia solar para residências e empresas em Manaus.",
+      imageAlt:
+        "Alicate amperímetro em primeiro plano, com componentes elétricos ao fundo.",
+      imageCaption:
+        "Medição com alicate amperímetro em componentes do sistema fotovoltaico.",
     },
     {
       title: business.services[2],
       description:
         "Manutenção de sistemas fotovoltaicos para residências e empresas.",
+      imageAlt:
+        "Profissional realiza uma atividade junto a um inversor e componentes de proteção.",
+      imageCaption:
+        "Registro de atividade de manutenção em sistema fotovoltaico.",
     },
   ],
   service: {
@@ -66,6 +81,16 @@ export const pageContent = {
     title: "Sobre a MCS Sollar",
     description:
       "A MCS Sollar atende residências e empresas em Manaus com projetos, instalações e manutenção em energia solar. Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
+    imageAlt:
+      "Fachada comercial com identificação da MCS e cartaz da MCS Sollar.",
+    imageCaption: "Fachada comercial com identificação da empresa.",
+    inverterImageAlt:
+      "Inversor fotovoltaico instalado ao lado de componentes de proteção elétrica.",
+    inverterImageCaption: "Registro de instalação de inversor fotovoltaico.",
+    safetyImageAlt:
+      "Placa com alerta de risco de choque elétrico em geração própria.",
+    safetyImageCaption:
+      "Sinalização de risco elétrico em uma instalação fotovoltaica.",
   },
   faq: [
     {

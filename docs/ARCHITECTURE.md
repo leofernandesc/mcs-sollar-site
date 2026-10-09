@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial e a paleta derivada foram aplicadas na etapa 2A. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Sobre reúne registros da fachada, de módulos fotovoltaicos e de uma placa de alerta em uma composição responsiva. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -22,7 +22,7 @@ src/
   layouts/
     site-layout.astro    # Documento HTML e metadados
   components/
-    sections/            # Cabeçalho, apresentação, serviços, atendimento, sobre, FAQ, contato, rodapé
+    sections/            # Cabeçalho, apresentação, serviços, trabalhos, atendimento, sobre, FAQ, contato, rodapé
     ui/                  # Links de WhatsApp/Instagram, contêineres e títulos reutilizáveis
   data/
     business.ts          # Fatos comerciais confirmados
@@ -30,7 +30,8 @@ src/
   types/                 # Tipos compartilhados somente quando necessários
   utils/                 # Composição de links e metadados no build
   assets/
-    images/              # Imagens processadas pelo Astro
+    images/              # Logo e imagens locais processadas pelo Astro
+      projects/          # Derivados WebP autorizados, sem metadados
   styles/
     global.css           # Entrada Tailwind, tokens e estilos globais
 public/                  # favicon.svg provisório e arquivos sem transformação
@@ -60,16 +61,14 @@ Uma rota pública `/`, com navegação por fragmentos:
 | --- | --- | --- |
 | Cabeçalho | — | Marca, navegação e contato |
 | Apresentação | `inicio` | H1, resumo e ações de contato/orçamento |
-| Serviços | `servicos` | Projetos, instalações e manutenção |
+| Serviços | `servicos` | Projetos, instalações e manutenção, cada um acompanhado por uma foto selecionada |
 | Atendimento | `atendimento` | Como iniciar a conversa |
 | Sobre | `sobre` | Apresentação institucional aprovada |
 | FAQ | `duvidas` | Perguntas e respostas em controles nativos |
 | Contato | `contato` | WhatsApp e localização confirmada |
 | Rodapé | — | Identificação e links pertinentes |
 
-Preservar os identificadores para navegação e links compartilhados. Não incluir portfólio ou depoimentos sem material real autorizado. Imagens ilustrativas pertencem à apresentação ou aos serviços e recebem legenda; não são evidência de projetos realizados.
-
-A seção de trabalhos reais está planejada após Serviços, com âncora `projetos` e acesso de navegação, somente após curadoria e validação. Ela continuará na rota `/`; não criar páginas de projetos, carrossel com JavaScript ou uma coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco; Sobre reúne fotos da fachada, dos módulos fotovoltaicos e da placa de alerta. Não afirmar que as imagens representam clientes ou projetos específicos. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
 
 ## 5. Organização de conteúdo e dados
 
@@ -104,8 +103,10 @@ Informações pendentes:
 | Procedimentos técnicos adicionais, prazos e diferenciais comprovados | TBD |
 | Anos de atuação, estatísticas e certificações | TBD |
 | Garantias, financiamento e outras condições comerciais | TBD; preços não serão divulgados |
-| Identificação dos trabalhos, autoria, autorização e depoimentos | TBD; acervo recebido, ainda não validado para publicação |
-| Revisão final dos novos textos e da aplicação responsiva da logo | TBD |
+| Autoria e uso das fotos selecionadas | Mídias indicadas pelo responsável; derivados sem metadados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/` |
+| Detalhes específicos dos trabalhos, clientes, localização e capacidade | TBD; não são exibidos |
+| Depoimentos e outras provas de confiança | TBD |
+| Revisão final do texto comercial e da aplicação responsiva da logo | TBD |
 
 Registrar pendências como **TBD** na documentação. Nos futuros dados, representar campos opcionais não resolvidos como ausentes; não renderizar o texto “TBD”, inventar valores nem incluir pendências em dados estruturados. Conteúdo obrigatório ainda não aprovado impede a publicação daquele conteúdo.
 
@@ -115,15 +116,13 @@ Os arquivos em `docs/references/` são referências históricas, não assets fin
 
 O cabeçalho exibe a composição oficial da logo. `public/favicon.svg` mantém um símbolo simplificado para leitura em tamanho pequeno. Os tokens `brand-navy`, `brand-gold` e `brand-cream` usam valores aproximados amostrados do JPEG, não um manual vetorial da marca. O dourado é decorativo e não deve ser usado para texto essencial, foco ou marcadores interativos sobre creme; validar a legibilidade da logo em larguras de celular e desktop.
 
-Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. Usar `public/` apenas para arquivos que precisam permanecer inalterados. SVGs podem ser usados para marca e ícones após revisão.
+Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. SVGs podem ser usados para marca e ícones após revisão.
 
 Registrar origem, licença/autorização e condição ilustrativa de cada imagem. Começar com fontes de sistema; qualquer fonte adicional deverá ser licenciada e hospedada localmente.
 
 O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos da seleção de portfólio. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
 
-As fotos aprovadas poderão ocupar `src/assets/images/projects/`, criado apenas nessa entrega. Não deduzir detalhes técnicos ou agrupar arquivos como um projeto sem confirmação. Remover a legenda de imagem ilustrativa somente ao substituí-la por foto real validada.
-
-Vídeos serão avaliados em entrega posterior. Revisar imagem e áudio integrais; preparar versões otimizadas fora do build de imagens, pois Astro não comprime vídeos. Servir somente derivados aprovados como arquivos estáticos, com player HTML nativo, controles, poster, dimensões reservadas e `preload="none"`. Não usar autoplay nem embeds externos; fornecer legendas ou transcrição quando houver fala essencial. Não criar diretórios ou adicionar dependências de vídeo nesta etapa.
+Os derivados WebP sem metadados são organizados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`. As imagens de Instalações e Manutenção mantêm seus quadros completos; o visor do alicate amperímetro é desfocado para não divulgar o valor medido. Marcas manuscritas acima da placa de alerta foram removidas do derivado. A placa aparece em Sobre como registro da sinalização visível, sem alegar conformidade ou certificação. A foto da fachada exclui as anotações dos medidores; a foto dos painéis exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Os componentes usam `astro:assets` para gerar dimensões responsivas e carregamento tardio. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
 
 ## 7. Estratégia responsiva
 
@@ -137,7 +136,7 @@ O cabeçalho usa navegação desktop a partir de 1024 px e mantém Instagram com
 
 Gerar título, descrição, metadados sociais e HTML semântico no build. Manter um H1, hierarquia coerente e textos úteis em pt-BR, com foco na localidade confirmada.
 
-**URL pública/domínio: TBD.** Centralizar a origem de produção na configuração e utilizá-la para `site` do Astro, canonical, sitemap e URLs de compartilhamento. Gerar sitemap e robots como arquivos estáticos após definir a origem; fragmentos de seção não são páginas adicionais. Não publicar canonical fictício ou apontado para localhost. Prévias públicas deverão usar `noindex`, sem depender apenas de robots para impedir indexação; essa configuração faz parte da preparação da publicação.
+**Preview público atual:** `https://mcs-sollar-site.pages.dev/`, provisório. O domínio próprio e a URL de produção seguem TBD. O layout aplica `noindex` ao preview e `public/robots.txt` permite que os buscadores rastreiem a página e leiam essa diretiva. Não incluir canonical ou sitemap apontados ao endereço provisório. Ao conectar o domínio final, remover `noindex`, definir `site` no Astro e atualizar canonical, sitemap, robots e metadados sociais. Fragmentos de seção não são páginas adicionais.
 
 JSON-LD, quando incluído, será gerado no build e conterá somente fatos confirmados e visíveis. Não fabricar endereço para atender requisitos de um tipo de negócio local; omitir tipos/propriedades sem dados suficientes. A ausência de endereço pode limitar recursos de busca local, mas não impede a página institucional.
 
@@ -155,11 +154,11 @@ Não carregar JavaScript de aplicação por padrão. Compilar CSS, otimizar imag
 
 ## 11. Premissas de deployment
 
-**Provedor de hospedagem: TBD.** A arquitetura permanece independente de fornecedor. O build Astro produz `dist/`, publicável em qualquer serviço de arquivos estáticos com HTTPS. Node é necessário no ambiente de build, não como servidor de produção.
+**Preview atual:** Cloudflare Pages em `https://mcs-sollar-site.pages.dev/`. Esse endereço é provisório e não define a hospedagem de produção. A arquitetura continua independente de fornecedor. O build Astro produz `dist/`, publicável em qualquer serviço de arquivos estáticos com HTTPS. Node é necessário no ambiente de build, não como servidor de produção.
 
 Não exigir adaptador de hospedagem, SDK de fornecedor, funções serverless ou infraestrutura de backend. O destino deve servir a página de entrada e seus assets; não há necessidade de fallback de SPA. A premissa inicial é publicação na raiz; caso o destino exija subdiretório, configurar `base` e validar URLs antes do build de publicação.
 
-O scaffold registra faixa de Node compatível, instalação reproduzível por `package-lock.json` e comandos npm de desenvolvimento, build e preview. Domínio e configuração de produção devem ser definidos antes do lançamento. Não há configuração de provedor nesta etapa.
+O scaffold registra faixa de Node compatível, instalação reproduzível por `package-lock.json` e comandos npm de desenvolvimento, build e preview. Domínio e configuração de produção devem ser definidos antes do lançamento. O preview permanece com `noindex`; remover essa diretiva na preparação para indexação do domínio próprio.
 
 Não presumir o estado de produção a partir do preview ou do GitHub. A substituição do site antigo depende de confirmação da infraestrutura, revisão do build, HTTPS, DNS e autorização de publicação própria. O site antigo não é fonte de conteúdo ou identidade; suas URLs poderão ser inspecionadas somente para preparar redirecionamentos relevantes.
 
@@ -172,7 +171,8 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | Orientações e mensagem de orçamento estruturada | HTML e link de WhatsApp gerados no build; sem formulário |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
 | Título, descrição e metadados sociais básicos | Saída estática implementada |
-| Canonical, sitemap, robots e JSON-LD | Preparação da publicação; saída estática futura |
+| Metadados básicos e `noindex` do preview | Saída estática no `site-layout.astro` |
+| Canonical, sitemap, regras de robots de produção e JSON-LD | Aguardam a definição do domínio e os dados confirmados; o `robots.txt` atual só permite rastreamento do preview |
 | Analytics, pixels e integrações | Fora da V1 |
 
 Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicial. Não adicionar hidratação com `client:*`, roteador de SPA ou framework de UI. Um script futuro só poderá atender uma interação documentada, com melhoria progressiva e conteúdo/contato utilizáveis sem ele; não faz parte desta entrega.
