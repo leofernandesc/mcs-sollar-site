@@ -10,4 +10,8 @@ export const business = {
     display: "+55 92 99996-0878",
     quotationMessage: "Olá! Gostaria de solicitar um orçamento de energia solar.",
   },
+  instagram: {
+    handle: "@mcssollar",
+    url: "https://www.instagram.com/mcssollar/",
+  },
 } as const;

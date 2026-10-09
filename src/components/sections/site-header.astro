@@ -1,6 +1,7 @@
 ---
 import PageContainer from "../ui/page-container.astro";
 import WhatsAppLink from "../ui/whatsapp-link.astro";
+import InstagramLink from "../ui/instagram-link.astro";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 ---
@@ -49,7 +50,8 @@ import { pageContent } from "../../data/content";
       </nav>
 
       <div class="ml-auto flex items-center gap-2 lg:ml-0">
-        <div class="hidden lg:block">
+        <div class="hidden shrink-0 items-center gap-2 lg:flex">
+          <InstagramLink />
           <WhatsAppLink intent="contact" label="Fale pelo WhatsApp" />
         </div>
 
@@ -93,8 +95,9 @@ import { pageContent } from "../../data/content";
                 ))}
               </ul>
             </nav>
-            <div class="mt-4 border-t border-brand-navy/15 pt-4">
+            <div class="mt-4 flex flex-col gap-3 border-t border-brand-navy/15 pt-4">
               <WhatsAppLink intent="contact" label="Fale pelo WhatsApp" />
+              <InstagramLink />
             </div>
           </div>
         </details>

@@ -3,6 +3,7 @@ import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import { getWhatsAppUrl } from "../../utils/whatsapp-url";
 import PageContainer from "../ui/page-container.astro";
+import InstagramLink from "../ui/instagram-link.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -41,6 +42,9 @@ const currentYear = new Date().getFullYear();
         >
           {business.whatsapp.display}
         </a>
+        <div class="mt-2 flex">
+          <InstagramLink variant="footer" />
+        </div>
       </div>
     </div>
 
