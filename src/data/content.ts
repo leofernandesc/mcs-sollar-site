@@ -15,7 +15,7 @@ export const pageContent = {
     { label: "Contato", href: "#contato" },
   ],
   hero: {
-    title: "Energia solar em Manaus para sua residência ou empresa",
+    title: "Energia solar para sua residência ou empresa",
     description:
       "A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.",
     quotationLabel: "Solicitar orçamento",
