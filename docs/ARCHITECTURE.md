@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada, fotos selecionadas e um trecho curto de vídeo local estão aplicados. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -61,17 +61,14 @@ Uma rota pública `/`, com navegação por fragmentos:
 | --- | --- | --- |
 | Cabeçalho | — | Marca, navegação e contato |
 | Apresentação | `inicio` | H1, resumo e ações de contato/orçamento |
-| Serviços | `servicos` | Projetos, instalações e manutenção |
-| Trabalhos realizados | `projetos` | Fotos responsivas e vídeo HTML nativo, selecionados pelo responsável |
+| Serviços | `servicos` | Projetos, instalações e manutenção, cada um acompanhado por uma foto selecionada |
 | Atendimento | `atendimento` | Como iniciar a conversa |
 | Sobre | `sobre` | Apresentação institucional aprovada |
 | FAQ | `duvidas` | Perguntas e respostas em controles nativos |
 | Contato | `contato` | WhatsApp e localização confirmada |
 | Rodapé | — | Identificação e links pertinentes |
 
-Preservar os identificadores para navegação e links compartilhados. Imagens ilustrativas pertencem à apresentação ou aos serviços e recebem legenda; não são evidência de projetos realizados.
-
-A seção de trabalhos reais fica após Serviços, na mesma rota `/`, com acesso pelo menu. Ela exibe fotos selecionadas e um vídeo curto sem áudio, com enquadramentos que não mostram dados de clientes, localização exata ou métricas. Legendas descrevem apenas o que foi confirmado ou é visível. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+Preservar os identificadores das seções que permanecem no site. As três fotos aparecem dentro dos blocos de serviço, sem afirmar que representam projetos específicos ou clientes. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
 
 ## 5. Organização de conteúdo e dados
 
@@ -106,7 +103,7 @@ Informações pendentes:
 | Procedimentos técnicos adicionais, prazos e diferenciais comprovados | TBD |
 | Anos de atuação, estatísticas e certificações | TBD |
 | Garantias, financiamento e outras condições comerciais | TBD; preços não serão divulgados |
-| Autoria e uso das fotos e vídeos selecionados | Mídias indicadas pelo responsável; derivados sanitizados em `src/assets/images/projects/` e `public/videos/` |
+| Autoria e uso das fotos selecionadas | Mídias indicadas pelo responsável; derivados sem metadados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/` |
 | Detalhes específicos dos trabalhos, clientes, localização e capacidade | TBD; não são exibidos |
 | Depoimentos e outras provas de confiança | TBD |
 | Revisão final do texto comercial e da aplicação responsiva da logo | TBD |
@@ -119,15 +116,13 @@ Os arquivos em `docs/references/` são referências históricas, não assets fin
 
 O cabeçalho exibe a composição oficial da logo. `public/favicon.svg` mantém um símbolo simplificado para leitura em tamanho pequeno. Os tokens `brand-navy`, `brand-gold` e `brand-cream` usam valores aproximados amostrados do JPEG, não um manual vetorial da marca. O dourado é decorativo e não deve ser usado para texto essencial, foco ou marcadores interativos sobre creme; validar a legibilidade da logo em larguras de celular e desktop.
 
-Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. Usar `public/` para arquivos estáticos entregues por URL direta, como vídeos já tratados. SVGs podem ser usados para marca e ícones após revisão.
+Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. SVGs podem ser usados para marca e ícones após revisão.
 
 Registrar origem, licença/autorização e condição ilustrativa de cada imagem. Começar com fontes de sistema; qualquer fonte adicional deverá ser licenciada e hospedada localmente.
 
 O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos da seleção de portfólio. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
 
-As fotos selecionadas são armazenadas em `src/assets/images/projects/` como derivados WebP reprocessados, sem metadados. O material de Hero foi revisado para ocultar o código de identificação do equipamento; outros recortes excluem leitura de medidor, entorno e detalhes de endereço. A prévia do projeto usa um quadro recortado do vídeo fornecido. Os componentes usam `astro:assets` para gerar dimensões responsivas e carregamento tardio. Não deduzir detalhes técnicos nem agrupar imagens como um único projeto sem confirmação.
-
-Um trecho curto de um vídeo indicado pelo responsável é servido em `public/videos/` como arquivo MP4 otimizado, sem faixa de áudio, com poster WebP e enquadramento limitado à estação de recarga. Revisar a imagem e o áudio da fonte integralmente; preparar derivados fora do build de imagens, pois Astro não comprime vídeos. Usar player HTML nativo, controles, dimensões reservadas e `preload="none"`. Não usar autoplay nem embeds externos; fornecer legendas ou transcrição quando houver fala essencial. Não adicionar dependências de vídeo.
+Os derivados WebP sem metadados são organizados em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`. As imagens de serviço mantêm seus quadros completos; o visor do alicate amperímetro é desfocado para não divulgar o valor medido. O plano foi recebido como captura estática e não é extraído de um vídeo. Os componentes usam `astro:assets` para gerar dimensões responsivas e carregamento tardio. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
 
 ## 7. Estratégia responsiva
 

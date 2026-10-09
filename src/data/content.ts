@@ -9,7 +9,6 @@ export const pageContent = {
   navigation: [
     { label: "Início", href: "#inicio" },
     { label: "Serviços", href: "#servicos" },
-    { label: "Projetos", href: "#projetos" },
     { label: "Atendimento", href: "#atendimento" },
     { label: "Sobre", href: "#sobre" },
     { label: "Dúvidas", href: "#duvidas" },
@@ -32,47 +31,30 @@ export const pageContent = {
       title: business.services[0],
       description:
         "Projetos de sistemas fotovoltaicos considerando o consumo de energia e as características do imóvel.",
+      imageAlt:
+        "Visualização tridimensional de uma cobertura com módulos fotovoltaicos.",
+      imageCaption:
+        "Visualização de uma cobertura com módulos fotovoltaicos.",
     },
     {
       title: business.services[1],
       description:
         "Instalação de sistemas de energia solar para residências e empresas em Manaus.",
+      imageAlt:
+        "Alicate amperímetro em primeiro plano, com componentes elétricos ao fundo.",
+      imageCaption:
+        "Medição com alicate amperímetro em componentes do sistema fotovoltaico.",
     },
     {
       title: business.services[2],
       description:
         "Manutenção de sistemas fotovoltaicos para residências e empresas.",
+      imageAlt:
+        "Profissional realiza uma atividade junto a um inversor e componentes de proteção.",
+      imageCaption:
+        "Registro de atividade de manutenção em sistema fotovoltaico.",
     },
   ],
-  projects: {
-    title: "Trabalhos realizados",
-    description:
-      "Registros de instalação, manutenção e planejamento de sistemas fotovoltaicos.",
-    items: [
-      {
-        alt:
-          "Alicate amperímetro próximo a componentes elétricos de um sistema fotovoltaico.",
-        caption: "Medição com alicate amperímetro em um sistema fotovoltaico.",
-      },
-      {
-        alt:
-          "Placa de advertência sobre risco de choque elétrico em sistema de geração própria.",
-        caption: "Sinalização de segurança em uma instalação fotovoltaica.",
-      },
-      {
-        alt:
-          "Inversor fotovoltaico e componentes elétricos durante uma atividade de manutenção.",
-        caption: "Registro de manutenção de inversor fotovoltaico.",
-      },
-      {
-        alt:
-          "Prévia tridimensional do posicionamento de módulos fotovoltaicos em uma cobertura.",
-        caption: "Visualização de posicionamento de módulos em cobertura.",
-      },
-    ],
-    videoLabel: "Trecho curto de uma estação de recarga veicular.",
-    videoCaption: "Registro em vídeo de uma estação de recarga veicular.",
-  },
   service: {
     title: "Como solicitar um orçamento",
     description:

@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. As fotos e o trecho de vídeo atuais foram selecionados e tratados para publicação. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem junto aos serviços; não há seção separada de trabalhos nem vídeo publicado. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
 
 ## Objetivo do projeto
 
@@ -27,13 +27,12 @@ Página única, com navegação por seções:
 1. **Cabeçalho:** marca, menu, WhatsApp e Instagram.
 2. **Apresentação:** energia solar em Manaus, resumo dos serviços e chamadas para ação.
 3. **Serviços:** projetos, instalações e manutenção.
-4. **Trabalhos realizados:** fotos e um trecho curto de vídeo, sem nome de cliente, endereço ou métricas de sistema.
-5. **Atendimento:** três orientações para compartilhar consumo, características do imóvel e iniciar a conversa de orçamento.
-6. **Sobre a MCS Sollar:** apresentação institucional breve.
-7. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
-8. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
+4. **Atendimento:** três orientações para compartilhar consumo, características do imóvel e iniciar a conversa de orçamento.
+5. **Sobre a MCS Sollar:** apresentação institucional breve.
+6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
+7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas devem ser identificadas. As fotos e o vídeo atuais foram indicados pelo responsável e publicados como derivados otimizados, sem metadados. Os recortes excluem elementos de identificação de equipamento, leitura de medidor, anotações e detalhes do entorno. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
+Imagens ilustrativas devem ser identificadas. As fotos usadas junto aos serviços e no Hero/Sobre foram indicadas pelo responsável e publicadas como derivados otimizados, sem metadados. A foto do alicate mantém o quadro completo, com o visor de medição desfocado. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
 
 ## Identidade visual e imagens
 
@@ -45,8 +44,8 @@ Imagens ilustrativas devem ser identificadas. As fotos e o vídeo atuais foram i
 - Usar a logo oficial recebida, preservando sua composição e proporções. A versão JPEG fornecida está em `src/assets/images/brand/mcs-sollar-official.jpeg`; o Astro gera uma versão otimizada para o cabeçalho. O favicon é uma simplificação vetorial do símbolo, usando as cores aproximadas da marca.
 - Revisar a legibilidade da logo e a paleta nos tamanhos de tela suportados antes da publicação. O arquivo original continua sendo raster; não há versão vetorial ou transparente confirmada.
 - Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. As fotos reais selecionadas foram autorizadas pelo responsável; não inferir potência, localização, cliente ou quantidade de projetos.
-- Os derivados aprovados estão em `src/assets/images/projects/`; os originais permanecem no acervo externo. Remover metadados e revisar enquadramentos antes de publicar qualquer outra mídia.
-- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados. A revisão de vídeos inclui imagem e áudio.
+- Os derivados aprovados ficam em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; os originais permanecem no acervo externo. Remover metadados e revisar enquadramentos antes de publicar qualquer outra mídia.
+- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados.
 
 ## Conteúdo comercial e atendimento
 
@@ -111,7 +110,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas e um trecho curto de vídeo local, sem reprodução automática. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero, Sobre e nos três blocos de serviço. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -120,6 +119,6 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 ## Pendências
 
 - **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
-- **Mídias:** fotos selecionadas pelo responsável foram recortadas e reprocessadas sem metadados. Um trecho curto de vídeo foi publicado sem áudio, com enquadramento limitado à estação de recarga e carregamento sob demanda. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas.
+- **Mídias:** fotos selecionadas pelo responsável foram reprocessadas sem metadados. A foto do alicate amperímetro mantém o enquadramento integral e oculta o visor. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.
