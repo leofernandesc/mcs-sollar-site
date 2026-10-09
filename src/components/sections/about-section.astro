@@ -28,14 +28,14 @@ import SectionHeading from "../ui/section-heading.astro";
         </p>
       </div>
 
-      <div class="grid min-w-0 grid-cols-3 items-center gap-3 sm:gap-5">
-        <figure>
+      <div class="grid min-w-0 grid-cols-2 items-end gap-3 sm:gap-5 md:grid-cols-4">
+        <figure class="col-span-2 md:col-span-2">
           <div class="overflow-hidden rounded-md">
             <Image
               src={photovoltaicPanels}
               alt={pageContent.about.panelImageAlt}
-              widths={[240, 360, 480, 640]}
-              sizes="(min-width: 64rem) 15rem, 34vw"
+              widths={[360, 540, 720, 960]}
+              sizes="(min-width: 64rem) 30vw, (min-width: 48rem) 50vw, 100vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -48,13 +48,13 @@ import SectionHeading from "../ui/section-heading.astro";
           </figcaption>
         </figure>
 
-        <figure>
+        <figure class="col-span-1 md:col-span-1">
           <div class="overflow-hidden rounded-md">
             <Image
               src={facadeDetail}
               alt={pageContent.about.imageAlt}
               widths={[192, 256, 384, 480]}
-              sizes="(min-width: 64rem) 13rem, 34vw"
+              sizes="(min-width: 64rem) 15vw, (min-width: 48rem) 25vw, 50vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -67,13 +67,13 @@ import SectionHeading from "../ui/section-heading.astro";
           </figcaption>
         </figure>
 
-        <figure>
+        <figure class="col-span-1 md:col-span-1">
           <div class="overflow-hidden rounded-md">
             <Image
               src={electricalSafetySign}
               alt={pageContent.about.safetyImageAlt}
               widths={[192, 256, 384, 480]}
-              sizes="(min-width: 64rem) 13rem, 34vw"
+              sizes="(min-width: 64rem) 15vw, (min-width: 48rem) 25vw, 50vw"
               format="webp"
               quality={84}
               loading="lazy"
