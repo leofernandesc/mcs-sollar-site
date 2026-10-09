@@ -141,7 +141,7 @@ O cabeçalho usa navegação desktop a partir de 1024 px e mantém Instagram com
 
 Gerar título, descrição, metadados sociais e HTML semântico no build. Manter um H1, hierarquia coerente e textos úteis em pt-BR, com foco na localidade confirmada.
 
-**Preview público atual:** `https://mcs-sollar-site.pages.dev/`, provisório. O domínio próprio e a URL de produção seguem TBD. O layout aplica `noindex` ao preview; não incluir canonical ou sitemap apontados ao endereço provisório. Ao conectar o domínio final, remover `noindex`, definir `site` no Astro e gerar canonical, sitemap, robots e metadados sociais definitivos. Fragmentos de seção não são páginas adicionais.
+**Preview público atual:** `https://mcs-sollar-site.pages.dev/`, provisório. O domínio próprio e a URL de produção seguem TBD. O layout aplica `noindex` ao preview e `public/robots.txt` permite que os buscadores rastreiem a página e leiam essa diretiva. Não incluir canonical ou sitemap apontados ao endereço provisório. Ao conectar o domínio final, remover `noindex`, definir `site` no Astro e atualizar canonical, sitemap, robots e metadados sociais. Fragmentos de seção não são páginas adicionais.
 
 JSON-LD, quando incluído, será gerado no build e conterá somente fatos confirmados e visíveis. Não fabricar endereço para atender requisitos de um tipo de negócio local; omitir tipos/propriedades sem dados suficientes. A ausência de endereço pode limitar recursos de busca local, mas não impede a página institucional.
 
@@ -177,7 +177,7 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
 | Título, descrição e metadados sociais básicos | Saída estática implementada |
 | Metadados básicos e `noindex` do preview | Saída estática no `site-layout.astro` |
-| Canonical, sitemap, robots de produção e JSON-LD | Aguardam a definição do domínio e os dados confirmados |
+| Canonical, sitemap, regras de robots de produção e JSON-LD | Aguardam a definição do domínio e os dados confirmados; o `robots.txt` atual só permite rastreamento do preview |
 | Analytics, pixels e integrações | Fora da V1 |
 
 Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicial. Não adicionar hidratação com `client:*`, roteador de SPA ou framework de UI. Um script futuro só poderá atender uma interação documentada, com melhoria progressiva e conteúdo/contato utilizáveis sem ele; não faz parte desta entrega.

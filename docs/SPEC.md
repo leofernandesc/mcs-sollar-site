@@ -87,7 +87,7 @@ Layout com prioridade para celular, sem rolagem horizontal a partir de 320 px; i
 - Título proposto: “MCS Sollar | Energia Solar em Manaus”. Descrição baseada nos três serviços confirmados.
 - Um H1, hierarquia lógica, HTML semântico e conteúdo útil em português com foco em Manaus.
 - Nome e telefone consistentes; não inventar endereço nem criar páginas artificiais de localidades.
-- O preview `mcs-sollar-site.pages.dev` deve permanecer com `noindex` enquanto for provisório. URL canônica, sitemap e indexação pública aguardam a conexão do domínio próprio.
+- O preview `mcs-sollar-site.pages.dev` deve permanecer com `noindex` enquanto for provisório; `robots.txt` permite rastreamento para que os buscadores leiam a diretiva. URL canônica, sitemap e indexação pública aguardam a conexão do domínio próprio.
 - Dados estruturados compatíveis com as informações reais disponíveis, sem endereço ou avaliações fictícias.
 - Não prometer posições nos resultados de busca.
 

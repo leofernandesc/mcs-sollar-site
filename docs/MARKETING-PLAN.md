@@ -16,7 +16,7 @@ Evoluir a homepage existente para apresentar melhor os serviços, demonstrar tra
 - Logo oficial: `src/assets/images/brand/mcs-sollar-official.jpeg`, cópia sem alterações do JPEG recebido, com sol e painéis, azul-marinho, dourado e creme.
 - O responsável confirmou a autenticidade e autorizou a publicação das fotos selecionadas dos grupos residenciais, telhado e estrutura no solo. Três derivados sem metadados foram integrados; um enquadramento foi recortado para evitar expor propriedades adjacentes.
 - O responsável optou por adiar os vídeos. O acervo bruto permanece fora do Git.
-- Preview atual no Cloudflare Pages: `https://mcs-sollar-site.pages.dev/`, provisório e com `noindex`. O domínio próprio e a configuração final de SEO continuam TBD.
+- Preview atual no Cloudflare Pages: `https://mcs-sollar-site.pages.dev/`, provisório e com `noindex`; `robots.txt` permite rastreamento para leitura da diretiva. O domínio próprio e a configuração final de SEO continuam TBD.
 
 ## Entregas e dependências
 
@@ -33,7 +33,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 4B — Fotos e trabalhos reais | Galeria estática criada depois de Serviços com três fotos otimizadas, texto alternativo e legendas descritivas. A imagem ilustrativa do Hero foi mantida identificada como ilustrativa. | Concluída; revisar a galeria nos tamanhos suportados e validar o build. |
 | 4C — Vídeos opcionais | Vídeos adiados pelo responsável; nenhum vídeo foi processado ou publicado. | Reavaliar apenas quando o responsável selecionar um vídeo e confirmar sua privacidade e autorização. |
 | 5 — FAQ e confiança | FAQ atualizado com dados confirmados; não há credenciais ou depoimentos aprovados para acrescentar. Revisão editorial antes da publicação ainda necessária. | Perguntas úteis respondidas sem credenciais ou condições inventadas; inserir provas somente após validação. |
-| 6 — SEO e publicação | O preview Pages usa `noindex` e não recebe canonical nem sitemap definitivos. Concluir SEO de produção após conectar o domínio próprio. | Domínio ainda TBD; antes da indexação, remover `noindex`, definir canonical e sitemap e validar metadados. |
+| 6 — SEO e publicação | O preview Pages usa `noindex` e um `robots.txt` que permite rastreamento; não recebe canonical nem sitemap definitivos. Concluir SEO de produção após conectar o domínio próprio. | Domínio ainda TBD; antes da indexação, remover `noindex`, definir canonical e sitemap e validar metadados. |
 | 7 — Mensuração | Definir acompanhamento comercial manual, externo ao site. Integrações exigirão proposta técnica futura. | Distinguir cliques, conversas, leads qualificados e vendas, sem prometer atribuição automática. |
 | 8 — Página de campanha | Avaliar uma página específica somente se houver necessidade demonstrada. | Novo escopo aprovado; a evolução atual permanece com uma homepage. |
 
@@ -101,7 +101,7 @@ Vídeos foram adiados pelo responsável. Caso sejam retomados, exigem revisão i
 
 Referências financeiras, ticket médio, capacidade operacional, verba publicitária e critérios numéricos de qualificação ficam fora de todo o repositório e dos recursos enviados ao navegador. Documentos versionados também seguem essa regra. Registrar apenas a política de não divulgar preços, valores mínimos, tabelas ou cálculos genéricos de investimento. A equipe fará a qualificação manualmente, sem bloqueio automático por consumo no site.
 
-O endereço `pages.dev` é um preview provisório e recebe `noindex`; não definir canonical ou sitemap para ele. Na etapa 6, configurar a origem pública, canonical, sitemap, robots, metadados sociais completos e dados estruturados somente com fatos confirmados, depois de conectar o domínio próprio. Não inventar endereço ou avaliações. O site antigo poderá ter URLs inspecionadas apenas para preparar redirecionamentos; não reutilizar seu conteúdo. DNS, HTTPS e substituição do site em produção exigem verificação e autorização próprias.
+O endereço `pages.dev` é um preview provisório e recebe `noindex`; seu `robots.txt` permite rastreamento e não aponta sitemap. Não definir canonical ou sitemap para esse endereço. Na etapa 6, configurar a origem pública, canonical, sitemap, regras de robots, metadados sociais completos e dados estruturados somente com fatos confirmados, depois de conectar o domínio próprio. Não inventar endereço ou avaliações. O site antigo poderá ter URLs inspecionadas apenas para preparar redirecionamentos; não reutilizar seu conteúdo. DNS, HTTPS e substituição do site em produção exigem verificação e autorização próprias.
 
 Na etapa 7, separar clique no WhatsApp, conversa recebida, contato qualificado e venda no acompanhamento manual. Os nomes `whatsapp_contact_click` e `whatsapp_quote_click` são candidatos para uma futura proposta de mensuração, não eventos implementados. Um clique não comprova orçamento recebido ou venda.
 
