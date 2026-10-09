@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem no Hero, junto aos serviços e na seção Sobre; não há seção separada de trabalhos nem vídeo publicado. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem no Hero, junto aos serviços e na seção Sobre; Sobre reúne instalação fotovoltaica com recarga de veículo elétrico, instalação de inversor, placa de risco elétrico e captura de monitoramento com o nome da conta desfocado. Não há seção separada de trabalhos nem vídeo publicado. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
 
 ## Objetivo do projeto
 
@@ -32,7 +32,7 @@ Página única, com navegação por seções:
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne duas fotos: a instalação de um inversor e uma placa de alerta, sem afirmar conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado da placa. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto dos painéis usada no Hero não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
+Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne quatro registros: instalação de inversor, placa de alerta, instalação fotovoltaica com recarga veicular e captura de monitoramento; o nome da conta na captura foi desfocado irreversivelmente. A placa não indica conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado. Os números da captura são apenas parte da tela fornecida, sem alegação de resultado típico, economia ou garantia. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto dos painéis usada no Hero não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
 
 ## Identidade visual e imagens
 
@@ -110,7 +110,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre contém duas fotos, da instalação de inversor e da placa de sinalização de risco elétrico. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre contém quatro fotos autorizadas, incluindo uma captura de monitoramento com o nome da conta desfocado. Não publica vídeo. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -119,6 +119,6 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 ## Pendências
 
 - **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
-- **Mídias:** fotos selecionadas pelo responsável foram revisadas para publicação sem metadados. A imagem do alicate usa o original aprovado, com o visor legível e a leitura preservada exatamente como registrada; as imagens de Instalações e Manutenção mantêm o quadro completo. Marcas manuscritas foram removidas do derivado da placa, agora exibida em Sobre ao lado da foto da instalação de inversor. A foto dos painéis usada no Hero omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
+- **Mídias:** fotos selecionadas pelo responsável foram revisadas para publicação sem metadados. A imagem do alicate usa o original aprovado, com o visor legível e a leitura preservada exatamente como registrada; as imagens de Instalações e Manutenção mantêm o quadro completo. Marcas manuscritas foram removidas do derivado da placa. Sobre também inclui a instalação fotovoltaica com recarga veicular e a captura de monitoramento aprovada com o nome da conta desfocado de forma irreversível; os números da captura não são apresentados como resultados típicos ou garantidos. A foto dos painéis usada no Hero omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Outras capturas de aplicativo e peças promocionais com informações ou afirmações pendentes não são publicadas; vídeos foram retirados do escopo atual.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.

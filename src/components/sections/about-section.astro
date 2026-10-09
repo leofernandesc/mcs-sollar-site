@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import inverterInstallation from "../../assets/images/hero/solar-inverter-installation.webp";
 import electricalSafetySign from "../../assets/images/services/electrical-safety-sign.webp";
+import evChargingInstallation from "../../assets/images/about/solar-installation-ev-charger.webp";
+import monitoringApp from "../../assets/images/about/solar-monitoring-account-redacted.webp";
 import { business } from "../../data/business";
 import { pageContent } from "../../data/content";
 import PageContainer from "../ui/page-container.astro";
@@ -27,14 +29,33 @@ import SectionHeading from "../ui/section-heading.astro";
         </p>
       </div>
 
-      <div class="grid min-w-0 grid-cols-5 items-start gap-3 sm:gap-5">
-        <figure class="col-span-3">
+      <div class="grid min-w-0 grid-cols-2 items-start gap-3 sm:gap-5">
+        <figure class="min-w-0">
+          <div class="overflow-hidden rounded-md">
+            <Image
+              src={evChargingInstallation}
+              alt={pageContent.about.evChargingImageAlt}
+              widths={[360, 540, 720, 960]}
+              sizes="(min-width: 64rem) 20vw, 45vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.evChargingImageCaption}
+          </figcaption>
+        </figure>
+
+        <figure class="min-w-0">
           <div class="overflow-hidden rounded-md">
             <Image
               src={inverterInstallation}
               alt={pageContent.about.inverterImageAlt}
               widths={[360, 540, 720, 960]}
-              sizes="(min-width: 64rem) 28vw, 60vw"
+              sizes="(min-width: 64rem) 20vw, 45vw"
               format="webp"
               quality={84}
               loading="lazy"
@@ -47,22 +68,41 @@ import SectionHeading from "../ui/section-heading.astro";
           </figcaption>
         </figure>
 
-        <figure class="col-span-2">
+        <figure class="min-w-0">
           <div class="overflow-hidden rounded-md">
             <Image
               src={electricalSafetySign}
               alt={pageContent.about.safetyImageAlt}
               widths={[192, 256, 384, 480]}
-              sizes="(min-width: 64rem) 18vw, 40vw"
+              sizes="(min-width: 64rem) 20vw, 45vw"
               format="webp"
               quality={84}
               loading="lazy"
               decoding="async"
-              class="h-auto w-full"
+              class="mx-auto h-auto max-h-96 w-auto max-w-full"
             />
           </div>
           <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
             {pageContent.about.safetyImageCaption}
+          </figcaption>
+        </figure>
+
+        <figure class="min-w-0">
+          <div class="flex justify-center overflow-hidden rounded-md bg-brand-navy/5">
+            <Image
+              src={monitoringApp}
+              alt={pageContent.about.monitoringImageAlt}
+              widths={[144, 192, 256, 384, 480]}
+              sizes="(min-width: 48rem) 12.5rem, 45vw"
+              format="webp"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="h-auto max-h-96 w-auto max-w-full"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs leading-5 text-ink/80 sm:mt-3 sm:text-sm sm:leading-6">
+            {pageContent.about.monitoringImageCaption}
           </figcaption>
         </figure>
       </div>
