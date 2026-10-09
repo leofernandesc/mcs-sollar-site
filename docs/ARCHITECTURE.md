@@ -68,7 +68,7 @@ Uma rota pública `/`, com navegação por fragmentos:
 | Contato | `contato` | WhatsApp e localização confirmada |
 | Rodapé | — | Identificação e links pertinentes |
 
-Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco; Sobre combina uma introdução institucional com os três serviços confirmados e uma grade de quatro fotos em duas colunas. No desktop, o texto e a grade ficam lado a lado; em telas menores, ficam empilhados. A captura de monitoramento tem a identificação da conta desfocada. Não afirmar que as imagens representam clientes ou projetos específicos nem interpretar os números da captura como resultado típico, economia ou garantia. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco. Sobre combina título e apresentação no topo; as fotos horizontais ocupam a largura da galeria e as duas fotos verticais ficam centralizadas abaixo, mantendo uma grade de duas colunas em telas menores. A captura de monitoramento tem a identificação da conta desfocada. Não afirmar que as imagens representam clientes ou projetos específicos nem interpretar os números da captura como resultado típico, economia ou garantia. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
 
 ## 5. Organização de conteúdo e dados
 
