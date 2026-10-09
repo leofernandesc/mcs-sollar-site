@@ -1,0 +1,61 @@
+---
+import { business } from "../../data/business";
+import { pageContent } from "../../data/content";
+import { getWhatsAppUrl } from "../../utils/whatsapp-url";
+import PageContainer from "../ui/page-container.astro";
+import InstagramLink from "../ui/instagram-link.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-brand-navy text-white">
+  <PageContainer>
+    <div class="grid gap-8 border-b border-white/20 py-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-10">
+      <div>
+        <a href="#inicio" class="footer-link inline-flex min-h-11 items-center font-bold tracking-wide text-white">
+          {business.name}
+        </a>
+        <p class="mt-2 text-sm text-white/80">{business.locationDisplay}</p>
+      </div>
+
+      <nav aria-label="Navegação do rodapé">
+        <h2 class="mb-3 text-sm font-semibold tracking-wide text-white">Navegação</h2>
+        <ul class="grid grid-cols-2 gap-x-4">
+          {pageContent.navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="footer-link inline-flex min-h-11 items-center text-sm text-white/85 underline-offset-4 hover:text-white hover:underline"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="mb-3 text-sm font-semibold tracking-wide text-white">Contato</h2>
+        <a
+          href={getWhatsAppUrl("contact")}
+          class="footer-link inline-flex min-h-11 items-center text-sm font-medium text-white underline underline-offset-4 hover:text-white/80"
+        >
+          {business.whatsapp.display}
+        </a>
+        <div class="mt-2 flex">
+          <InstagramLink variant="footer" />
+        </div>
+      </div>
+    </div>
+
+    <p class="py-5 text-xs text-white/75">
+      © {currentYear} {business.name}.
+    </p>
+  </PageContainer>
+</footer>
+
+<style>
+  .footer-link:focus-visible {
+    outline-color: var(--color-brand-cream);
+  }
+</style>

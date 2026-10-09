@@ -1,0 +1,23 @@
+---
+import { pageContent } from "../../data/content";
+import PageContainer from "../ui/page-container.astro";
+import SectionHeading from "../ui/section-heading.astro";
+import WhatsAppLink from "../ui/whatsapp-link.astro";
+---
+
+<section
+  id="atendimento"
+  aria-labelledby="process-heading"
+  class="border-t border-brand-navy/10 bg-brand-cream py-section"
+>
+  <PageContainer>
+    <div class="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+      <SectionHeading
+        id="process-heading"
+        title={pageContent.service.title}
+        description={pageContent.service.description}
+      />
+      <WhatsAppLink intent="contact" label="Fale pelo WhatsApp" />
+    </div>
+  </PageContainer>
+</section>

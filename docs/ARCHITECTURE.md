@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: scaffold inicial criado conforme esta arquitetura. O site institucional ainda não foi implementado. [SPEC.md](SPEC.md) define o produto e as informações comerciais; este documento define a organização técnica.
+Status: página institucional V1 implementada conforme esta arquitetura. Marca e textos aguardam aprovação final; domínio, hospedagem e configuração de SEO para publicação seguem pendentes. [SPEC.md](SPEC.md) define o produto e as informações comerciais; este documento define a organização técnica.
 
 ## 1. Stack escolhida e justificativa
 
@@ -11,9 +11,9 @@ Status: scaffold inicial criado conforme esta arquitetura. O site institucional 
 
 O scaffold usa as versões estáveis mais recentes disponíveis na sua criação, registra os limites de Node compatíveis e mantém o lockfile npm. Conferir compatibilidade ao atualizar as dependências.
 
-## 2. Estrutura de diretórios proposta
+## 2. Estrutura de diretórios
 
-Estrutura do scaffold e próximos diretórios previstos. Arquivos `.gitkeep` mantêm diretórios ainda vazios no Git; os módulos de negócio e seções serão adicionados nas próximas etapas:
+Estrutura atual. Arquivos `.gitkeep` mantêm diretórios ainda vazios no Git; tipos compartilhados e configurações adicionais só entram quando necessários:
 
 ```text
 src/
@@ -22,33 +22,31 @@ src/
   layouts/
     site-layout.astro    # Documento HTML e metadados
   components/
-    site-header.astro
-    site-footer.astro
-    sections/            # Apresentação, serviços, atendimento, sobre, FAQ, contato
-    ui/                  # Links de WhatsApp, contêineres e títulos reutilizáveis
+    sections/            # Cabeçalho, apresentação, serviços, atendimento, sobre, FAQ, contato, rodapé
+    ui/                  # Links de WhatsApp/Instagram, contêineres e títulos reutilizáveis
   data/
     business.ts          # Fatos comerciais confirmados
     content.ts           # Textos pt-BR e listas de seções
-    seo.ts               # Configuração de metadados e endereço público
   types/                 # Tipos compartilhados somente quando necessários
   utils/                 # Composição de links e metadados no build
   assets/
-    brand/               # Marca aprovada para uso no site
     images/              # Imagens processadas pelo Astro
   styles/
     global.css           # Entrada Tailwind, tokens e estilos globais
-public/                  # Favicon e arquivos servidos sem transformação
+public/                  # favicon.svg provisório e arquivos sem transformação
 docs/                    # Documentação e referências recebidas
 dist/                    # Resultado gerado; não versionar
 ```
 
-Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Configurações futuras ficam na raiz; a árvore não representa um scaffold existente.
+Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Os metadados atuais ficam em `content.ts`; centralizar a origem pública quando ela for definida, sem criar arquivos vazios para funcionalidades futuras.
 
 ## 3. Arquitetura de componentes
 
-`site-layout.astro` controla `lang="pt-BR"`, metadados, estilos e link para pular ao conteúdo. A página compõe cabeçalho, um único `main`, seções e rodapé. Cada componente de seção mantém sua responsabilidade visual e recebe conteúdo por props tipadas.
+`site-layout.astro` controla `lang="pt-BR"`, metadados, favicon, estilos e link para pular ao conteúdo. A página compõe cabeçalho, um único `main`, seções e rodapé. As seções importam os dados locais; os componentes de UI expõem props tipadas quando precisam de variações.
 
 Um componente reutilizável de link de WhatsApp recebe a intenção de contato ou orçamento e usa o número centralizado. O utilitário de composição codifica a mensagem com `encodeURIComponent` durante o build; o resultado é um link HTML normal. Não duplicar telefone ou textos comerciais nos componentes.
+
+`instagram-link.astro` usa o perfil centralizado em `business.ts`, com variantes de cabeçalho e rodapé, ícone SVG decorativo e rótulo acessível. O link abre na mesma aba; não há feed, SDK, rastreamento nem recursos carregados do Instagram durante a visita ao site.
 
 Fluxo: dados locais → props e utilitários no build → HTML/CSS e imagens estáticas → navegador. Não há leitura de APIs ou dados comerciais em tempo de execução.
 
@@ -83,13 +81,14 @@ Fatos já fornecidos, que devem ser preservados:
 | WhatsApp | +55 92 99996-0878 |
 | Número para link | `5592999960878` |
 | Mensagem de orçamento | “Olá! Gostaria de solicitar um orçamento de energia solar.” |
+| Instagram | [@mcssollar](https://www.instagram.com/mcssollar/) |
 
 Informações pendentes:
 
 | Informação | Estado |
 | --- | --- |
 | Prioridade de público e segmentos específicos | TBD |
-| Endereço físico, horários, e-mail e perfis sociais | TBD |
+| Endereço físico, horários, e-mail e outros perfis sociais | TBD |
 | Razão social, CNPJ e outros identificadores não fornecidos | TBD |
 | Cobertura além de Manaus | TBD |
 | Etapas técnicas/comerciais e diferenciais comprovados | TBD |
@@ -104,6 +103,8 @@ Registrar pendências como **TBD** na documentação. Nos futuros dados, represe
 
 Os arquivos em `docs/references/` são referências recebidas, não assets finais de produção. A versão limpa da marca deve ser revisada; não reutilizar o anúncio inteiro como logo.
 
+O símbolo do cabeçalho é um SVG inline de sol sobre painéis. O favicon em `public/favicon.svg` usa uma adaptação simplificada nas cores aprovadas. Ambos são provisórios até a aprovação final da marca.
+
 Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. Usar `public/` apenas para arquivos que precisam permanecer inalterados. SVGs podem ser usados para marca e ícones após revisão.
 
 Registrar origem, licença/autorização e condição ilustrativa de cada imagem. Começar com fontes de sistema; qualquer fonte adicional deverá ser licenciada e hospedada localmente.
@@ -114,11 +115,13 @@ Aplicar estilos de base para celular, contêineres fluidos, espaçamento consist
 
 Garantir ausência de overflow desde 320 px, leitura confortável, zoom e orientação horizontal. O menu móvel usa `<details>/<summary>`; a navegação ampla permanece visível no desktop. Evitar conteúdo essencial exposto apenas em hover. Ações fixas, se utilizadas, devem respeitar conteúdo, foco e área segura do dispositivo.
 
+O cabeçalho usa navegação desktop a partir de 1024 px e mantém Instagram como ação secundária ao WhatsApp. Os serviços ficam empilhados abaixo de 768 px e em três colunas a partir desse tamanho.
+
 ## 8. Arquitetura de SEO
 
 Gerar título, descrição, metadados sociais e HTML semântico no build. Manter um H1, hierarquia coerente e textos úteis em pt-BR, com foco na localidade confirmada.
 
-**URL pública/domínio: TBD.** Centralizar a origem de produção na configuração e utilizá-la para `site` do Astro, canonical, sitemap e URLs de compartilhamento. Gerar sitemap e robots como arquivos estáticos após definir a origem; fragmentos de seção não são páginas adicionais. Não publicar canonical fictício ou apontado para localhost. Prévias devem usar `noindex`, sem depender apenas de robots para impedir indexação.
+**URL pública/domínio: TBD.** Centralizar a origem de produção na configuração e utilizá-la para `site` do Astro, canonical, sitemap e URLs de compartilhamento. Gerar sitemap e robots como arquivos estáticos após definir a origem; fragmentos de seção não são páginas adicionais. Não publicar canonical fictício ou apontado para localhost. Prévias públicas deverão usar `noindex`, sem depender apenas de robots para impedir indexação; essa configuração faz parte da preparação da publicação.
 
 JSON-LD, quando incluído, será gerado no build e conterá somente fatos confirmados e visíveis. Não fabricar endereço para atender requisitos de um tipo de negócio local; omitir tipos/propriedades sem dados suficientes. A ausência de endereço pode limitar recursos de busca local, mas não impede a página institucional.
 
@@ -147,9 +150,10 @@ O scaffold registra faixa de Node compatível, instalação reproduzível por `p
 | Recurso | Implementação prevista |
 | --- | --- |
 | Conteúdo, layout, serviços e imagens | HTML/CSS gerados no build |
-| Links de navegação e WhatsApp | Âncoras HTML estáticas |
+| Links de navegação, WhatsApp e Instagram | Âncoras HTML estáticas |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
-| Metadados, sitemap, robots e JSON-LD | Saída estática; JSON-LD não é script executável |
+| Título, descrição e metadados sociais básicos | Saída estática implementada |
+| Canonical, sitemap, robots e JSON-LD | Preparação da publicação; saída estática futura |
 | Analytics, pixels e integrações | Fora da V1 |
 
 Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicial. Não adicionar hidratação com `client:*`, roteador de SPA ou framework de UI. Um script futuro só poderá atender uma interação documentada, com melhoria progressiva e conteúdo/contato utilizáveis sem ele; não faz parte desta entrega.
@@ -158,11 +162,11 @@ Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicia
 
 - **Marca de captura:** resolução e fidelidade precisam de revisão antes do uso final.
 - **Contraste:** a paleta proposta não garante conformidade em todas as combinações; verificar especialmente os acentos laranja.
-- **Compatibilidade:** confirmar versões Astro/Tailwind/Node na preparação do projeto, usando a integração oficial atual.
+- **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
 - **Origem de produção:** TBD impede finalizar canonical, sitemap e compartilhamento para lançamento.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.
 - **WhatsApp:** número confirmado não comprova disponibilidade da conta; testar destino e mensagem em dispositivos reais.
-- **Qualidade:** metas de acessibilidade/desempenho são requisitos, não resultados medidos nesta etapa. Validar o site quando existir.
+- **Qualidade:** rodar `npm run check`, `npm run build` e verificações responsivas/de teclado após alterações. Auditorias automáticas devem ser complementadas por inspeção manual de contraste, conteúdo e interação.
 
 ## Referências técnicas
 
