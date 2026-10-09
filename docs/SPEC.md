@@ -54,7 +54,7 @@ Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser 
 - **Apresentação atual:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
 - **Ação principal do Hero:** “Solicitar orçamento”; a ação secundária leva à seção de serviços. Há apenas um CTA de WhatsApp no grupo visual.
 - **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.
-- **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
+- **FAQ atual:** informa quais dados enviar para orçamento, o atendimento residencial e empresarial em Manaus e os fatores considerados na proposta. Financiamento, garantias e condições técnicas específicas continuam TBD e não são mencionados.
 
 Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A seção de Atendimento orienta o visitante a compartilhar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
 
