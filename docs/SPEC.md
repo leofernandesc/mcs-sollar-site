@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). Esta atualização é documental: a nova hierarquia de conversões, os textos comerciais e a logo oficial ainda serão aplicados em entregas próprias. Domínio e hospedagem seguem TBD na documentação do projeto.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). O orçamento já tem destaque único no Hero e no CTA final; os textos comerciais e a aplicação da logo oficial ainda serão atualizados em entregas próprias. Domínio e hospedagem seguem TBD na documentação do projeto.
 
 ## Objetivo do projeto
 
@@ -14,7 +14,7 @@ Clientes residenciais e empresas que buscam serviços de energia solar em Manaus
 
 - **Principal aprovada para a evolução:** solicitar orçamento pelo botão “Solicitar orçamento”, via WhatsApp.
 - **Secundária:** iniciar contato geral pelo WhatsApp, inclusive para outras necessidades de atendimento.
-- **Estado atual da interface:** o contato geral ainda tem destaque principal e o orçamento é secundário. A mudança aprovada será aplicada nas entregas de conteúdo e atendimento, sem alterar a arquitetura estática.
+- **Estado atual da interface:** o Hero e o CTA final oferecem um único botão “Solicitar orçamento”. Contato geral permanece no cabeçalho e em Atendimento, em posições distintas.
 - Número informado e corrigido pelo responsável: **+55 92 99996-0878**; formato do link: `5592999960878`.
 - Mensagem atual do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”** Uma mensagem estruturada será revisada na etapa de atendimento; o texto atual permanece até essa entrega.
 - Contato geral abre a conversa sem mensagem obrigatória. Um clique não comprova uma conversa ou orçamento concluído. Testar o destino real antes da publicação.
@@ -53,7 +53,7 @@ O site ainda usa os textos institucionais iniciais centralizados nos módulos de
 
 - **H1 proposto:** “Energia solar em Manaus para sua residência ou empresa”.
 - **Apresentação proposta:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
-- **Ações do Hero:** “Solicitar orçamento” como principal e “Conhecer nossos serviços” como acesso a `#servicos`.
+- **Ação do Hero:** “Solicitar orçamento” como CTA único da seção.
 - **Serviços e Sobre:** explicar a finalidade dos três serviços e a atuação residencial e comercial, sem adicionar procedimentos ou especialidades não confirmados.
 - **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
 
@@ -70,6 +70,7 @@ Não acrescentar anos de atuação, certificações, quantidade de projetos ou g
 ## Requisitos funcionais
 
 - Menu responsivo, links internos e botões acessíveis em dispositivos móveis e computadores.
+- Não colocar contato geral e solicitação de orçamento do WhatsApp lado a lado no mesmo grupo visual. Ações equivalentes podem aparecer em pontos diferentes da página.
 - Links de WhatsApp com número consistente e mensagem corretamente codificada.
 - Ações de contato visíveis; eventual botão flutuante não deve cobrir conteúdo ou controles.
 - Conteúdo essencial disponível sem JavaScript; scripts apenas para melhorias necessárias.

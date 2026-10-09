@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. A nova prioridade de orçamento e a aplicação da logo oficial ainda são mudanças planejadas. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a aplicação da logo oficial segue planejada. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -46,7 +46,7 @@ Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Os metadados atuais fic
 
 Um componente reutilizável de link de WhatsApp recebe a intenção de contato ou orçamento e usa o número centralizado. O utilitário de composição codifica a mensagem com `encodeURIComponent` durante o build; o resultado é um link HTML normal. Não duplicar telefone ou textos comerciais nos componentes.
 
-Preservar as intenções existentes `contact` e `quote`. A evolução comercial dará destaque principal a `quote`; a interface atual ainda prioriza contato geral. A mensagem estruturada de orçamento será texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
+Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento será texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
 
 `instagram-link.astro` usa o perfil centralizado em `business.ts`, com variantes de cabeçalho e rodapé, ícone SVG decorativo e rótulo acessível. O link abre na mesma aba; não há feed, SDK, rastreamento nem recursos carregados do Instagram durante a visita ao site.
 

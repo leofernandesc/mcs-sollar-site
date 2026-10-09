@@ -12,7 +12,7 @@ Evoluir a homepage existente para apresentar melhor os serviços, demonstrar tra
 - Astro, Tailwind CSS, TypeScript onde útil, npm, uma homepage e componentes estáticos. Sem backend, banco de dados, CMS, autenticação ou JavaScript de aplicação no cliente.
 - Público inicial: residências e empresas em Manaus, AM. Serviços: projetos, instalações e manutenção em energia solar.
 - Conversão principal aprovada: solicitar orçamento pelo WhatsApp. Contato geral é secundário; Instagram continua um canal secundário já implementado.
-- O código ainda usa os textos, a hierarquia de CTAs e a marca provisória da primeira versão. A nova direção será aplicada nas entregas abaixo.
+- O código mantém textos e marca provisórios da primeira versão. A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final; as próximas entregas atualizarão os textos e a marca.
 - Logo oficial: `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, no acervo local, com sol e painéis, azul-marinho, dourado e creme.
 - Acervo recebido: 43 imagens e 9 vídeos, além de um arquivo ZIP. Disponibilidade não comprova autoria, autorização ou dados de um projeto; a seleção será validada pelo responsável.
 - Domínio, hospedagem e configuração de publicação: TBD na documentação do projeto. Não presumir produção a partir do preview ou do GitHub.
@@ -43,7 +43,7 @@ Propostas para a etapa 2B, ainda não aplicadas:
 - **H1:** “Energia solar em Manaus para sua residência ou empresa”.
 - **Descrição:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
 - **CTA principal:** “Solicitar orçamento”, com a intenção de orçamento no WhatsApp.
-- **CTA secundário:** “Conhecer nossos serviços”, apontando para `#servicos`.
+- O Hero terá apenas esse CTA; o contato geral continuará no cabeçalho e em Atendimento, em seções distintas.
 
 Explicar a finalidade de projetos, instalações e manutenção sem repetir uma chamada de contato em todas as descrições. Não incluir homologação, financiamento, visitas, reparos específicos ou outras especialidades sem confirmação. Sobre deve apresentar a atuação e o atendimento, sem estatísticas artificiais.
 
@@ -68,7 +68,7 @@ Tipo de telhado:
 Localização do imóvel:
 ```
 
-Preservar as intenções existentes de contato e orçamento e codificar a mensagem no build. Dar destaque ao orçamento no Hero e nas ações comerciais; manter contato geral acessível e Instagram secundário. Evitar dois botões com a mesma função no Hero. Não adicionar formulário, armazenamento, calculadora ou rejeição automática por consumo.
+Preservar as intenções existentes de contato e orçamento e codificar a mensagem no build. Exibir apenas um CTA do WhatsApp por grupo visual: orçamento no Hero e no contato final; contato geral no cabeçalho e em Atendimento, em locais distintos. Instagram segue secundário. Não adicionar formulário, armazenamento, calculadora ou rejeição automática por consumo.
 
 O FAQ poderá responder quais informações enviar, público atendido, região confirmada e relação do orçamento com o consumo e as condições do imóvel. Respostas serão revisadas; financiamento e condições técnicas específicas continuam TBD.
 

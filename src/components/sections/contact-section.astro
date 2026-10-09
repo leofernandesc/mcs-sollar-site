@@ -22,15 +22,10 @@ import WhatsAppLink from "../ui/whatsapp-link.astro";
         />
       </div>
 
-      <div class="flex flex-col gap-3 md:col-span-5 xl:flex-row xl:flex-wrap xl:justify-end">
-        <WhatsAppLink
-          intent="contact"
-          label={pageContent.hero.contactLabel}
-        />
+      <div class="md:col-span-5 xl:justify-self-end">
         <WhatsAppLink
           intent="quote"
           label={pageContent.hero.quotationLabel}
-          variant="secondary"
         />
       </div>
     </div>
