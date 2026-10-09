@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import officialLogo from "../../assets/images/brand/mcs-sollar-official.jpeg";
 import PageContainer from "../ui/page-container.astro";
 import WhatsAppLink from "../ui/whatsapp-link.astro";
 import InstagramLink from "../ui/instagram-link.astro";
@@ -9,29 +11,17 @@ import { pageContent } from "../../data/content";
 <header class="relative z-20 border-b border-brand-navy/15 bg-brand-cream">
   <PageContainer class="py-3">
     <div class="flex items-center justify-between gap-3 lg:gap-6">
-      <a href="#inicio" class="inline-flex shrink-0 items-center gap-2 text-brand-navy">
-        <svg
-          viewBox="0 0 64 54"
-          class="h-10 w-12 shrink-0"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-width="2.5"
-            class="text-brand-solar"
-          >
-            <path d="M32 3v7M15 9l4 6M49 9l-4 6M8 22h8M56 22h-8" />
-          </g>
-          <path d="M20 23a12 12 0 0 1 24 0v1H20z" class="fill-brand-solar" />
-          <g class="fill-brand-navy">
-            <path d="M14 28h12l-2 6H12zM29 28h10v6H27zM40 28h12l2 6H42z" />
-            <path d="M10 37h15l-2 7H8zM28 37h10v7H26zM41 37h15l3 7H39z" />
-          </g>
-        </svg>
-        <span class="text-base font-bold tracking-wide sm:text-lg">{business.name}</span>
+      <a href="#inicio" class="inline-flex shrink-0 items-center text-brand-navy">
+        <Image
+          src={officialLogo}
+          alt={business.name}
+          widths={[128, 144, 160, 192, 256]}
+          sizes="(min-width: 1024px) 160px, (min-width: 640px) 144px, 128px"
+          format="webp"
+          quality={88}
+          loading="eager"
+          class="h-auto w-32 sm:w-36 lg:w-40"
+        />
       </a>
 
       <nav class="hidden lg:block" aria-label="Navegação principal">

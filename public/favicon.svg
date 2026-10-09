@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Provisional MCS Sollar solar symbol; pending final brand approval. -->
-  <g fill="none" stroke="#F59A16" stroke-linecap="round" stroke-width="4">
+  <!-- Simplified favicon mark adapted from the confirmed MCS Sollar logo. -->
+  <g fill="none" stroke="#D9A945" stroke-linecap="round" stroke-width="4">
     <path d="M32 4v8M14 11l5 7M7 26h9M57 26h-9M50 11l-5 7" />
   </g>
-  <path fill="#F59A16" d="M18 32a14 14 0 0 1 28 0v2H18z" />
-  <g fill="#0B3D5C">
+  <path fill="#D9A945" d="M18 32a14 14 0 0 1 28 0v2H18z" />
+  <g fill="#1F3D55">
     <path d="M9 38h14l-2 8H7zM26 38h12v8H25zM41 38h14l2 8H39z" />
     <path d="M6 49h17l-2 9H4zM26 49h12v9H24zM41 49h17l2 9H39z" />
   </g>

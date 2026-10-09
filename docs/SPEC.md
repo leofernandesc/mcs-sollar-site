@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). O orçamento já tem destaque único no Hero e no CTA final; os textos comerciais e a aplicação da logo oficial ainda serão atualizados em entregas próprias. Domínio e hospedagem seguem TBD na documentação do projeto.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual oficial foi aplicada na etapa 2A; a revisão dos textos comerciais segue na etapa 2B. Domínio e hospedagem seguem TBD na documentação do projeto.
 
 ## Objetivo do projeto
 
@@ -39,11 +39,10 @@ Imagens ilustrativas podem acompanhar apresentação e serviços, com identifica
 - Referências históricas: [anúncio](references/mcs-sollar-announcement.png) e [logo do Instagram](references/mcs-sollar-instagram-logo.png).
 - **Logo oficial confirmada:** `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, recebida no acervo local, com 911 × 456 px. É um JPEG; não presumir disponibilidade de arquivo vetorial ou transparente. Outras variantes não orientam a identidade do site.
 - Preservar a grafia **MCS Sollar** e o símbolo de sol sobre painéis.
-- Paleta atualmente implementada: azul profundo `#0B3D5C`, laranja solar `#F59A16`, fundo creme `#FFF5E8` e texto escuro `#172A34`.
-- Paleta planejada, aproximada a partir do JPEG oficial: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7` e texto escuro `#172A34`. Aplicar na entrega de marca e validar as combinações reais. Dourado sobre creme não serve para texto essencial, foco ou marcadores interativos.
+- Paleta aplicada, aproximada a partir do JPEG oficial: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7` e texto escuro `#172A34`. São referências extraídas da imagem, não valores de um manual oficial de marca. Dourado sobre creme não serve para texto essencial, foco ou marcadores interativos.
 - Tipografia sem serifa, legível e profissional; evitar reproduzir a tipografia condensada do anúncio em textos longos.
-- Usar a logo oficial recebida, preservando sua composição e proporções; revisar sua aplicação antes da publicação.
-- O cabeçalho e `public/favicon.svg` ainda usam símbolos provisórios. A aplicação da logo e a adaptação do favicon ocorrerão na entrega de marca.
+- Usar a logo oficial recebida, preservando sua composição e proporções. A versão JPEG fornecida está em `src/assets/images/brand/mcs-sollar-official.jpeg`; o Astro gera uma versão otimizada para o cabeçalho. O favicon é uma simplificação vetorial do símbolo, usando as cores aproximadas da marca.
+- Revisar a legibilidade da logo e a paleta nos tamanhos de tela suportados antes da publicação. O arquivo original continua sendo raster; não há versão vetorial ou transparente confirmada.
 - Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. Fotos de trabalhos reais só podem receber essa atribuição após validação; não inferir potência, localização, cliente ou quantidade de projetos.
 - Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados. A revisão de vídeos inclui imagem e áudio.
 
@@ -118,7 +117,7 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 
 ## Pendências
 
-- **Antes de publicar:** aplicar e revisar a logo oficial e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
+- **Antes de publicar:** revisar a aplicação responsiva da logo e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
 - **Mídias:** confirmar a seleção de fotos, autoria, autorização e informações de cada trabalho após revisão de privacidade. Vídeos serão uma entrega posterior, condicionada à revisão de imagem e áudio.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.
