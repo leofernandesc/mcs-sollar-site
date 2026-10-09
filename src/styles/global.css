@@ -29,7 +29,6 @@ html {
 }
 
 body {
-  min-width: 20rem;
   min-height: 100vh;
   margin: 0;
   background: var(--color-brand-cream);
@@ -37,11 +36,18 @@ body {
   line-height: 1.6;
 }
 
+@layer base {
+  h1,
+  h2,
+  h3 {
+    color: var(--color-brand-navy);
+  }
+}
+
 h1,
 h2,
 h3 {
   margin: 0;
-  color: var(--color-brand-navy);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.025em;
