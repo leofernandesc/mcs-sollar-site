@@ -92,9 +92,6 @@ export const pageContent = {
     safetyImageAlt:
       "Placa com alerta de risco de choque elétrico em geração própria.",
     safetyImageCaption: "Sinalização de segurança elétrica.",
-    monitoringImageAlt:
-      "Tela de aplicativo com indicadores de geração de energia solar.",
-    monitoringImageCaption: "Monitoramento da geração solar.",
   },
   faq: [
     {
