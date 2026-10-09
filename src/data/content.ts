@@ -19,8 +19,8 @@ export const pageContent = {
     description:
       "A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.",
     imageAlt:
-      "Inversor fotovoltaico instalado ao lado de componentes de proteção elétrica.",
-    imageCaption: "Registro de instalação de inversor fotovoltaico.",
+      "Módulos fotovoltaicos instalados sobre uma cobertura com telhas cerâmicas.",
+    imageCaption: "Módulos fotovoltaicos sobre uma cobertura.",
     quotationLabel: "Solicitar orçamento",
     servicesLabel: "Conhecer nossos serviços",
   },
