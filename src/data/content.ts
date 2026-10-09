@@ -79,23 +79,22 @@ export const pageContent = {
   },
   about: {
     title: "Sobre a MCS Sollar",
+    lead: "Energia solar para residências e empresas em Manaus.",
     description:
-      "A MCS Sollar atende residências e empresas em Manaus com projetos, instalações e manutenção em energia solar. Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
+      "Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
     evChargingImageAlt:
       "Inversor, componentes elétricos e estação de recarga para veículo elétrico instalados em uma parede.",
     evChargingImageCaption:
-      "Instalação de sistema fotovoltaico com estação de recarga para veículo elétrico.",
+      "Sistema fotovoltaico com recarga veicular.",
     inverterImageAlt:
       "Inversor fotovoltaico instalado ao lado de componentes de proteção elétrica.",
-    inverterImageCaption: "Registro de instalação de inversor fotovoltaico.",
+    inverterImageCaption: "Instalação de inversor fotovoltaico.",
     safetyImageAlt:
       "Placa com alerta de risco de choque elétrico em geração própria.",
-    safetyImageCaption:
-      "Sinalização de risco elétrico em uma instalação fotovoltaica.",
+    safetyImageCaption: "Sinalização de segurança elétrica.",
     monitoringImageAlt:
-      "Tela de aplicativo com indicadores de geração solar e o nome da conta ocultado.",
-    monitoringImageCaption:
-      "Visualização de dados de geração em aplicativo de monitoramento; identificação da conta ocultada.",
+      "Tela de aplicativo com indicadores de geração de energia solar.",
+    monitoringImageCaption: "Monitoramento da geração solar.",
   },
   faq: [
     {
