@@ -31,7 +31,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
 | 4B — Fotos e trabalhos reais | Após 4A e a revisão da marca, integrar a seleção, criar a seção de trabalhos e substituir a imagem ilustrativa do Hero quando adequada. | Conteúdo autêntico, descrições confirmadas e carregamento preservado. |
 | 4C — Vídeos opcionais | Após as fotos, avaliar utilidade comercial, privacidade, áudio e otimização dos vídeos selecionados. | Player acessível e sob demanda; inclusão não é requisito para lançar a homepage. |
-| 5 — FAQ e confiança | Melhorar dúvidas comerciais e apresentação institucional com informações e materiais aprovados. | Perguntas úteis respondidas sem credenciais ou condições inventadas. |
+| 5 — FAQ e confiança | FAQ atualizado com dados confirmados; não há credenciais ou depoimentos aprovados para acrescentar. Revisão editorial antes da publicação ainda necessária. | Perguntas úteis respondidas sem credenciais ou condições inventadas; inserir provas somente após validação. |
 | 6 — SEO e publicação | Finalizar SEO já previsto após confirmar domínio e hospedagem; preparar a substituição do site antigo. | Build aprovado e configuração revisada; publicação depende de autorização própria. |
 | 7 — Mensuração | Definir acompanhamento comercial manual, externo ao site. Integrações exigirão proposta técnica futura. | Distinguir cliques, conversas, leads qualificados e vendas, sem prometer atribuição automática. |
 | 8 — Página de campanha | Avaliar uma página específica somente se houver necessidade demonstrada. | Novo escopo aprovado; a evolução atual permanece com uma homepage. |
@@ -70,7 +70,7 @@ Localização do imóvel:
 
 Preservar as intenções existentes de contato e orçamento e codificar a mensagem no build. Exibir apenas um CTA do WhatsApp por grupo visual: orçamento no Hero e no contato final; contato geral no cabeçalho e em Atendimento, em locais distintos. Instagram segue secundário. Não adicionar formulário, armazenamento, calculadora ou rejeição automática por consumo.
 
-O FAQ poderá responder quais informações enviar, público atendido, região confirmada e relação do orçamento com o consumo e as condições do imóvel. Respostas serão revisadas; financiamento e condições técnicas específicas continuam TBD.
+O FAQ responde quais informações enviar, público atendido em Manaus e relação do orçamento com consumo e características do imóvel. Financiamento e condições técnicas específicas continuam TBD e não são publicados. Incluir provas de confiança apenas quando houver conteúdo real autorizado e verificável.
 
 ## Aplicação da marca
 

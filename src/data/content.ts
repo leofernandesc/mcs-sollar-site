@@ -69,12 +69,19 @@ export const pageContent = {
   },
   faq: [
     {
-      question: "Como solicitar um orçamento?",
-      answer: "Use o botão Solicitar orçamento para conversar pelo WhatsApp.",
+      question: "Quais informações preciso enviar para pedir um orçamento?",
+      answer:
+        "Informe o consumo mensal em kWh ou o valor aproximado da conta de energia, o tipo de telhado e a localização do imóvel. A equipe poderá solicitar outras informações conforme a necessidade.",
     },
     {
-      question: "Quais serviços são oferecidos?",
-      answer: "Projetos, instalações e manutenção em energia solar.",
+      question: "A MCS Sollar atende residências e empresas?",
+      answer:
+        "Sim. O atendimento informado pela MCS Sollar inclui residências e empresas em Manaus, com projetos, instalações e manutenção de sistemas fotovoltaicos.",
+    },
+    {
+      question: "O que é considerado na elaboração do orçamento?",
+      answer:
+        "O consumo de energia e as características do imóvel. A equipe pode pedir informações adicionais conforme a necessidade de cada solicitação.",
     },
   ],
   contact: {
