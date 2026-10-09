@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. Marca e textos aguardam aprovação final; domínio, hospedagem e configuração de SEO para publicação seguem pendentes. [SPEC.md](SPEC.md) define o produto e as informações comerciais; este documento define a organização técnica.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a aplicação da logo oficial segue planejada. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -46,6 +46,8 @@ Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Os metadados atuais fic
 
 Um componente reutilizável de link de WhatsApp recebe a intenção de contato ou orçamento e usa o número centralizado. O utilitário de composição codifica a mensagem com `encodeURIComponent` durante o build; o resultado é um link HTML normal. Não duplicar telefone ou textos comerciais nos componentes.
 
+Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento será texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
+
 `instagram-link.astro` usa o perfil centralizado em `business.ts`, com variantes de cabeçalho e rodapé, ícone SVG decorativo e rótulo acessível. O link abre na mesma aba; não há feed, SDK, rastreamento nem recursos carregados do Instagram durante a visita ao site.
 
 Fluxo: dados locais → props e utilitários no build → HTML/CSS e imagens estáticas → navegador. Não há leitura de APIs ou dados comerciais em tempo de execução.
@@ -67,9 +69,13 @@ Uma rota pública `/`, com navegação por fragmentos:
 
 Preservar os identificadores para navegação e links compartilhados. Não incluir portfólio ou depoimentos sem material real autorizado. Imagens ilustrativas pertencem à apresentação ou aos serviços e recebem legenda; não são evidência de projetos realizados.
 
+A seção de trabalhos reais está planejada após Serviços, com âncora `projetos` e acesso de navegação, somente após curadoria e validação. Ela continuará na rota `/`; não criar páginas de projetos, carrossel com JavaScript ou uma coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
+
 ## 5. Organização de conteúdo e dados
 
 Manter módulos TypeScript locais, sem CMS ou coleções de conteúdo desnecessárias para uma página. Separar fatos confirmados, textos provisórios e configurações técnicas. Edições exigem novo build e publicação.
+
+Os módulos conterão somente informações destinadas à divulgação. Referências financeiras, capacidade operacional, verba publicitária e critérios numéricos internos de qualificação não podem entrar no código, na documentação versionada, no histórico ou nos assets. O processamento no build não é uma proteção para informações internas. A qualificação será feita na conversa comercial; o site não coleta nem armazena os dados do visitante.
 
 Fatos já fornecidos, que devem ser preservados:
 
@@ -78,36 +84,46 @@ Fatos já fornecidos, que devem ser preservados:
 | Nome público | MCS Sollar |
 | Localidade atendida | Manaus, AM |
 | Serviços | Projetos, instalações e manutenção em energia solar |
+| Público inicial | Residências e empresas em Manaus |
+| Conversão principal aprovada | Solicitar orçamento pelo WhatsApp; aplicação visual planejada |
 | WhatsApp | +55 92 99996-0878 |
 | Número para link | `5592999960878` |
 | Mensagem de orçamento | “Olá! Gostaria de solicitar um orçamento de energia solar.” |
 | Instagram | [@mcssollar](https://www.instagram.com/mcssollar/) |
+| Informações iniciais para orçamento | Consumo mensal em kWh ou valor aproximado da conta, tipo de telhado e localização do imóvel |
+| Referência oficial da marca | `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, recebida no acervo local |
 
 Informações pendentes:
 
 | Informação | Estado |
 | --- | --- |
-| Prioridade de público e segmentos específicos | TBD |
+| Segmentos especializados e serviços adicionais | TBD |
 | Endereço físico, horários, e-mail e outros perfis sociais | TBD |
 | Razão social, CNPJ e outros identificadores não fornecidos | TBD |
 | Cobertura além de Manaus | TBD |
-| Etapas técnicas/comerciais e diferenciais comprovados | TBD |
+| Procedimentos técnicos adicionais, prazos e diferenciais comprovados | TBD |
 | Anos de atuação, estatísticas e certificações | TBD |
-| Preços, garantias e condições comerciais | TBD |
-| Projetos reais, fotos autorizadas e depoimentos | TBD |
-| Aprovação final dos textos e da marca | TBD |
+| Garantias, financiamento e outras condições comerciais | TBD; preços não serão divulgados |
+| Identificação dos trabalhos, autoria, autorização e depoimentos | TBD; acervo recebido, ainda não validado para publicação |
+| Revisão dos novos textos e da aplicação da logo oficial | TBD |
 
 Registrar pendências como **TBD** na documentação. Nos futuros dados, representar campos opcionais não resolvidos como ausentes; não renderizar o texto “TBD”, inventar valores nem incluir pendências em dados estruturados. Conteúdo obrigatório ainda não aprovado impede a publicação daquele conteúdo.
 
 ## 6. Organização de assets
 
-Os arquivos em `docs/references/` são referências recebidas, não assets finais de produção. A versão limpa da marca deve ser revisada; não reutilizar o anúncio inteiro como logo.
+Os arquivos em `docs/references/` são referências históricas, não assets finais de produção. A logo oficial recebida é um JPEG de 911 × 456 px, ainda fora do repositório; aplicar a composição aprovada preservando proporções. Não reutilizar o anúncio inteiro nem outras variantes como logo.
 
-O símbolo do cabeçalho é um SVG inline de sol sobre painéis. O favicon em `public/favicon.svg` usa uma adaptação simplificada nas cores aprovadas. Ambos são provisórios até a aprovação final da marca.
+O cabeçalho e `public/favicon.svg` ainda usam símbolos provisórios. Na entrega de marca, aplicar a logo recebida e alinhar os tokens e o favicon ao azul-marinho, dourado e creme definidos como referência na SPEC. Os valores derivados do JPEG são aproximações, não um manual vetorial da marca; validar contraste e legibilidade na aplicação.
 
 Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. Usar `public/` apenas para arquivos que precisam permanecer inalterados. SVGs podem ser usados para marca e ícones após revisão.
 
 Registrar origem, licença/autorização e condição ilustrativa de cada imagem. Começar com fontes de sistema; qualquer fonte adicional deverá ser licenciada e hospedada localmente.
+
+O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos da seleção de portfólio. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
+
+As fotos aprovadas poderão ocupar `src/assets/images/projects/`, criado apenas nessa entrega. Não deduzir detalhes técnicos ou agrupar arquivos como um projeto sem confirmação. Remover a legenda de imagem ilustrativa somente ao substituí-la por foto real validada.
+
+Vídeos serão avaliados em entrega posterior. Revisar imagem e áudio integrais; preparar versões otimizadas fora do build de imagens, pois Astro não comprime vídeos. Servir somente derivados aprovados como arquivos estáticos, com player HTML nativo, controles, poster, dimensões reservadas e `preload="none"`. Não usar autoplay nem embeds externos; fornecer legendas ou transcrição quando houver fala essencial. Não criar diretórios ou adicionar dependências de vídeo nesta etapa.
 
 ## 7. Estratégia responsiva
 
@@ -145,12 +161,15 @@ Não exigir adaptador de hospedagem, SDK de fornecedor, funções serverless ou 
 
 O scaffold registra faixa de Node compatível, instalação reproduzível por `package-lock.json` e comandos npm de desenvolvimento, build e preview. Domínio e configuração de produção devem ser definidos antes do lançamento. Não há configuração de provedor nesta etapa.
 
+Não presumir o estado de produção a partir do preview ou do GitHub. A substituição do site antigo depende de confirmação da infraestrutura, revisão do build, HTTPS, DNS e autorização de publicação própria. O site antigo não é fonte de conteúdo ou identidade; suas URLs poderão ser inspecionadas somente para preparar redirecionamentos relevantes.
+
 ## 12. Conteúdo estático e JavaScript no cliente
 
 | Recurso | Implementação prevista |
 | --- | --- |
 | Conteúdo, layout, serviços e imagens | HTML/CSS gerados no build |
 | Links de navegação, WhatsApp e Instagram | Âncoras HTML estáticas |
+| Orientações e mensagem de orçamento estruturada | Evolução planejada; texto e links gerados no build, sem formulário |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
 | Título, descrição e metadados sociais básicos | Saída estática implementada |
 | Canonical, sitemap, robots e JSON-LD | Preparação da publicação; saída estática futura |
@@ -158,14 +177,17 @@ O scaffold registra faixa de Node compatível, instalação reproduzível por `p
 
 Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicial. Não adicionar hidratação com `client:*`, roteador de SPA ou framework de UI. Um script futuro só poderá atender uma interação documentada, com melhoria progressiva e conteúdo/contato utilizáveis sem ele; não faz parte desta entrega.
 
+Preparar o conteúdo para Google Ads não autoriza instalar GA4, GTM, pixels ou outros scripts. Inicialmente, o acompanhamento comercial será manual e externo ao site. Uma futura proposta de mensuração deve distinguir clique, conversa, lead qualificado e venda, tratar privacidade e duplicidade e atualizar explicitamente o escopo antes de implementar tags. Páginas adicionais de campanha também continuam fora da V1.
+
 ## Riscos e verificações futuras
 
-- **Marca de captura:** resolução e fidelidade precisam de revisão antes do uso final.
-- **Contraste:** a paleta proposta não garante conformidade em todas as combinações; verificar especialmente os acentos laranja.
+- **Marca recebida:** a referência oficial é um JPEG; revisar sua aplicação e legibilidade antes da publicação.
+- **Contraste:** verificar as combinações reais, especialmente o acento laranja atual e o dourado planejado; manter foco e marcadores interativos com contraste suficiente.
 - **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
 - **Origem de produção:** TBD impede finalizar canonical, sitemap e compartilhamento para lançamento.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.
 - **WhatsApp:** número confirmado não comprova disponibilidade da conta; testar destino e mensagem em dispositivos reais.
+- **Mídias:** disponibilidade de um arquivo não comprova autoria ou autorização; aplicar curadoria, revisão de privacidade e confirmação antes de divulgar.
 - **Qualidade:** rodar `npm run check`, `npm run build` e verificações responsivas/de teclado após alterações. Auditorias automáticas devem ser complementadas por inspeção manual de contraste, conteúdo e interação.
 
 ## Referências técnicas
