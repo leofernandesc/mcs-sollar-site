@@ -1,21 +1,22 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). Textos, marca e favicon provisórios aguardam aprovação final; domínio e hospedagem seguem pendentes.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). Esta atualização é documental: a nova hierarquia de conversões, os textos comerciais e a logo oficial ainda serão aplicados em entregas próprias. Domínio e hospedagem seguem TBD na documentação do projeto.
 
 ## Objetivo do projeto
 
-Criar um site institucional estático para a **MCS Sollar**, empresa brasileira de energia solar com atendimento em **Manaus, AM**. Apresentar projetos, instalações e manutenção, favorecer a descoberta em buscas locais e incentivar conversas pelo WhatsApp.
+Criar um site institucional estático para a **MCS Sollar**, empresa brasileira de energia solar com atendimento em **Manaus, AM**. Apresentar projetos, instalações e manutenção, demonstrar trabalhos reais autorizados, favorecer a descoberta em buscas locais e facilitar solicitações de orçamento pelo WhatsApp.
 
 ## Público-alvo
 
-Pessoas que buscam serviços de energia solar em Manaus. A prioridade entre clientes residenciais, comerciais, industriais ou rurais ainda não foi definida; evitar alegações específicas sobre esses segmentos até confirmação.
+Clientes residenciais e empresas que buscam serviços de energia solar em Manaus. Segmentos especializados, serviços adicionais e atendimento em outras localidades permanecem TBD; não divulgar essas possibilidades sem confirmação.
 
 ## Conversões principais e secundárias
 
-- **Principal:** iniciar conversa no WhatsApp pelo botão “Fale pelo WhatsApp”.
-- **Secundária:** solicitar orçamento pelo botão “Solicitar orçamento”, também via WhatsApp.
+- **Principal aprovada para a evolução:** solicitar orçamento pelo botão “Solicitar orçamento”, via WhatsApp.
+- **Secundária:** iniciar contato geral pelo WhatsApp, inclusive para outras necessidades de atendimento.
+- **Estado atual da interface:** o contato geral ainda tem destaque principal e o orçamento é secundário. A mudança aprovada será aplicada nas entregas de conteúdo e atendimento, sem alterar a arquitetura estática.
 - Número informado e corrigido pelo responsável: **+55 92 99996-0878**; formato do link: `5592999960878`.
-- Mensagem do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”**
+- Mensagem atual do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”** Uma mensagem estruturada será revisada na etapa de atendimento; o texto atual permanece até essa entrega.
 - Contato geral abre a conversa sem mensagem obrigatória. Um clique não comprova uma conversa ou orçamento concluído. Testar o destino real antes da publicação.
 - Instagram confirmado: **[@mcssollar](https://www.instagram.com/mcssollar/)**. Acesso no cabeçalho desktop, menu móvel e rodapé, como ação secundária à conversão pelo WhatsApp. Links abrem na mesma aba, sem feed incorporado.
 
@@ -31,32 +32,40 @@ Página única, com navegação por seções:
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas podem acompanhar apresentação e serviços. Portfólio e depoimentos só entram quando houver material real autorizado; não criar projetos fictícios. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
+Imagens ilustrativas podem acompanhar apresentação e serviços, com identificação explícita. Há um acervo local recebido, ainda fora do site. A seção de trabalhos reais está planejada após Serviços, condicionada à seleção e à confirmação de autoria, autorização e informações de cada trabalho. Não criar projetos fictícios. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
 
 ## Identidade visual e imagens
 
-- Referências recebidas: [anúncio](references/mcs-sollar-announcement.png) e [logo do Instagram](references/mcs-sollar-instagram-logo.png). São capturas de referência, sem arquivo original disponível.
+- Referências históricas: [anúncio](references/mcs-sollar-announcement.png) e [logo do Instagram](references/mcs-sollar-instagram-logo.png).
+- **Logo oficial confirmada:** `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, recebida no acervo local, com 911 × 456 px. É um JPEG; não presumir disponibilidade de arquivo vetorial ou transparente. Outras variantes não orientam a identidade do site.
 - Preservar a grafia **MCS Sollar** e o símbolo de sol sobre painéis.
-- Paleta proposta: azul profundo `#0B3D5C`, laranja solar `#F59A16`, fundo creme `#FFF5E8` e texto escuro `#172A34`. Validar contraste nas combinações utilizadas.
+- Paleta atualmente implementada: azul profundo `#0B3D5C`, laranja solar `#F59A16`, fundo creme `#FFF5E8` e texto escuro `#172A34`.
+- Paleta planejada, aproximada a partir do JPEG oficial: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7` e texto escuro `#172A34`. Aplicar na entrega de marca e validar as combinações reais. Dourado sobre creme não serve para texto essencial, foco ou marcadores interativos.
 - Tipografia sem serifa, legível e profissional; evitar reproduzir a tipografia condensada do anúncio em textos longos.
-- A recriação fiel da marca foi autorizada como opção; qualquer versão deverá ser revisada antes da publicação.
-- O cabeçalho usa um símbolo SVG de sol sobre painéis; `public/favicon.svg` adapta esse símbolo para tamanhos pequenos. Ambos permanecem provisórios, pendentes de aprovação final.
-- Fotografias devem ter licença adequada e identificação de “Imagem ilustrativa” junto ao conteúdo. Não apresentá-las como instalações da empresa.
+- Usar a logo oficial recebida, preservando sua composição e proporções; revisar sua aplicação antes da publicação.
+- O cabeçalho e `public/favicon.svg` ainda usam símbolos provisórios. A aplicação da logo e a adaptação do favicon ocorrerão na entrega de marca.
+- Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. Fotos de trabalhos reais só podem receber essa atribuição após validação; não inferir potência, localização, cliente ou quantidade de projetos.
+- Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados. A revisão de vídeos inclui imagem e áudio.
 
-## Textos iniciais para revisão
+## Conteúdo comercial e atendimento
 
-Propostas editoriais; não representam validação de processos, credenciais ou resultados.
+O site ainda usa os textos institucionais iniciais centralizados nos módulos de conteúdo. As propostas abaixo orientarão a entrega de conteúdo e serão revisadas antes da publicação; não representam credenciais ou resultados comerciais.
 
-- **Título:** “Energia solar em Manaus”.
-- **Apresentação:** “Projetos, instalações e manutenção em energia solar. Converse com a MCS Sollar e solicite um orçamento para sua necessidade.”
-- **Projetos:** “Precisa de um projeto de energia solar? Fale com a MCS Sollar sobre sua necessidade.”
-- **Instalações:** “Solicite um orçamento para instalação de energia solar em Manaus.”
-- **Manutenção:** “Entre em contato para consultar os serviços de manutenção em energia solar.”
-- **Sobre:** “A MCS Sollar oferece projetos, instalações e manutenção em energia solar em Manaus. Entre em contato pelo WhatsApp para conhecer os serviços e solicitar um orçamento.”
-- **Atendimento:** “Abra uma conversa no WhatsApp e conte qual serviço procura.” Etapas técnicas e comerciais adicionais dependem de confirmação.
-- **FAQ:** “Como solicitar um orçamento?” → “Use o botão Solicitar orçamento para conversar pelo WhatsApp.” “Quais serviços são oferecidos?” → “Projetos, instalações e manutenção em energia solar.”
+- **H1 proposto:** “Energia solar em Manaus para sua residência ou empresa”.
+- **Apresentação proposta:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
+- **Ações do Hero:** “Solicitar orçamento” como principal e “Conhecer nossos serviços” como acesso a `#servicos`.
+- **Serviços e Sobre:** explicar a finalidade dos três serviços e a atuação residencial e comercial, sem adicionar procedimentos ou especialidades não confirmados.
+- **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
 
-Não acrescentar anos de atuação, certificações, quantidade de projetos, economia garantida, preços ou garantias sem fonte aprovada.
+Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A entrega de atendimento explicará como informar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
+
+## Informações públicas e internas
+
+Serviços, Manaus, canais de contato, público confirmado e orientações de atendimento podem integrar o conteúdo público. Referências financeiras, ticket médio, capacidade operacional, verba publicitária e critérios numéricos internos de qualificação ficam fora de todo o repositório, inclusive documentos, histórico, metadados e assets.
+
+Não divulgar preços, valores mínimos, tabelas comerciais ou cálculos genéricos de investimento. Não prometer economia fixa nem retorno garantido. A qualificação é feita pela equipe, sem rejeição automática por consumo; o site não coleta nem armazena os dados informados na conversa.
+
+Não acrescentar anos de atuação, certificações, quantidade de projetos ou garantias sem fonte aprovada. Preços e promessas financeiras permanecem fora do conteúdo público, conforme a política acima.
 
 ## Requisitos funcionais
 
@@ -64,7 +73,8 @@ Não acrescentar anos de atuação, certificações, quantidade de projetos, eco
 - Links de WhatsApp com número consistente e mensagem corretamente codificada.
 - Ações de contato visíveis; eventual botão flutuante não deve cobrir conteúdo ou controles.
 - Conteúdo essencial disponível sem JavaScript; scripts apenas para melhorias necessárias.
-- Sem formulário de envio, armazenamento de dados ou integrações externas em V1.
+- Orientações de orçamento e mensagens de WhatsApp estáticas, sem formulário de pré-qualificação, envio ou armazenamento de dados no site.
+- Sem tags de mensuração, pixels ou embeds externos em V1. Links simples para os canais confirmados permanecem permitidos.
 
 ## Requisitos não funcionais
 
@@ -95,18 +105,19 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Hospedagem
 
-**Provedor: TBD. Domínio/URL pública: TBD.** Manter a arquitetura independente de fornecedor, com publicação dos arquivos gerados em `dist/` em um serviço de hospedagem estática com HTTPS. Não exigir adaptador, SDK ou runtime de servidor específico. Priorizar uma opção gratuita ao selecionar o provedor; a recomendação anterior não fixa uma escolha de hospedagem. Nenhuma conta ou hospedagem foi configurada.
+**Provedor: TBD. Domínio/URL pública: TBD.** Manter a arquitetura independente de fornecedor, com publicação dos arquivos gerados em `dist/` em um serviço de hospedagem estática com HTTPS. Não exigir adaptador, SDK ou runtime de servidor específico. Priorizar uma opção gratuita ao selecionar o provedor; a recomendação anterior não fixa uma escolha de hospedagem. O repositório ainda não registra um destino definitivo ou configuração de provedor. Substituir o site antigo requer confirmação da infraestrutura e autorização própria; ele não é fonte de conteúdo ou design.
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados, conteúdo provisório sujeito à revisão, imagens ilustrativas identificadas, identidade baseada na marca recebida, contato e orçamento pelo WhatsApp, SEO local, acessibilidade, desempenho e instruções de publicação estática.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Evoluir conteúdo, marca e trabalhos reais em entregas revisadas, preservando SEO local, acessibilidade e desempenho. Mídias reais dependem de curadoria e autorização; conteúdo ainda não aplicado deve permanecer identificado como planejado.
 
 ## Fora do escopo
 
-Portal do cliente, login, administração, CMS, banco de dados, formulários com envio, CRM, pagamentos, agendamento, cálculo de economia, orçamento automático, chatbot, blog e múltiplos idiomas. Analytics, pixels, mapas incorporados e demais integrações ficam para depois. Portfólio real depende do envio de materiais.
+Portal do cliente, login, administração, CMS, banco de dados, formulários de pré-qualificação ou envio, CRM, pagamentos, agendamento, cálculo de economia, orçamento automático, chatbot, blog e múltiplos idiomas. Analytics, pixels, mapas incorporados, páginas adicionais para campanhas e demais integrações exigem avaliação e ampliação de escopo futuras. A preparação comercial para Google Ads não autoriza instalar tags nem criar campanhas.
 
 ## Pendências
 
-- **Antes de publicar:** revisar textos e versão final da marca; testar o WhatsApp e a mensagem; definir o endereço público e configurar a conta de hospedagem.
-- **Para refinar o conteúdo:** informar eventual prioridade de público, etapas reais de atendimento, diferenciais comprovados e endereço público, se desejado. Sem essas informações, usar apresentação geral e omitir detalhes.
-- **Depois:** receber fotos reais autorizadas, definir quem fará atualizações e avaliar analytics ou outras integrações.
+- **Antes de publicar:** aplicar e revisar a logo oficial e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
+- **Mídias:** confirmar a seleção de fotos, autoria, autorização e informações de cada trabalho após revisão de privacidade. Vídeos serão uma entrega posterior, condicionada à revisão de imagem e áudio.
+- **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
+- **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.
