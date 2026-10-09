@@ -27,7 +27,7 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Concluída na branch de planejamento. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
 | 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Aplicação implementada; revisão visual final depende da validação do preview. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
 | 2B — Conteúdo comercial | Atualizar Hero, Serviços e Sobre com os fatos confirmados; proposta editorial aplicada, pendente de revisão antes da publicação. | Serviço, público, localização e próximo passo claros; texto aprovado antes da publicação. |
-| 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
+| 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. Fluxo e mensagem estruturada implementados; revisão do texto ainda necessária antes da publicação. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
 | 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
 | 4B — Fotos e trabalhos reais | Após 4A e a revisão da marca, integrar a seleção, criar a seção de trabalhos e substituir a imagem ilustrativa do Hero quando adequada. | Conteúdo autêntico, descrições confirmadas e carregamento preservado. |
 | 4C — Vídeos opcionais | Após as fotos, avaliar utilidade comercial, privacidade, áudio e otimização dos vídeos selecionados. | Player acessível e sob demanda; inclusão não é requisito para lançar a homepage. |
@@ -51,7 +51,7 @@ Manter linguagem profissional, objetiva e tecnicamente correta. Não criar urgê
 
 ## Solicitação de orçamento
 
-Na etapa 3, explicar três orientações comerciais:
+Na etapa 3, apresentar três orientações comerciais:
 
 1. Informar consumo mensal em **kWh** ou valor aproximado da conta de energia.
 2. Informar tipo de telhado e localização do imóvel.
@@ -59,7 +59,7 @@ Na etapa 3, explicar três orientações comerciais:
 
 Não confundir consumo de energia com potência instalada. A orientação não garante prazo, visita ou proposta automática.
 
-Mensagem estruturada proposta para revisão:
+Mensagem usada pelo CTA de orçamento (campos em branco para preenchimento pelo visitante no WhatsApp):
 
 ```text
 Olá! Gostaria de solicitar um orçamento de energia solar.

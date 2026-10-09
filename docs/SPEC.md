@@ -16,7 +16,7 @@ Clientes residenciais e empresas que buscam serviços de energia solar em Manaus
 - **Secundária:** iniciar contato geral pelo WhatsApp, inclusive para outras necessidades de atendimento.
 - **Estado atual da interface:** o Hero e o CTA final oferecem um único botão “Solicitar orçamento”. Contato geral permanece no cabeçalho e em Atendimento, em posições distintas.
 - Número informado e corrigido pelo responsável: **+55 92 99996-0878**; formato do link: `5592999960878`.
-- Mensagem atual do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”** Uma mensagem estruturada será revisada na etapa de atendimento; o texto atual permanece até essa entrega.
+- Mensagem de orçamento: texto estruturado com campos para consumo, tipo de telhado e localização; o visitante pode preenchê-los na conversa do WhatsApp. A mensagem é codificada durante o build.
 - Contato geral abre a conversa sem mensagem obrigatória. Um clique não comprova uma conversa ou orçamento concluído. Testar o destino real antes da publicação.
 - Instagram confirmado: **[@mcssollar](https://www.instagram.com/mcssollar/)**. Acesso no cabeçalho desktop, menu móvel e rodapé, como ação secundária à conversão pelo WhatsApp. Links abrem na mesma aba, sem feed incorporado.
 
@@ -27,7 +27,7 @@ Página única, com navegação por seções:
 1. **Cabeçalho:** marca, menu, WhatsApp e Instagram.
 2. **Apresentação:** energia solar em Manaus, resumo dos serviços e chamadas para ação.
 3. **Serviços:** projetos, instalações e manutenção.
-4. **Como solicitar atendimento:** orientação para iniciar conversa e explicar a necessidade.
+4. **Atendimento:** três orientações para compartilhar consumo, características do imóvel e iniciar a conversa de orçamento.
 5. **Sobre a MCS Sollar:** apresentação institucional breve.
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
@@ -56,7 +56,7 @@ Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser 
 - **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.
 - **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
 
-Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A entrega de atendimento explicará como informar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
+Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A seção de Atendimento orienta o visitante a compartilhar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
 
 ## Informações públicas e internas
 
