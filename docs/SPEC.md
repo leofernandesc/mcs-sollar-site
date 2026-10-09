@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). O orçamento já tem destaque único no Hero e no CTA final; os textos comerciais e a aplicação da logo oficial ainda serão atualizados em entregas próprias. Domínio e hospedagem seguem TBD na documentação do projeto.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual foi aplicada na etapa 2A e a proposta de conteúdo da etapa 2B está na interface, pendente de revisão editorial antes da publicação. Domínio e hospedagem seguem TBD na documentação do projeto.
 
 ## Objetivo do projeto
 
@@ -16,7 +16,7 @@ Clientes residenciais e empresas que buscam serviços de energia solar em Manaus
 - **Secundária:** iniciar contato geral pelo WhatsApp, inclusive para outras necessidades de atendimento.
 - **Estado atual da interface:** o Hero e o CTA final oferecem um único botão “Solicitar orçamento”. Contato geral permanece no cabeçalho e em Atendimento, em posições distintas.
 - Número informado e corrigido pelo responsável: **+55 92 99996-0878**; formato do link: `5592999960878`.
-- Mensagem atual do orçamento: **“Olá! Gostaria de solicitar um orçamento de energia solar.”** Uma mensagem estruturada será revisada na etapa de atendimento; o texto atual permanece até essa entrega.
+- Mensagem de orçamento: texto estruturado com campos para consumo, tipo de telhado e localização; o visitante pode preenchê-los na conversa do WhatsApp. A mensagem é codificada durante o build.
 - Contato geral abre a conversa sem mensagem obrigatória. Um clique não comprova uma conversa ou orçamento concluído. Testar o destino real antes da publicação.
 - Instagram confirmado: **[@mcssollar](https://www.instagram.com/mcssollar/)**. Acesso no cabeçalho desktop, menu móvel e rodapé, como ação secundária à conversão pelo WhatsApp. Links abrem na mesma aba, sem feed incorporado.
 
@@ -27,7 +27,7 @@ Página única, com navegação por seções:
 1. **Cabeçalho:** marca, menu, WhatsApp e Instagram.
 2. **Apresentação:** energia solar em Manaus, resumo dos serviços e chamadas para ação.
 3. **Serviços:** projetos, instalações e manutenção.
-4. **Como solicitar atendimento:** orientação para iniciar conversa e explicar a necessidade.
+4. **Atendimento:** três orientações para compartilhar consumo, características do imóvel e iniciar a conversa de orçamento.
 5. **Sobre a MCS Sollar:** apresentação institucional breve.
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
@@ -39,25 +39,24 @@ Imagens ilustrativas podem acompanhar apresentação e serviços, com identifica
 - Referências históricas: [anúncio](references/mcs-sollar-announcement.png) e [logo do Instagram](references/mcs-sollar-instagram-logo.png).
 - **Logo oficial confirmada:** `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, recebida no acervo local, com 911 × 456 px. É um JPEG; não presumir disponibilidade de arquivo vetorial ou transparente. Outras variantes não orientam a identidade do site.
 - Preservar a grafia **MCS Sollar** e o símbolo de sol sobre painéis.
-- Paleta atualmente implementada: azul profundo `#0B3D5C`, laranja solar `#F59A16`, fundo creme `#FFF5E8` e texto escuro `#172A34`.
-- Paleta planejada, aproximada a partir do JPEG oficial: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7` e texto escuro `#172A34`. Aplicar na entrega de marca e validar as combinações reais. Dourado sobre creme não serve para texto essencial, foco ou marcadores interativos.
+- Paleta aplicada, aproximada a partir do JPEG oficial: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7` e texto escuro `#172A34`. São referências extraídas da imagem, não valores de um manual oficial de marca. Dourado sobre creme não serve para texto essencial, foco ou marcadores interativos.
 - Tipografia sem serifa, legível e profissional; evitar reproduzir a tipografia condensada do anúncio em textos longos.
-- Usar a logo oficial recebida, preservando sua composição e proporções; revisar sua aplicação antes da publicação.
-- O cabeçalho e `public/favicon.svg` ainda usam símbolos provisórios. A aplicação da logo e a adaptação do favicon ocorrerão na entrega de marca.
+- Usar a logo oficial recebida, preservando sua composição e proporções. A versão JPEG fornecida está em `src/assets/images/brand/mcs-sollar-official.jpeg`; o Astro gera uma versão otimizada para o cabeçalho. O favicon é uma simplificação vetorial do símbolo, usando as cores aproximadas da marca.
+- Revisar a legibilidade da logo e a paleta nos tamanhos de tela suportados antes da publicação. O arquivo original continua sendo raster; não há versão vetorial ou transparente confirmada.
 - Fotografias ilustrativas devem ter licença adequada e legenda “Imagem ilustrativa”. Fotos de trabalhos reais só podem receber essa atribuição após validação; não inferir potência, localização, cliente ou quantidade de projetos.
 - Preservar originais fora do repositório. Publicar somente versões selecionadas e revisadas quanto a documentos, contatos, endereços, placas, identificadores, telas, pessoas e metadados. A revisão de vídeos inclui imagem e áudio.
 
 ## Conteúdo comercial e atendimento
 
-O site ainda usa os textos institucionais iniciais centralizados nos módulos de conteúdo. As propostas abaixo orientarão a entrega de conteúdo e serão revisadas antes da publicação; não representam credenciais ou resultados comerciais.
+Os textos comerciais abaixo foram aplicados como proposta editorial e devem ser revisados antes da publicação. Não representam credenciais ou resultados comerciais.
 
-- **H1 proposto:** “Energia solar em Manaus para sua residência ou empresa”.
-- **Apresentação proposta:** “Projetos, instalações e manutenção de sistemas de energia solar. Conte seu consumo e as características do imóvel à MCS Sollar para solicitar um orçamento personalizado.”
-- **Ação do Hero:** “Solicitar orçamento” como CTA único da seção.
-- **Serviços e Sobre:** explicar a finalidade dos três serviços e a atuação residencial e comercial, sem adicionar procedimentos ou especialidades não confirmados.
-- **FAQ:** ampliar as duas perguntas atuais com informações necessárias ao orçamento, público atendido e relação entre orçamento e características do imóvel. Respostas serão revisadas; financiamento, garantias e condições específicas continuam TBD.
+- **H1 atual:** “Energia solar para sua residência ou empresa”; o eyebrow do Hero informa “Manaus, AM”.
+- **Apresentação atual:** “A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.”
+- **Ação principal do Hero:** “Solicitar orçamento”; a ação secundária leva à seção de serviços. Há apenas um CTA de WhatsApp no grupo visual.
+- **Serviços e Sobre:** descrevem projetos, instalações, manutenção e atendimento residencial/comercial, sem adicionar procedimentos ou especialidades não confirmados.
+- **FAQ atual:** informa quais dados enviar para orçamento, o atendimento residencial e empresarial em Manaus e os fatores considerados na proposta. Financiamento, garantias e condições técnicas específicas continuam TBD e não são mencionados.
 
-Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A entrega de atendimento explicará como informar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
+Para iniciar o orçamento, a equipe solicita: consumo mensal em **kWh** ou valor aproximado da conta; tipo de telhado; e localização do imóvel. A seção de Atendimento orienta o visitante a compartilhar esses dados e conversar com a equipe sobre a elaboração da proposta. Não garantir prazo, visita técnica ou proposta automática.
 
 ## Informações públicas e internas
 
@@ -110,7 +109,7 @@ Sem backend, autenticação, banco de dados ou CMS. A página implementada inclu
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Evoluir conteúdo, marca e trabalhos reais em entregas revisadas, preservando SEO local, acessibilidade e desempenho. Mídias reais dependem de curadoria e autorização; conteúdo ainda não aplicado deve permanecer identificado como planejado.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Conteúdo comercial inicial e identidade visual foram aplicados em entregas separadas; trabalhos reais dependem de curadoria e autorização. Preservar SEO local, acessibilidade e desempenho.
 
 ## Fora do escopo
 
@@ -118,7 +117,7 @@ Portal do cliente, login, administração, CMS, banco de dados, formulários de 
 
 ## Pendências
 
-- **Antes de publicar:** aplicar e revisar a logo oficial e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
+- **Antes de publicar:** revisar a aplicação responsiva da logo e os novos textos; testar o WhatsApp e a mensagem; definir o endereço público, a hospedagem e a configuração de SEO de publicação.
 - **Mídias:** confirmar a seleção de fotos, autoria, autorização e informações de cada trabalho após revisão de privacidade. Vídeos serão uma entrega posterior, condicionada à revisão de imagem e áudio.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
 - **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.

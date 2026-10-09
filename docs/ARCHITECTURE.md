@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a aplicação da logo oficial segue planejada. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial e a paleta derivada foram aplicadas na etapa 2A. Domínio, hospedagem e SEO de publicação seguem TBD. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -46,7 +46,7 @@ Usar nomes de arquivo em kebab-case, conforme AGENTS.md. Os metadados atuais fic
 
 Um componente reutilizável de link de WhatsApp recebe a intenção de contato ou orçamento e usa o número centralizado. O utilitário de composição codifica a mensagem com `encodeURIComponent` durante o build; o resultado é um link HTML normal. Não duplicar telefone ou textos comerciais nos componentes.
 
-Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento será texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
+Preservar as intenções existentes `contact` e `quote`. O Hero e o contato final exibem uma única ação de orçamento; contato geral permanece em seções distintas. Não colocar os dois links de WhatsApp lado a lado no mesmo grupo visual. A mensagem estruturada de orçamento é texto estático nos dados locais, sem formulário, interpolação de dados do visitante ou script no navegador. Não ampliar a interface do utilitário sem uma necessidade aprovada.
 
 `instagram-link.astro` usa o perfil centralizado em `business.ts`, com variantes de cabeçalho e rodapé, ícone SVG decorativo e rótulo acessível. O link abre na mesma aba; não há feed, SDK, rastreamento nem recursos carregados do Instagram durante a visita ao site.
 
@@ -85,13 +85,13 @@ Fatos já fornecidos, que devem ser preservados:
 | Localidade atendida | Manaus, AM |
 | Serviços | Projetos, instalações e manutenção em energia solar |
 | Público inicial | Residências e empresas em Manaus |
-| Conversão principal aprovada | Solicitar orçamento pelo WhatsApp; aplicação visual planejada |
+| Conversão principal aprovada | Solicitar orçamento pelo WhatsApp; um único CTA por grupo visual no Hero e no contato final |
 | WhatsApp | +55 92 99996-0878 |
 | Número para link | `5592999960878` |
 | Mensagem de orçamento | “Olá! Gostaria de solicitar um orçamento de energia solar.” |
 | Instagram | [@mcssollar](https://www.instagram.com/mcssollar/) |
 | Informações iniciais para orçamento | Consumo mensal em kWh ou valor aproximado da conta, tipo de telhado e localização do imóvel |
-| Referência oficial da marca | `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, recebida no acervo local |
+| Referência/asset oficial da marca | `src/assets/images/brand/mcs-sollar-official.jpeg`, JPEG recebido e armazenado sem alterações |
 
 Informações pendentes:
 
@@ -105,15 +105,15 @@ Informações pendentes:
 | Anos de atuação, estatísticas e certificações | TBD |
 | Garantias, financiamento e outras condições comerciais | TBD; preços não serão divulgados |
 | Identificação dos trabalhos, autoria, autorização e depoimentos | TBD; acervo recebido, ainda não validado para publicação |
-| Revisão dos novos textos e da aplicação da logo oficial | TBD |
+| Revisão final dos novos textos e da aplicação responsiva da logo | TBD |
 
 Registrar pendências como **TBD** na documentação. Nos futuros dados, representar campos opcionais não resolvidos como ausentes; não renderizar o texto “TBD”, inventar valores nem incluir pendências em dados estruturados. Conteúdo obrigatório ainda não aprovado impede a publicação daquele conteúdo.
 
 ## 6. Organização de assets
 
-Os arquivos em `docs/references/` são referências históricas, não assets finais de produção. A logo oficial recebida é um JPEG de 911 × 456 px, ainda fora do repositório; aplicar a composição aprovada preservando proporções. Não reutilizar o anúncio inteiro nem outras variantes como logo.
+Os arquivos em `docs/references/` são referências históricas, não assets finais de produção. A logo oficial recebida é um JPEG de 911 × 456 px armazenado em `src/assets/images/brand/mcs-sollar-official.jpeg`. O componente do cabeçalho usa `astro:assets` para gerar uma imagem WebP responsiva, mantendo a proporção e a composição completa. O original permanece sem modificação. Não reutilizar o anúncio inteiro nem outras variantes como logo.
 
-O cabeçalho e `public/favicon.svg` ainda usam símbolos provisórios. Na entrega de marca, aplicar a logo recebida e alinhar os tokens e o favicon ao azul-marinho, dourado e creme definidos como referência na SPEC. Os valores derivados do JPEG são aproximações, não um manual vetorial da marca; validar contraste e legibilidade na aplicação.
+O cabeçalho exibe a composição oficial da logo. `public/favicon.svg` mantém um símbolo simplificado para leitura em tamanho pequeno. Os tokens `brand-navy`, `brand-gold` e `brand-cream` usam valores aproximados amostrados do JPEG, não um manual vetorial da marca. O dourado é decorativo e não deve ser usado para texto essencial, foco ou marcadores interativos sobre creme; validar a legibilidade da logo em larguras de celular e desktop.
 
 Importar fotografias locais de `src/assets/` para processamento com as ferramentas de imagem do Astro. Gerar tamanhos responsivos, formatos eficientes e dimensões explícitas. Usar `public/` apenas para arquivos que precisam permanecer inalterados. SVGs podem ser usados para marca e ícones após revisão.
 
@@ -169,7 +169,7 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | --- | --- |
 | Conteúdo, layout, serviços e imagens | HTML/CSS gerados no build |
 | Links de navegação, WhatsApp e Instagram | Âncoras HTML estáticas |
-| Orientações e mensagem de orçamento estruturada | Evolução planejada; texto e links gerados no build, sem formulário |
+| Orientações e mensagem de orçamento estruturada | HTML e link de WhatsApp gerados no build; sem formulário |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
 | Título, descrição e metadados sociais básicos | Saída estática implementada |
 | Canonical, sitemap, robots e JSON-LD | Preparação da publicação; saída estática futura |
@@ -181,8 +181,8 @@ Preparar o conteúdo para Google Ads não autoriza instalar GA4, GTM, pixels ou 
 
 ## Riscos e verificações futuras
 
-- **Marca recebida:** a referência oficial é um JPEG; revisar sua aplicação e legibilidade antes da publicação.
-- **Contraste:** verificar as combinações reais, especialmente o acento laranja atual e o dourado planejado; manter foco e marcadores interativos com contraste suficiente.
+- **Marca recebida:** a logo oficial é um JPEG; revisar sua legibilidade em tamanhos móveis e desktop antes da publicação.
+- **Contraste:** o dourado aproximado da imagem não tem contraste suficiente sobre creme para texto funcional; foco e marcadores usam navy.
 - **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
 - **Origem de produção:** TBD impede finalizar canonical, sitemap e compartilhamento para lançamento.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.

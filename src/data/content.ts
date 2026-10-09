@@ -4,7 +4,7 @@ export const pageContent = {
   seo: {
     title: `${business.name} | Energia Solar em Manaus`,
     description:
-      "Projetos, instalações e manutenção em energia solar em Manaus. Converse com a MCS Sollar pelo WhatsApp.",
+      "Projetos, instalações e manutenção de energia solar para residências e empresas em Manaus. Solicite um orçamento personalizado à MCS Sollar pelo WhatsApp.",
   },
   navigation: [
     { label: "Início", href: "#inicio" },
@@ -15,43 +15,73 @@ export const pageContent = {
     { label: "Contato", href: "#contato" },
   ],
   hero: {
-    title: "Energia solar em Manaus",
+    title: "Energia solar para sua residência ou empresa",
     description:
-      "Projetos, instalações e manutenção em energia solar. Converse com a MCS Sollar e solicite um orçamento para sua necessidade.",
-    contactLabel: "Fale pelo WhatsApp",
+      "A MCS Sollar oferece projetos, instalações e manutenção de sistemas fotovoltaicos para residências e empresas em Manaus. O orçamento considera o consumo de energia e as características de cada imóvel.",
     quotationLabel: "Solicitar orçamento",
+    servicesLabel: "Conhecer nossos serviços",
   },
+  servicesDescription:
+    "Soluções em energia solar para residências e empresas em Manaus.",
   services: [
     {
       title: business.services[0],
-      description: "Precisa de um projeto de energia solar? Fale com a MCS Sollar sobre sua necessidade.",
+      description:
+        "Projetos de sistemas fotovoltaicos considerando o consumo de energia e as características do imóvel.",
     },
     {
       title: business.services[1],
-      description: "Solicite um orçamento para instalação de energia solar em Manaus.",
+      description:
+        "Instalação de sistemas de energia solar para residências e empresas em Manaus.",
     },
     {
       title: business.services[2],
-      description: "Entre em contato para consultar os serviços de manutenção em energia solar.",
+      description:
+        "Manutenção de sistemas fotovoltaicos para residências e empresas.",
     },
   ],
   service: {
-    title: "Como solicitar atendimento",
-    description: "Abra uma conversa no WhatsApp e conte qual serviço procura.",
+    title: "Como solicitar um orçamento",
+    description:
+      "Reúna algumas informações sobre o consumo e o imóvel para iniciar a conversa com a equipe da MCS Sollar.",
+    steps: [
+      {
+        title: "Informe o consumo",
+        description:
+          "Conte o consumo mensal em kWh ou o valor aproximado da conta de energia.",
+      },
+      {
+        title: "Descreva o imóvel",
+        description:
+          "Informe o tipo de telhado e a localização onde seria feita a instalação.",
+      },
+      {
+        title: "Converse com a equipe",
+        description:
+          "Com essas informações, a equipe poderá orientar os próximos passos para elaborar o orçamento.",
+      },
+    ],
   },
   about: {
     title: "Sobre a MCS Sollar",
     description:
-      "A MCS Sollar oferece projetos, instalações e manutenção em energia solar em Manaus. Entre em contato pelo WhatsApp para conhecer os serviços e solicitar um orçamento.",
+      "A MCS Sollar atende residências e empresas em Manaus com projetos, instalações e manutenção em energia solar. Cada solicitação de orçamento considera o consumo de energia e as características do imóvel.",
   },
   faq: [
     {
-      question: "Como solicitar um orçamento?",
-      answer: "Use o botão Solicitar orçamento para conversar pelo WhatsApp.",
+      question: "Quais informações preciso enviar para pedir um orçamento?",
+      answer:
+        "Informe o consumo mensal em kWh ou o valor aproximado da conta de energia, o tipo de telhado e a localização do imóvel. A equipe poderá solicitar outras informações conforme a necessidade.",
     },
     {
-      question: "Quais serviços são oferecidos?",
-      answer: "Projetos, instalações e manutenção em energia solar.",
+      question: "A MCS Sollar atende residências e empresas?",
+      answer:
+        "Sim. O atendimento informado pela MCS Sollar inclui residências e empresas em Manaus, com projetos, instalações e manutenção de sistemas fotovoltaicos.",
+    },
+    {
+      question: "O que é considerado na elaboração do orçamento?",
+      answer:
+        "O consumo de energia e as características do imóvel. A equipe pode pedir informações adicionais conforme a necessidade de cada solicitação.",
     },
   ],
   contact: {
