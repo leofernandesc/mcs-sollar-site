@@ -12,8 +12,8 @@ Evoluir a homepage existente para apresentar melhor os serviços, demonstrar tra
 - Astro, Tailwind CSS, TypeScript onde útil, npm, uma homepage e componentes estáticos. Sem backend, banco de dados, CMS, autenticação ou JavaScript de aplicação no cliente.
 - Público inicial: residências e empresas em Manaus, AM. Serviços: projetos, instalações e manutenção em energia solar.
 - Conversão principal aprovada: solicitar orçamento pelo WhatsApp. Contato geral é secundário; Instagram continua um canal secundário já implementado.
-- O código mantém textos e marca provisórios da primeira versão. A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final; as próximas entregas atualizarão os textos e a marca.
-- Logo oficial: `WhatsApp Image 2026-10-08 at 22.38.08.jpeg`, no acervo local, com sol e painéis, azul-marinho, dourado e creme.
+- A hierarquia do orçamento como ação principal já foi aplicada no Hero e no CTA final. A logo oficial e a paleta extraída foram integradas na etapa 2A; a revisão dos textos continua na etapa 2B.
+- Logo oficial: `src/assets/images/brand/mcs-sollar-official.jpeg`, cópia sem alterações do JPEG recebido, com sol e painéis, azul-marinho, dourado e creme.
 - Acervo recebido: 43 imagens e 9 vídeos, além de um arquivo ZIP. Disponibilidade não comprova autoria, autorização ou dados de um projeto; a seleção será validada pelo responsável.
 - Domínio, hospedagem e configuração de publicação: TBD na documentação do projeto. Não presumir produção a partir do preview ou do GitHub.
 
@@ -24,8 +24,8 @@ Executar uma entrega por vez, com revisão entre etapas. A etapa 1 é documental
 | Etapa | Entrega | Condição de conclusão |
 | --- | --- | --- |
 | 0 — Auditoria | Inspecionar implementação, documentação, Git e acervo; identificar divergências. Auditoria estrutural concluída. | Baseline identificado e build aprovado; revisão visual de novas mudanças ocorrerá em cada entrega. |
-| 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Esta entrega. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
-| 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. | Legibilidade, proporções, contraste e foco aprovados em celular e desktop. |
+| 1 — Especificações | Registrar público, conversões, atendimento, marca e regras de privacidade; manter informações internas fora do Git. Concluída na branch de planejamento. | SPEC, ARCHITECTURE e este roteiro coerentes, com mudanças planejadas explicitamente identificadas. |
+| 2A — Marca oficial | Aplicar a logo confirmada; alinhar tokens e favicon, preservando tipografia e linguagem editorial. Aplicação implementada; revisão visual final depende da validação do preview. | Legibilidade, proporções, contraste e foco revisados em celular e desktop. |
 | 2B — Conteúdo comercial | Revisar Hero, Serviços e Sobre; destacar Manaus, público e orçamento personalizado. | Serviço, público, localização e próximo passo claros; textos revisados antes da publicação. |
 | 3 — Atendimento | Explicar as informações necessárias e aplicar a prioridade de orçamento aos CTAs e à mensagem de WhatsApp. | Solicitação simples, link correto e mensagem útil, sem formulário ou promessa de prazo. |
 | 4A — Curadoria | Selecionar fotos, revisar privacidade e apresentar candidatos ao responsável. Pode ocorrer após a etapa 1, em entrega independente. | Autoria, autorização e informações dos trabalhos confirmadas para a seleção. |
@@ -76,9 +76,9 @@ O FAQ poderá responder quais informações enviar, público atendido, região c
 
 Usar a logo oficial recebida, preservando sua composição. O arquivo disponível é um JPEG de 911 × 456 px; não presumir arquivo vetorial ou transparência.
 
-Na etapa 2A, aproximar os tokens do JPEG: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7`; manter texto escuro `#172A34`. São referências extraídas da imagem, não valores de um manual oficial de marca. A paleta atualmente implementada continua até essa entrega.
+Na etapa 2A, aproximar os tokens do JPEG: azul-marinho `#1F3D55`, dourado `#D9A945`, creme `#F7EAD7`; manter texto escuro `#172A34`. São referências extraídas da imagem, não valores de um manual oficial de marca. Essa paleta já está aplicada.
 
-Azul-marinho com branco oferece contraste aproximado de 11,31:1; dourado com creme, 1,82:1. Restringir dourado a acentos adequados: não usar para texto essencial, foco ou marcadores interativos sobre creme. Revisar a aplicação da logo, navegação e favicon sem redesenhar a página. Excluir outras variantes de marca e peças incompatíveis da identidade.
+Azul-marinho com branco oferece contraste aproximado de 11,31:1; dourado com creme, 1,82:1. Restringir dourado a acentos adequados: não usar para texto essencial, foco ou marcadores interativos sobre creme. A aplicação usa a logo completa no cabeçalho e um símbolo simplificado no favicon, sem redesenhar a página. Excluir outras variantes de marca e peças incompatíveis da identidade.
 
 ## Curadoria e privacidade das mídias
 
