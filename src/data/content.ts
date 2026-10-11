@@ -30,7 +30,7 @@ export const pageContent = {
     {
       title: business.services[0],
       description:
-        "Projetos de sistemas fotovoltaicos considerando o consumo de energia e as características do imóvel.",
+        "Projetos fotovoltaicos conforme consumo e características do imóvel.",
       imageAlt:
         "Visualização tridimensional de uma cobertura com módulos fotovoltaicos.",
       imageCaption:
