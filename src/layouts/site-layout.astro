@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { business } from "../data/business";
 
 interface Props {
   title: string;
@@ -7,7 +8,14 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://mcssollar.com.br");
+const siteUrl = new URL("/", Astro.site ?? "https://mcssollar.com.br").href;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: business.name,
+  url: siteUrl,
+};
 ---
 
 <!doctype html>
@@ -19,15 +27,23 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://mcssolla
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl.href} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
     <meta name="theme-color" content="#F7EAD7" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
     <meta property="og:url" content={canonicalUrl.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta name="twitter:card" content="summary" />
     <title>{title}</title>
+    {Astro.url.pathname === "/" && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(websiteStructuredData)}
+      />
+    )}
   </head>
   <body class="min-h-screen bg-brand-cream font-sans text-ink antialiased">
     <a class="skip-link" href="#main-content">Pular para o conteúdo</a>

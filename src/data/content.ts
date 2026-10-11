@@ -2,9 +2,9 @@ import { business } from "./business";
 
 export const pageContent = {
   seo: {
-    title: `${business.name} | Energia Solar em Manaus`,
+    title: `Energia Solar em ${business.city} | ${business.name}`,
     description:
-      "Projetos, instalações e manutenção de energia solar para residências e empresas em Manaus. Solicite um orçamento personalizado à MCS Sollar pelo WhatsApp.",
+      `Projetos, instalações e manutenção de sistemas de energia solar para residências e empresas em ${business.city}. Solicite seu orçamento.`,
   },
   navigation: [
     { label: "Início", href: "#inicio" },

@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
   <!-- Simplified favicon mark adapted from the confirmed MCS Sollar logo. -->
+  <rect width="64" height="64" fill="#F7EAD7" />
   <g fill="none" stroke="#D9A945" stroke-linecap="round" stroke-width="4">
     <path d="M32 4v8M14 11l5 7M7 26h9M57 26h-9M50 11l-5 7" />
   </g>
