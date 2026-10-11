@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { business } from "../data/business";
+import ConsentManager from "../components/ui/consent-manager.astro";
 
 interface Props {
   title: string;
@@ -48,5 +49,6 @@ const websiteStructuredData = {
   <body class="min-h-screen bg-brand-cream font-sans text-ink antialiased">
     <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
     <slot />
+    <ConsentManager />
   </body>
 </html>

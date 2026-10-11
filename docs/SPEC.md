@@ -1,6 +1,6 @@
 # Especificação do Produto — MCS Sollar, V1
 
-Status: página institucional V1 implementada em português brasileiro (`pt-BR`). A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem no Hero, junto aos serviços e na seção Sobre; em Sobre, o texto fica à esquerda e duas imagens ficam à direita no desktop. A foto da fachada comercial e a captura do aplicativo de monitoramento não aparecem na interface. Não há seção separada de trabalhos nem vídeo publicado. O endereço atual do Cloudflare Pages é apenas provisório; domínio próprio continua TBD.
+Status: página institucional V1 implementada em português brasileiro (`pt-BR`), com saída estática configurada para `https://mcssollar.com.br/` e hospedagem informada HostGator/cPanel. A evolução comercial aprovada está registrada em [MARKETING-PLAN.md](MARKETING-PLAN.md). A identidade visual e a proposta de conteúdo da etapa 2B estão aplicadas; a frase do Hero foi aprovada, com redução de escala solicitada. Fotos selecionadas aparecem no Hero, junto aos serviços e na seção Sobre; em Sobre, o texto fica à esquerda e duas imagens ficam à direita no desktop. A foto da fachada comercial e a captura do aplicativo de monitoramento não aparecem na interface. O vídeo autorizado está na coluna Projetos; não há galeria separada. A integração GA4 usa consentimento explícito e ainda não foi publicada; as pendências de privacidade estão registradas na minuta interna.
 
 ## Objetivo do projeto
 
@@ -32,7 +32,7 @@ Página única, com navegação por seções:
 6. **Perguntas frequentes:** dúvidas sobre serviços e solicitação de orçamento.
 7. **Contato e rodapé:** WhatsApp, Manaus e identificação da empresa; Instagram no rodapé.
 
-Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne dois registros: instalação de inversor e placa de alerta. A foto da fachada comercial e a captura do aplicativo de monitoramento não aparecem na interface. A placa não indica conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto dos painéis usada no Hero não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos. Vídeos não são publicados nesta versão.
+Imagens ilustrativas devem ser identificadas. As fotos usadas no Hero, nos serviços e em Sobre foram indicadas pelo responsável e publicadas sem metadados. Sobre reúne dois registros: instalação de inversor e placa de alerta. A foto da fachada comercial e a captura do aplicativo de monitoramento não aparecem na interface. A placa não indica conformidade ou certificação; marcas manuscritas na parede foram removidas do derivado. A foto do alicate usa o JPEG original aprovado, mantendo o quadro completo e o visor legível como registrado, sem reconstruir ou alterar a leitura. A foto dos painéis usada no Hero não mostra a numeração da casa vizinha nem uma pessoa que aparecia na borda. O vídeo autorizado está na coluna Projetos, sem áudio e sem autoplay. Não associar as mídias a endereço, cliente, potência ou localização específica. Endereço, horários e outros contatos ficam ausentes até serem fornecidos.
 
 ## Identidade visual e imagens
 
@@ -75,7 +75,7 @@ Não acrescentar anos de atuação, certificações, quantidade de projetos ou g
 - Ações de contato visíveis; eventual botão flutuante não deve cobrir conteúdo ou controles.
 - Conteúdo essencial disponível sem JavaScript; scripts apenas para melhorias necessárias.
 - Orientações de orçamento e mensagens de WhatsApp estáticas, sem formulário de pré-qualificação, envio ou armazenamento de dados no site.
-- Sem tags de mensuração, pixels ou embeds externos em V1. Links simples para os canais confirmados permanecem permitidos.
+- GA4 com Consent Mode v2 básico só é carregado após consentimento analítico explícito; recusa e revogação bloqueiam novas medições. Se houver revogação depois que o tag foi carregado, a página restringe conexões analíticas por CSP e é recarregada para descartar hits adiados. Todos os sinais publicitários começam negados e permanecem negados. GTM, pixels, remarketing e personalização de anúncios ficam desativados.
 
 ## Requisitos não funcionais
 
@@ -83,10 +83,10 @@ Layout com prioridade para celular, sem rolagem horizontal a partir de 320 px; i
 
 ## SEO local
 
-- Título proposto: “MCS Sollar | Energia Solar em Manaus”. Descrição baseada nos três serviços confirmados.
+- Título implementado: “Energia Solar em Manaus | MCS Sollar”. A descrição apresenta projetos, instalações e manutenção para residências e empresas em Manaus.
 - Um H1, hierarquia lógica, HTML semântico e conteúdo útil em português com foco em Manaus.
 - Nome e telefone consistentes; não inventar endereço nem criar páginas artificiais de localidades.
-- O preview `mcs-sollar-site.pages.dev` deve permanecer com `noindex` enquanto for provisório; `robots.txt` permite rastreamento para que os buscadores leiam a diretiva. URL canônica, sitemap e indexação pública aguardam a conexão do domínio próprio.
+- A URL canônica da home é `https://mcssollar.com.br/`; a home permite indexação e o sitemap/robots apontam para o domínio de produção. JSON-LD `WebSite`, Open Graph e favicons usam a identidade MCS Sollar. O gerenciador de consentimento preserva esses metadados.
 - Dados estruturados compatíveis com as informações reais disponíveis, sem endereço ou avaliações fictícias.
 - Não prometer posições nos resultados de busca.
 
@@ -100,25 +100,26 @@ Meta Lighthouse mobile ≥ 90 em desempenho. Metas de Core Web Vitals: LCP ≤ 2
 
 ## Restrições técnicas
 
-Stack confirmada: **Astro**, **Tailwind CSS** e **TypeScript onde útil**, com saída exclusivamente estática. Preferir componentes Astro renderizados no build e evitar JavaScript desnecessário no cliente; a arquitetura inicial usa controles HTML nativos e não exige scripts de aplicação no navegador.
+Stack confirmada: **Astro**, **Tailwind CSS** e **TypeScript onde útil**, com saída exclusivamente estática. JavaScript no cliente fica limitado ao gerenciador de consentimento e à medição autorizada; sem consentimento, a tag GA4 não é solicitada. Não há backend, autenticação, banco de dados ou CMS.
 
 Sem backend, autenticação, banco de dados ou CMS. A página implementada inclui cabeçalho, apresentação, serviços, atendimento, sobre, FAQ, contato e rodapé. Atualizações de conteúdo ocorrem nos arquivos do projeto, sem painel administrativo. A organização técnica está descrita em [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Hospedagem
 
-**Preview atual:** [mcs-sollar-site.pages.dev](https://mcs-sollar-site.pages.dev/) no Cloudflare Pages, endereço provisório. O domínio próprio e a URL definitiva permanecem TBD. Manter a arquitetura de produção independente de fornecedor, com arquivos estáticos em `dist/`, sem adaptador ou runtime específico. O preview deve usar `noindex`; remover essa diretiva e configurar canonical, sitemap e indexação quando o domínio final estiver conectado. Substituir o site antigo requer confirmação da infraestrutura e autorização própria; ele não é fonte de conteúdo ou design.
+**Produção configurada:** `https://mcssollar.com.br/`, com saída estática Astro em `dist/` para HostGator/cPanel. O servidor não exige Node.js. O código não altera hospedagem, DNS nem arquivos publicados.
 
 ## Escopo da V1
 
-Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento personalizado pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos reais selecionadas no Hero e nos três blocos de serviço; Sobre contém duas fotos autorizadas. Não publica foto da fachada, captura de aplicativo nem vídeo. Preservar SEO local, acessibilidade e desempenho.
+Uma página institucional em português, serviços confirmados para residências e empresas em Manaus, orçamento pelo WhatsApp, contato geral secundário e Instagram. Inclui fotos aprovadas, o vídeo sem áudio na coluna Projetos, SEO local, acessibilidade e desempenho. A integração GA4 adiciona medição somente após consentimento, sem interferir nos contatos ou no vídeo.
 
 ## Fora do escopo
 
-Portal do cliente, login, administração, CMS, banco de dados, formulários de pré-qualificação ou envio, CRM, pagamentos, agendamento, cálculo de economia, orçamento automático, chatbot, blog e múltiplos idiomas. Analytics, pixels, mapas incorporados, páginas adicionais para campanhas e demais integrações exigem avaliação e ampliação de escopo futuras. A preparação comercial para Google Ads não autoriza instalar tags nem criar campanhas.
+Portal do cliente, login, administração, CMS, banco de dados, formulários de pré-qualificação ou envio, CRM, pagamentos, agendamento, cálculo de economia, orçamento automático, chatbot, blog, múltiplos idiomas, pixels, mapas incorporados e páginas adicionais para campanhas. GA4 está autorizado apenas com consentimento analítico; tags de publicidade, GTM, remarketing e campanhas permanecem fora do escopo.
 
 ## Pendências
 
-- **Antes de publicar no domínio próprio:** revisar a aplicação responsiva da logo e os textos; testar WhatsApp e mensagem; conectar o domínio; remover `noindex`; configurar canonical, sitemap e metadados sociais definitivos.
-- **Mídias:** fotos selecionadas pelo responsável foram revisadas para publicação sem metadados. A imagem do alicate usa o original aprovado, com o visor legível e a leitura preservada exatamente como registrada; as imagens de Instalações e Manutenção mantêm o quadro completo. Marcas manuscritas foram removidas do derivado da placa. Sobre contém apenas o registro da instalação do inversor e a placa de sinalização; a foto da fachada comercial e a captura de monitoramento não aparecem na interface. A foto dos painéis usada no Hero omite a numeração vizinha e uma pessoa na borda. A placa aparece como registro visual, sem alegação de conformidade. Vídeos foram retirados do escopo atual.
+- **Antes de publicar a integração GA4:** aprovar a política de privacidade, completar os dados jurídicos do controlador, revisar o prazo de 180 dias da preferência, confirmar as configurações da conta GA4 e testar consentimento/revogação em produção de ensaio.
+- **Mídias:** usar somente fotos e vídeo aprovados. O vídeo da seção Projetos é silencioso, tem carregamento sob demanda e não usa autoplay.
 - **TBD comercial:** segmentos especializados, procedimentos técnicos adicionais, diferenciais comprovados, garantias, financiamento, credenciais, endereço, horários e outros contatos não fornecidos.
-- **Depois:** definir quem fará atualizações e avaliar mensuração com escopo e requisitos de privacidade próprios. Distinguir clique, conversa recebida, lead qualificado e venda.
+- **Privacidade:** o contato informado é `mcsparintins@gmail.com`. Razão social, CNPJ, endereço e aprovação do aviso continuam pendentes; não publicar a minuta que fica em `docs/`.
+- **Mensuração:** distinguir o clique de orçamento (`whatsapp_quote_click`) da medição automática de cliques externos; nenhum dos eventos comprova conversa recebida, lead qualificado ou venda.

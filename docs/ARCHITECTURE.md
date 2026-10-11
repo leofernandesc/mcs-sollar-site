@@ -1,6 +1,6 @@
 # Arquitetura Técnica — MCS Sollar, V1
 
-Status: página institucional V1 implementada conforme esta arquitetura. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Em Sobre, o texto fica à esquerda e duas fotos ficam à direita no desktop; em telas menores, conteúdo e imagens empilham. Não há galeria separada nem vídeo publicado. O Cloudflare Pages atual é um preview provisório; o domínio próprio segue TBD. As decisões técnicas abaixo permanecem vigentes.
+Status: página institucional V1 implementada conforme esta arquitetura, com saída estática para `https://mcssollar.com.br/` e hospedagem informada HostGator/cPanel. [SPEC.md](SPEC.md) registra a evolução comercial aprovada; [MARKETING-PLAN.md](MARKETING-PLAN.md) organiza as entregas. O orçamento tem um CTA único no Hero e no contato final; a logo oficial, a paleta derivada e fotos selecionadas estão aplicadas junto aos serviços e nas seções Hero/Sobre. Em Sobre, o texto fica à esquerda e duas fotos ficam à direita no desktop; em telas menores, conteúdo e imagens empilham. O vídeo autorizado está na coluna Projetos; não há galeria separada. A integração GA4 com consentimento explícito está no código; sua publicação depende das aprovações de privacidade pendentes. As decisões técnicas abaixo permanecem vigentes.
 
 ## 1. Stack escolhida e justificativa
 
@@ -122,7 +122,7 @@ Registrar origem, licença/autorização e condição ilustrativa de cada imagem
 
 O acervo bruto e os arquivos ZIP permanecem fora do Git e de `public/`. Antes da importação, revisar documentos, contatos, endereços, placas, identificadores, telas, pessoas, nomes de arquivos e metadados. Excluir documentos e capturas de aplicativos. Só incluir versões revisadas e autorizadas; descartar mídia cuja privacidade ou autoria não possa ser confirmada. Pranchas de curadoria com conteúdo privado também permanecem fora do repositório.
 
-As mídias aprovadas estão em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; `astro:assets` gera variantes responsivas em WebP. A imagem de Instalações usa o JPEG original aprovado, sem metadados, mantendo o visor nítido e a leitura exatamente como registrada, sem reconstrução ou alteração. As imagens de Instalações e Manutenção mantêm seus quadros completos. Marcas manuscritas acima da placa de alerta foram removidas do derivado. Sobre reúne duas imagens: instalação de inversor e placa de sinalização de risco elétrico. A placa é apenas um registro visual, sem alegação de conformidade ou certificação. A foto dos painéis usada no Hero exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação. Vídeos ficam fora da versão atual.
+As mídias aprovadas estão em `src/assets/images/hero/`, `src/assets/images/services/` e `src/assets/images/about/`; `astro:assets` gera variantes responsivas em WebP. A imagem de Instalações usa o JPEG original aprovado, sem metadados, mantendo o visor nítido e a leitura exatamente como registrada, sem reconstrução ou alteração. As imagens de Instalações e Manutenção mantêm seus quadros completos. Marcas manuscritas acima da placa de alerta foram removidas do derivado. Sobre reúne duas imagens: instalação de inversor e placa de sinalização de risco elétrico. A placa é apenas um registro visual, sem alegação de conformidade ou certificação. A foto dos painéis usada no Hero exclui a numeração da casa vizinha e uma pessoa na borda. O plano foi recebido como captura estática e não é extraído de um vídeo. O vídeo autorizado está na coluna Projetos, servido como arquivo estático, sem áudio, com controles e sem autoplay. Não deduzir detalhes técnicos nem associar imagens a clientes ou projetos específicos sem confirmação.
 
 ## 7. Estratégia responsiva
 
@@ -136,7 +136,7 @@ O cabeçalho usa navegação desktop a partir de 1024 px e mantém Instagram com
 
 Gerar título, descrição, metadados sociais e HTML semântico no build. Manter um H1, hierarquia coerente e textos úteis em pt-BR, com foco na localidade confirmada.
 
-**Preview público atual:** `https://mcs-sollar-site.pages.dev/`, provisório. O domínio próprio e a URL de produção seguem TBD. O layout aplica `noindex` ao preview e `public/robots.txt` permite que os buscadores rastreiem a página e leiam essa diretiva. Não incluir canonical ou sitemap apontados ao endereço provisório. Ao conectar o domínio final, remover `noindex`, definir `site` no Astro e atualizar canonical, sitemap, robots e metadados sociais. Fragmentos de seção não são páginas adicionais.
+**Produção configurada:** `https://mcssollar.com.br/`. O Astro usa essa origem para canonical, sitemap, Open Graph e JSON-LD `WebSite`; a home permite indexação. `public/robots.txt` permite rastreamento e aponta para o sitemap de produção. A hospedagem de produção informada é HostGator/cPanel com saída estática. Fragmentos de seção não são páginas adicionais.
 
 JSON-LD, quando incluído, será gerado no build e conterá somente fatos confirmados e visíveis. Não fabricar endereço para atender requisitos de um tipo de negócio local; omitir tipos/propriedades sem dados suficientes. A ausência de endereço pode limitar recursos de busca local, mas não impede a página institucional.
 
@@ -154,11 +154,11 @@ Não carregar JavaScript de aplicação por padrão. Compilar CSS, otimizar imag
 
 ## 11. Premissas de deployment
 
-**Preview atual:** Cloudflare Pages em `https://mcs-sollar-site.pages.dev/`. Esse endereço é provisório e não define a hospedagem de produção. A arquitetura continua independente de fornecedor. O build Astro produz `dist/`, publicável em qualquer serviço de arquivos estáticos com HTTPS. Node é necessário no ambiente de build, não como servidor de produção.
+**Hospedagem de produção:** HostGator/cPanel para `https://mcssollar.com.br/`. O build Astro produz `dist/` estático, sem Node.js no servidor; para publicação manual, os arquivos de `dist/` são enviados diretamente à raiz do domínio. O build não publica arquivos na hospedagem.
 
 Não exigir adaptador de hospedagem, SDK de fornecedor, funções serverless ou infraestrutura de backend. O destino deve servir a página de entrada e seus assets; não há necessidade de fallback de SPA. A premissa inicial é publicação na raiz; caso o destino exija subdiretório, configurar `base` e validar URLs antes do build de publicação.
 
-O scaffold registra faixa de Node compatível, instalação reproduzível por `package-lock.json` e comandos npm de desenvolvimento, build e preview. Domínio e configuração de produção devem ser definidos antes do lançamento. O preview permanece com `noindex`; remover essa diretiva na preparação para indexação do domínio próprio.
+O projeto registra faixa de Node compatível, instalação reproduzível por `package-lock.json` e comandos npm de desenvolvimento, build e preview. A produção usa o domínio próprio configurado em `astro.config.ts`. O código GA4 não altera DNS, hospedagem nem arquivos publicados; o envio do build continua sendo uma ação manual separada.
 
 Não presumir o estado de produção a partir do preview ou do GitHub. A substituição do site antigo depende de confirmação da infraestrutura, revisão do build, HTTPS, DNS e autorização de publicação própria. O site antigo não é fonte de conteúdo ou identidade; suas URLs poderão ser inspecionadas somente para preparar redirecionamentos relevantes.
 
@@ -170,23 +170,26 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | Links de navegação, WhatsApp e Instagram | Âncoras HTML estáticas |
 | Orientações e mensagem de orçamento estruturada | HTML e link de WhatsApp gerados no build; sem formulário |
 | Menu móvel e FAQ | `<details>/<summary>` nativos |
-| Título, descrição e metadados sociais básicos | Saída estática implementada |
-| Metadados básicos e `noindex` do preview | Saída estática no `site-layout.astro` |
-| Canonical, sitemap, regras de robots de produção e JSON-LD | Aguardam a definição do domínio e os dados confirmados; o `robots.txt` atual só permite rastreamento do preview |
-| Analytics, pixels e integrações | Fora da V1 |
+| SEO, canonical, Open Graph, robots, sitemap e JSON-LD `WebSite` | Saída estática para `https://mcssollar.com.br/` |
+| Favicon SVG e PNG de 96 × 96 | Incluídos na saída estática |
+| Consentimento e GA4 | Tag carregada somente após autorização analítica explícita; Consent Mode v2 inicia com quatro sinais negados |
+| Eventos GA4 | Page view automático pela configuração única; medição otimizada da conta para views, scrolls e cliques de saída; evento próprio somente para clique de orçamento |
+| Revogação | Após o tag já ter sido carregado, aplica `ga-disable`, atualiza o Consent Mode, limpa cookies GA acessíveis, restringe conexões externas do documento por CSP e recarrega a página para descartar hits adiados e o tag em memória |
+| Publicidade e remarketing | Google Signals, dados fornecidos por usuários e personalização de anúncios desativados; sem GTM, pixels ou remarketing |
 
-Nenhum JavaScript de aplicação no cliente é necessário na arquitetura inicial. Não adicionar hidratação com `client:*`, roteador de SPA ou framework de UI. Um script futuro só poderá atender uma interação documentada, com melhoria progressiva e conteúdo/contato utilizáveis sem ele; não faz parte desta entrega.
+JavaScript no cliente fica limitado ao gerenciador de consentimento e à medição autorizada. Sem consentimento, a tag externa não é solicitada e a navegação, o vídeo e os links continuam disponíveis. Não adicionar roteador SPA ou framework de UI.
 
-Preparar o conteúdo para Google Ads não autoriza instalar GA4, GTM, pixels ou outros scripts. Inicialmente, o acompanhamento comercial será manual e externo ao site. Uma futura proposta de mensuração deve distinguir clique, conversa, lead qualificado e venda, tratar privacidade e duplicidade e atualizar explicitamente o escopo antes de implementar tags. Páginas adicionais de campanha também continuam fora da V1.
+GA4 está autorizado nesta versão de código com Consent Mode v2 básico. A propriedade `mcssollar` está configurada, conforme informado para este trabalho, com retenção de eventos e usuários por dois meses e sem renovação por atividade; Google Signals, recolha de dados fornecidos por usuários e personalização de anúncios estão desativados. Personalização está desativada nas 307 regiões. A medição otimizada ativa visualizações, deslocamentos e cliques externos; pesquisa interna, formulários, vídeos e downloads estão desativados. A coleta detalhada de localização e dispositivo está ativada. O compartilhamento de dados está limitado a apoio técnico. GTM, pixels e remarketing permanecem fora do escopo. Essas definições da conta devem ser conferidas na propriedade GA4 antes da publicação.
 
 ## Riscos e verificações futuras
 
 - **Marca recebida:** a logo oficial é um JPEG; revisar sua legibilidade em tamanhos móveis e desktop antes da publicação.
 - **Contraste:** o dourado aproximado da imagem não tem contraste suficiente sobre creme para texto funcional; foco e marcadores usam navy.
 - **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
-- **Origem de produção:** TBD impede finalizar canonical, sitemap e compartilhamento para lançamento.
+- **Configuração da conta GA4:** confirmar na interface da propriedade os valores informados antes de publicar; o código não verifica configurações administrativas da conta.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.
 - **WhatsApp:** número confirmado não comprova disponibilidade da conta; testar destino e mensagem em dispositivos reais.
+- **Privacidade e analytics:** os dados jurídicos do controlador e a aprovação da política continuam pendentes. O contato informado é `mcsparintins@gmail.com`; o prazo de 180 dias para a preferência ainda requer aprovação. A minuta permanece em `docs/` e não possui rota pública no build local. Confirmar também registros da hospedagem e parâmetros da propriedade GA4.
 - **Mídias:** disponibilidade de um arquivo não comprova autoria ou autorização; aplicar curadoria, revisão de privacidade e confirmação antes de divulgar.
 - **Qualidade:** rodar `npm run check`, `npm run build` e verificações responsivas/de teclado após alterações. Auditorias automáticas devem ser complementadas por inspeção manual de contraste, conteúdo e interação.
 

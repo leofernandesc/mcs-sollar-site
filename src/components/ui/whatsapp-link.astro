@@ -23,6 +23,7 @@ const variantClasses = {
     variant === "floating" && "sm:hidden",
   ]}
   style={variant === "floating" ? "bottom: max(1rem, env(safe-area-inset-bottom));" : undefined}
+  data-analytics-event={intent === "quote" ? "whatsapp_quote_click" : undefined}
 >
   {label}
 </a>

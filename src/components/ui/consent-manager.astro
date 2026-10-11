@@ -1,0 +1,229 @@
+---
+---
+
+<section
+  aria-labelledby="consent-heading"
+  aria-describedby="consent-description"
+  class="fixed inset-x-3 bottom-3 z-[60] mx-auto max-h-[calc(100dvh-1.5rem)] max-w-3xl overflow-y-auto rounded-lg border border-brand-navy/20 bg-brand-cream p-4 shadow-xl sm:inset-x-6 sm:bottom-6 sm:p-6"
+  data-consent-panel
+  hidden
+>
+  <div data-consent-overview>
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h2 id="consent-heading" class="text-lg font-bold text-brand-navy">Sua privacidade importa</h2>
+        <p id="consent-description" class="mt-2 max-w-2xl text-sm leading-6 text-ink">
+          Usamos cookies opcionais para entender quantas pessoas visitam nosso site, quais páginas acessam e quais botões utilizam. Isso nos ajuda a melhorar sua experiência.
+        </p>
+        <p class="mt-2 max-w-2xl text-sm leading-6 text-ink">Você pode mudar sua escolha a qualquer momento.</p>
+      </div>
+      <button
+        class="shrink-0 rounded-md px-3 py-2 text-sm font-semibold text-brand-navy underline underline-offset-2 hover:bg-white/70"
+        data-consent-close
+        type="button"
+        hidden
+      >
+        Fechar
+      </button>
+    </div>
+
+    <div class="mt-4 grid grid-cols-2 gap-3 sm:max-w-md">
+      <button
+        class="min-h-11 rounded-md border border-brand-navy bg-brand-navy px-2 py-2 text-xs font-semibold text-white hover:bg-brand-navy/90 sm:px-4 sm:text-sm"
+        data-consent-reject
+        type="button"
+      >
+        Recusar
+      </button>
+      <button
+        class="min-h-11 rounded-md border border-brand-navy bg-brand-navy px-2 py-2 text-xs font-semibold text-white hover:bg-brand-navy/90 sm:px-4 sm:text-sm"
+        data-consent-accept
+        type="button"
+      >
+        Aceitar
+      </button>
+    </div>
+
+    <button
+      class="mt-3 min-h-11 rounded-md px-2 text-sm font-semibold text-brand-navy underline underline-offset-2 hover:bg-white/70"
+      data-consent-manage
+      type="button"
+    >
+      Personalizar preferências
+    </button>
+  </div>
+
+  <div data-consent-settings hidden>
+    <h2 id="consent-settings-heading" class="text-lg font-bold text-brand-navy">Preferências de privacidade</h2>
+    <p id="consent-settings-description" class="mt-2 text-sm leading-6 text-ink">
+      Você escolhe se permite o uso de cookies para medir visitas, páginas acessadas e cliques nos botões do site. Pode mudar essa escolha quando quiser.
+    </p>
+    <label class="mt-4 flex min-h-11 cursor-pointer items-center gap-3 rounded-md border border-brand-navy/20 bg-white/60 px-3 py-2 text-sm font-medium text-ink">
+      <input class="size-5 accent-brand-navy" data-consent-analytics type="checkbox" />
+      Permitir cookies de análise
+    </label>
+    <div class="mt-4 flex flex-wrap gap-3">
+      <button
+        class="min-h-11 rounded-md border border-brand-navy bg-brand-navy px-4 py-2 text-sm font-semibold text-white hover:bg-brand-navy/90"
+        data-consent-save
+        type="button"
+      >
+        Salvar preferências
+      </button>
+      <button
+        class="min-h-11 rounded-md border border-brand-navy px-4 py-2 text-sm font-semibold text-brand-navy hover:bg-white/70"
+        data-consent-cancel
+        type="button"
+      >
+        Voltar
+      </button>
+    </div>
+    <p
+      class="mt-3 rounded-md border border-brand-navy/20 bg-white/70 p-3 text-sm leading-6 text-brand-navy"
+      data-consent-reload-status
+      role="status"
+      aria-live="polite"
+      tabindex="-1"
+      hidden
+    >
+      A página será atualizada para aplicar sua escolha.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { createAnalyticsConsent } from "../../utils/analytics-consent.js";
+
+  const consent = createAnalyticsConsent();
+  const initialChoice = consent.initialize();
+  const panel = document.querySelector("[data-consent-panel]") as HTMLElement | null;
+  const overview = document.querySelector("[data-consent-overview]") as HTMLElement | null;
+  const settings = document.querySelector("[data-consent-settings]") as HTMLElement | null;
+  const analyticsCheckbox = document.querySelector("[data-consent-analytics]") as HTMLInputElement | null;
+  const closeButton = document.querySelector("[data-consent-close]") as HTMLButtonElement | null;
+  const reloadStatus = document.querySelector("[data-consent-reload-status]") as HTMLParagraphElement | null;
+
+  if (panel && overview && settings && analyticsCheckbox && closeButton && reloadStatus) {
+    const consentPanel = panel;
+    const consentOverview = overview;
+    const consentSettings = settings;
+    const analyticsInput = analyticsCheckbox;
+    const consentCloseButton = closeButton;
+    const consentReloadStatus = reloadStatus;
+    const mainContent = document.querySelector("#main-content") as HTMLElement | null;
+    let returnFocusTarget: HTMLElement | null = null;
+    let reloadPending = false;
+
+    consentPanel.hidden = initialChoice.hasSavedChoice;
+    consentCloseButton.hidden = !initialChoice.hasSavedChoice;
+
+    function openPanel(showSettings = false, trigger?: HTMLElement) {
+      if (trigger && !consentPanel.contains(trigger)) {
+        returnFocusTarget = trigger;
+      }
+      consentPanel.hidden = false;
+      consentOverview.hidden = showSettings;
+      consentSettings.hidden = !showSettings;
+      consentPanel.setAttribute("aria-labelledby", showSettings ? "consent-settings-heading" : "consent-heading");
+      consentPanel.setAttribute(
+        "aria-describedby",
+        showSettings ? "consent-settings-description" : "consent-description",
+      );
+      consentCloseButton.hidden = !consent.hasSavedChoice();
+      analyticsInput.checked = consent.getChoice() === "granted";
+
+      requestAnimationFrame(() => {
+        const focusTarget = showSettings
+          ? analyticsInput
+          : consentOverview.querySelector<HTMLElement>("[data-consent-accept]");
+        focusTarget?.focus({ preventScroll: true });
+      });
+    }
+
+    function closePanel() {
+      consentPanel.hidden = true;
+      consentOverview.hidden = false;
+      consentSettings.hidden = true;
+      consentPanel.setAttribute("aria-labelledby", "consent-heading");
+      consentPanel.setAttribute("aria-describedby", "consent-description");
+      const focusTarget =
+        returnFocusTarget?.isConnected && !consentPanel.contains(returnFocusTarget)
+          ? returnFocusTarget
+          : mainContent;
+      returnFocusTarget = null;
+      focusTarget?.focus({ preventScroll: true });
+    }
+
+    function saveChoice(choice: "granted" | "denied") {
+      const result = consent.setChoice(choice);
+      consentCloseButton.hidden = false;
+
+      if (result.reloadRequired) {
+        reloadPending = true;
+        consentPanel.hidden = false;
+        consentOverview.hidden = true;
+        consentSettings.hidden = false;
+        consentReloadStatus.hidden = false;
+        analyticsInput.disabled = true;
+        consentSettings.querySelectorAll<HTMLButtonElement>("button").forEach((button) => {
+          button.disabled = true;
+        });
+        consentReloadStatus.focus({ preventScroll: true });
+        window.setTimeout(() => window.location.reload(), 2000);
+        return;
+      }
+
+      closePanel();
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (reloadPending) return;
+
+      if (target.closest("[data-consent-accept]")) {
+        saveChoice("granted");
+        return;
+      }
+
+      if (target.closest("[data-consent-reject]")) {
+        saveChoice("denied");
+        return;
+      }
+
+      if (target.closest("[data-consent-manage]")) {
+        openPanel(true);
+        return;
+      }
+
+      if (target.closest("[data-consent-save]")) {
+        saveChoice(analyticsInput.checked ? "granted" : "denied");
+        return;
+      }
+
+      if (target.closest("[data-consent-cancel]")) {
+        if (consent.hasSavedChoice()) {
+          closePanel();
+        } else {
+          openPanel(false);
+        }
+        return;
+      }
+
+      if (target.closest("[data-consent-close]")) {
+        closePanel();
+        return;
+      }
+
+      if (target.closest("[data-open-consent-settings]")) {
+        event.preventDefault();
+        openPanel(true, target.closest("[data-open-consent-settings]") as HTMLElement);
+        return;
+      }
+
+      if (target.closest('[data-analytics-event="whatsapp_quote_click"]')) {
+        consent.trackQuoteClick();
+      }
+    });
+  }
+</script>
