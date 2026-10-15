@@ -131,8 +131,10 @@ test("public policy explains the confirmed GA4 and Google Ads account link", () 
 test("external click measurement and the WhatsApp quote event remain distinct", () => {
   assert.match(page, /medir automaticamente cliques que levam a outros sites[\s\S]*?registra separadamente os cliques nos botões de orçamento/);
   assert.match(whatsappLink, /data-analytics-event=\{intent === "quote" \? "whatsapp_quote_click" : undefined\}/);
-  assert.equal(consentManager.match(/consent\.trackQuoteClick\(\)/g)?.length, 1);
-  assert.equal(analyticsConsent.match(/gtag\("event", "whatsapp_quote_click"\)/g)?.length, 1);
+  assert.equal(consentManager.match(/consent\.trackQuoteClick\(/g)?.length, 1);
+  assert.match(consentManager, /a\[data-analytics-event="whatsapp_quote_click"\]/);
+  assert.match(consentManager, /deferQuoteNavigation\(\s*event,\s*quoteLink/);
+  assert.equal(analyticsConsent.match(/dispatchEvent\("whatsapp_quote_click"/g)?.length, 1);
   assert.doesNotMatch(analyticsConsent, /gtag\("event", "click"/);
   assert.match(privacyDraft, /somente `whatsapp_quote_click` está previsto para futura importação como conversão/i);
 });

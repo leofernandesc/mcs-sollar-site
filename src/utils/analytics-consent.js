@@ -3,6 +3,7 @@ const CONSENT_STORAGE_KEY = "mcs-sollar-analytics-consent";
 const CONSENT_MAX_AGE_DAYS = 180;
 const GOOGLE_TAG_URL = "https://www.googletagmanager.com/gtag/js";
 const REVOKED_ANALYTICS_CSP = "connect-src 'self'; img-src 'self' data: blob:";
+const QUOTE_EVENT_CALLBACK_TIMEOUT_MS = 1000;
 
 const DENIED_CONSENT = Object.freeze({
   analytics_storage: "denied",
@@ -163,10 +164,30 @@ export function createAnalyticsConsent({
 
     const queuedEvents = pendingEvents;
     pendingEvents = [];
-    for (const eventName of queuedEvents) {
-      if (analyticsChoice !== "granted") break;
+    for (const { name, onComplete } of queuedEvents) {
+      if (analyticsChoice !== "granted") {
+        onComplete?.();
+        continue;
+      }
+      dispatchEvent(name, onComplete);
+    }
+  }
+
+  function dispatchEvent(eventName, onComplete) {
+    if (typeof onComplete === "function") {
+      gtag("event", eventName, {
+        event_callback: onComplete,
+        event_timeout: QUOTE_EVENT_CALLBACK_TIMEOUT_MS,
+      });
+    } else {
       gtag("event", eventName);
     }
+  }
+
+  function finishPendingEvents() {
+    const queuedEvents = pendingEvents;
+    pendingEvents = [];
+    for (const { onComplete } of queuedEvents) onComplete?.();
   }
 
   function ensureTagLoaded() {
@@ -189,13 +210,13 @@ export function createAnalyticsConsent({
         windowRef[`ga-disable-${measurementId}`] = false;
         configureOnce();
       } else {
-        pendingEvents = [];
+        finishPendingEvents();
         windowRef[`ga-disable-${measurementId}`] = true;
       }
     };
     script.onerror = () => {
       tagState = "failed";
-      pendingEvents = [];
+      finishPendingEvents();
       windowRef[`ga-disable-${measurementId}`] = true;
     };
     documentRef.head.appendChild(script);
@@ -225,7 +246,6 @@ export function createAnalyticsConsent({
       ensureTagLoaded();
     } else {
       windowRef[`ga-disable-${measurementId}`] = true;
-      pendingEvents = [];
       if (tagState === "loaded" || tagState === "loading") {
         // Google Tag can defer an outbound-click hit. A document policy blocks
         // that queued request after revocation, including beacon/fetch and
@@ -235,6 +255,7 @@ export function createAnalyticsConsent({
       }
       gtag("consent", "update", consent);
       clearAnalyticsCookies(documentRef);
+      finishPendingEvents();
     }
 
     return { hasSavedChoice, analytics: analyticsChoice, reloadRequired };
@@ -269,16 +290,16 @@ export function createAnalyticsConsent({
     return applyChoice(choice);
   }
 
-  function trackQuoteClick() {
+  function trackQuoteClick(onComplete) {
     if (analyticsChoice !== "granted" || analyticsNetworkLocked) return false;
 
     if (tagState === "loaded" && configurationQueued) {
-      gtag("event", "whatsapp_quote_click");
+      dispatchEvent("whatsapp_quote_click", onComplete);
       return true;
     }
 
     if (tagState === "loading") {
-      pendingEvents.push("whatsapp_quote_click");
+      pendingEvents.push({ name: "whatsapp_quote_click", onComplete });
       return true;
     }
 

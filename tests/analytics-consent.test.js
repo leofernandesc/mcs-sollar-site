@@ -183,6 +183,76 @@ test("acceptance loads one tag after consent and configures one automatic page v
   );
 });
 
+test("quote event provides a completion callback before same-page navigation", () => {
+  const environment = makeEnvironment();
+  environment.consent.initialize();
+  environment.consent.setChoice("granted");
+  environment.scripts[0].onload();
+  let completed = 0;
+
+  assert.equal(environment.consent.trackQuoteClick(() => completed++), true);
+
+  const eventCall = callsFrom(environment.windowRef).find(
+    (call) => call[0] === "event" && call[1] === "whatsapp_quote_click",
+  );
+  assert.equal(typeof eventCall[2].event_callback, "function");
+  assert.equal(eventCall[2].event_timeout, 1000);
+  assert.equal(completed, 0);
+  eventCall[2].event_callback();
+  assert.equal(completed, 1);
+});
+
+test("quote event clicked while the tag loads is flushed with its navigation callback", () => {
+  const environment = makeEnvironment();
+  environment.consent.initialize();
+  environment.consent.setChoice("granted");
+  let completed = 0;
+
+  assert.equal(environment.consent.trackQuoteClick(() => completed++), true);
+  assert.equal(
+    callsFrom(environment.windowRef).some(
+      (call) => call[0] === "event" && call[1] === "whatsapp_quote_click",
+    ),
+    false,
+  );
+
+  environment.scripts[0].onload();
+  const eventCall = callsFrom(environment.windowRef).find(
+    (call) => call[0] === "event" && call[1] === "whatsapp_quote_click",
+  );
+  assert.equal(typeof eventCall[2].event_callback, "function");
+  eventCall[2].event_callback();
+  assert.equal(completed, 1);
+});
+
+test("pending quote navigation continues if tag loading fails or consent is revoked", () => {
+  const failed = makeEnvironment();
+  failed.consent.initialize();
+  failed.consent.setChoice("granted");
+  let failedNavigation = 0;
+  failed.consent.trackQuoteClick(() => failedNavigation++);
+  failed.scripts[0].onerror();
+  assert.equal(failedNavigation, 1);
+  assert.equal(
+    callsFrom(failed.windowRef).some((call) => call[0] === "event"),
+    false,
+  );
+
+  const revoked = makeEnvironment();
+  revoked.consent.initialize();
+  revoked.consent.setChoice("granted");
+  let revokedNavigation = 0;
+  revoked.consent.trackQuoteClick(() => revokedNavigation++);
+  revoked.consent.setChoice("denied");
+  assert.equal(revokedNavigation, 1);
+  assert.equal(
+    callsFrom(revoked.windowRef).some(
+      (call) => call[0] === "event" && call[1] === "whatsapp_quote_click",
+    ),
+    false,
+  );
+});
+
 test("a saved acceptance sets defaults first and loads the tag once", () => {
   const environment = makeEnvironment({
     savedChoice: {

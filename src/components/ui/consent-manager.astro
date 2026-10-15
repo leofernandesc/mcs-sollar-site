@@ -105,6 +105,7 @@
 
 <script>
   import { createAnalyticsConsent } from "../../utils/analytics-consent.js";
+  import { deferQuoteNavigation } from "../../utils/quote-navigation.js";
 
   const consent = createAnalyticsConsent();
   const initialChoice = consent.initialize();
@@ -241,8 +242,20 @@
         return;
       }
 
-      if (target.closest('[data-analytics-event="whatsapp_quote_click"]')) {
-        consent.trackQuoteClick();
+      const quoteLink = target.closest<HTMLAnchorElement>(
+        'a[data-analytics-event="whatsapp_quote_click"]',
+      );
+      if (quoteLink && consent.getChoice() === "granted") {
+        deferQuoteNavigation(
+          event,
+          quoteLink,
+          (onComplete: () => void) => consent.trackQuoteClick(onComplete),
+          {
+            navigate: (href: string) => window.location.assign(href),
+            setTimeoutFn: window.setTimeout.bind(window),
+            clearTimeoutFn: window.clearTimeout.bind(window),
+          },
+        );
       }
     });
   }
