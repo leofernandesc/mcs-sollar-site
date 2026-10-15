@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets";
+import SiteLayout from "../layouts/site-layout.astro";
+import SiteFooter from "../components/sections/site-footer.astro";
+import PageContainer from "../components/ui/page-container.astro";
+import { business } from "../data/business";
+import officialLogo from "../assets/images/brand/mcs-sollar-official.jpeg";
+
+const title = `Política de Privacidade | ${business.name}`;
+const description =
+  "Conheça como a MCS Sollar trata dados relacionados à navegação, às preferências de privacidade e ao atendimento comercial.";
+---
+
+<SiteLayout title={title} description={description}>
+  <header class="border-b border-brand-navy/15 bg-brand-cream">
+    <PageContainer class="flex min-h-20 items-center justify-between gap-4 py-3">
+      <a href="/#inicio" class="inline-flex shrink-0 items-center rounded-sm text-brand-navy" aria-label="MCS Sollar — página inicial">
+        <Image
+          src={officialLogo}
+          alt={business.name}
+          widths={[144, 160, 176, 192, 224]}
+          sizes="(min-width: 1024px) 176px, (min-width: 640px) 160px, 144px"
+          format="webp"
+          quality={88}
+          loading="eager"
+          class="h-auto w-36 sm:w-40 lg:w-44"
+        />
+      </a>
+      <a
+        href="/#inicio"
+        class="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-semibold text-brand-navy underline underline-offset-4 hover:bg-white/60"
+      >
+        Voltar ao site
+      </a>
+    </PageContainer>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <PageContainer class="py-10 sm:py-14 lg:py-16">
+      <article class="mx-auto max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand-navy">MCS Sollar</p>
+        <h1 class="mt-2 text-3xl font-bold text-brand-navy sm:text-4xl">Política de Privacidade</h1>
+        <p class="mt-5 text-base leading-7 text-ink">
+          Esta política explica como M C SILVA LTDA, nome comercial MCS Sollar, trata informações relacionadas à navegação neste site e ao atendimento comercial realizado pela empresa.
+        </p>
+
+        <section aria-labelledby="controller-heading" class="mt-8 rounded-lg border border-brand-navy/20 bg-white/60 p-5 sm:p-6">
+          <h2 id="controller-heading" class="text-xl font-bold text-brand-navy">Controladora e contato</h2>
+          <p class="mt-3 leading-7 text-ink">
+            M C SILVA LTDA, nome comercial MCS Sollar, é a controladora dos dados pessoais tratados na operação deste website e nos atendimentos comerciais iniciados por seus canais.
+          </p>
+          <address class="mt-3 not-italic leading-7 text-ink">
+            CNPJ: 10.676.289/0001-17<br />
+            Rua Arquiteto Renato Braga, nº 67, Manaus – AM, CEP 69054-699<br />
+            Site: <a class="font-medium text-brand-navy underline underline-offset-2" href="https://mcssollar.com.br/">mcssollar.com.br</a><br />
+            Contato para privacidade: <a class="font-medium text-brand-navy underline underline-offset-2" href="mailto:mcsparintins@gmail.com">mcsparintins@gmail.com</a>
+          </address>
+        </section>
+
+        <div class="mt-10 space-y-9 text-base leading-7 text-ink">
+          <section aria-labelledby="analytics-heading">
+            <h2 id="analytics-heading" class="text-xl font-bold text-brand-navy">Navegação e medição de visitas</h2>
+            <p class="mt-3">
+              Usamos o Google Analytics 4 (GA4) para obter estatísticas sobre o uso do site. Essa medição só começa depois que você permite os cookies de análise. Após o aceite, podem ser registradas visitas às páginas e interações com os botões de solicitação de orçamento. As mensagens que você digita depois em uma conversa no WhatsApp não são enviadas pelo site ao GA4.
+            </p>
+            <p class="mt-3">
+              Na configuração atual da propriedade da MCS Sollar, também estão ativadas a medição de rolagens e de cliques que levam a outros sites. A propriedade permite a coleta detalhada de informações sobre dispositivo e localização somente para acessos do Brasil. Esses dados de navegação só podem ser medidos pelo site depois que você permite os cookies de análise.
+            </p>
+            <p class="mt-3">
+              Não estão ativadas medições de pesquisa no site, uso de formulários, vídeos ou downloads. O Google Signals, a coleta de dados fornecidos pelos usuários e a personalização de anúncios estão desativados; a personalização permanece desativada nas 307 regiões da propriedade. O compartilhamento de dados da conta Google está limitado ao apoio técnico.
+            </p>
+            <p class="mt-3">
+              Depois do consentimento, são registros distintos: a propriedade pode medir automaticamente cliques que levam a outros sites, e o site registra separadamente os cliques nos botões de orçamento pelo WhatsApp. Apenas esse registro específico de orçamento está previsto para uma futura importação como conversão no Google Ads; essa conversão ainda não foi configurada. O evento do botão não inclui o que você digitar na conversa. Como o registro automático de cliques externos pode incluir o destino do link, o botão de orçamento abre o WhatsApp com o número comercial e uma mensagem padrão com campos em branco. O Google trata as informações recebidas conforme as configurações do serviço e suas próprias políticas.
+            </p>
+            <p class="mt-3">
+              A propriedade do Google Analytics também está vinculada à conta Google Ads da MCS Sollar. A importação de métricas de aplicativos e da Web está habilitada, mas a importação de públicos do Analytics está desativada. O Google Signals e a personalização de anúncios também estão desativados. O vínculo entre as contas não significa que públicos estejam sendo usados para remarketing.
+            </p>
+            <p class="mt-3">
+              Na propriedade, os dados de eventos e de usuários sujeitos aos controles de retenção do GA4 estão configurados para um período de dois meses, que não é reiniciado por nova atividade. Isso não significa que todos os relatórios ou informações agregadas sejam apagados ao fim desse período.
+            </p>
+            <p class="mt-3">
+              Consulte a <a class="font-medium text-brand-navy underline underline-offset-2" href="https://policies.google.com/privacy?hl=pt-BR">Política de Privacidade do Google</a> e as informações do Google sobre <a class="font-medium text-brand-navy underline underline-offset-2" href="https://support.google.com/analytics/answer/11593727?hl=pt-BR">dados coletados pelo Google Analytics</a>.
+            </p>
+          </section>
+
+          <section aria-labelledby="storage-heading">
+            <h2 id="storage-heading" class="text-xl font-bold text-brand-navy">Cookies e armazenamento da preferência</h2>
+            <p class="mt-3">
+              Depois que você permite a análise, o Google Analytics pode usar cookies para medir o uso do site, conforme os ajustes do serviço e do navegador. Sem esse aceite, a medição não começa.
+            </p>
+            <p class="mt-3">
+              Sua escolha é guardada no armazenamento do próprio navegador, fora dos cookies, por até 180 dias. Depois desse período, ela deixa de valer e o registro é removido quando você visitar o site novamente. Se você retirar o aceite depois do início da medição, a página será atualizada para interromper novos envios. Isso não apaga informações que já tenham sido enviadas ao Google.
+            </p>
+            <p class="mt-3">
+              Você pode aceitar, recusar ou alterar sua escolha a qualquer momento pelo controle “Preferências de privacidade”, disponível no rodapé.
+            </p>
+          </section>
+
+          <section aria-labelledby="commercial-data-heading">
+            <h2 id="commercial-data-heading" class="text-xl font-bold text-brand-navy">Dados recebidos para atendimento comercial</h2>
+            <p class="mt-3">
+              A empresa informa que recebe dados diretamente dos clientes por WhatsApp, e-mail e entrega direta. Conforme o atendimento, esses dados podem incluir nome, telefone, e-mail, CPF ou CNPJ, endereço do imóvel, contas de energia elétrica, propostas, contratos e outros documentos comerciais.
+            </p>
+            <p class="mt-3">
+              A M C SILVA LTDA utiliza essas informações para atender clientes, analisar o consumo de energia, dimensionar sistemas fotovoltaicos, elaborar propostas e acompanhar solicitações comerciais. A empresa informa que não consulta sistemas de distribuidoras usando as contas de energia recebidas e não usa sua base de contatos para enviar publicidade não solicitada.
+            </p>
+            <p class="mt-3">
+              O acesso interno às conversas, planilhas e arquivos é restrito aos proprietários ou responsáveis autorizados. A empresa informa que os computadores usados nesses trabalhos são protegidos por senha.
+            </p>
+          </section>
+
+          <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="text-xl font-bold text-brand-navy">WhatsApp e Instagram</h2>
+            <p class="mt-3">
+              Este site não possui formulário de contato. Os links de WhatsApp abrem o serviço externo com o número comercial; o botão de orçamento apresenta uma mensagem padrão com campos em branco. O site não recebe diretamente o conteúdo digitado por você em uma conversa externa. Se você enviar uma mensagem, a empresa recebe os dados que decidir compartilhar para as finalidades comerciais descritas nesta política.
+            </p>
+            <p class="mt-3">
+              O link do Instagram leva ao perfil da MCS Sollar em uma plataforma externa. Ao acessar o WhatsApp ou o Instagram, esses serviços podem tratar informações de sua navegação e da interação realizada em seus ambientes, conforme suas próprias políticas. Consulte a <a class="font-medium text-brand-navy underline underline-offset-2" href="https://www.whatsapp.com/legal/privacy-policy?lang=pt">Política de Privacidade do WhatsApp</a> e a <a class="font-medium text-brand-navy underline underline-offset-2" href="https://www.facebook.com/privacy/policy/">Política de Privacidade da Meta</a>.
+            </p>
+          </section>
+
+          <section aria-labelledby="providers-heading">
+            <h2 id="providers-heading" class="text-xl font-bold text-brand-navy">Serviços de terceiros e compartilhamento</h2>
+            <ul class="mt-3 list-disc space-y-3 pl-6 marker:text-brand-navy">
+              <li><strong>Google Analytics 4:</strong> recebe dados de medição somente depois do aceite analítico. A propriedade está configurada para medir visitas, rolagens e cliques externos; também permite coleta detalhada de dispositivo e localização somente no Brasil. Pesquisa no site, formulários, vídeos, downloads, recursos de publicidade personalizada e coleta de dados fornecidos pelos usuários estão desativados.</li>
+              <li><strong>Google Ads:</strong> está vinculado à propriedade do Google Analytics da MCS Sollar. A importação de métricas de aplicativos e da Web está habilitada; a importação de públicos está desativada. Essa configuração entre contas não significa que públicos sejam usados para remarketing no site.</li>
+              <li><strong>WhatsApp:</strong> é aberto por links externos para contato e orçamento. As mensagens que você decidir enviar são tratadas no serviço e recebidas pela M C SILVA LTDA para as finalidades comerciais descritas acima.</li>
+              <li><strong>Instagram:</strong> é acessado por um link para o perfil da MCS Sollar; o site não incorpora a plataforma nem controla o tratamento feito após o acesso.</li>
+              <li><strong>HostGator:</strong> hospeda os arquivos do site e os disponibiliza aos visitantes. A hospedagem pode gerar registros técnicos; os tipos de registro, o acesso a eles e o tempo de conservação dependem da operação do provedor e ainda precisam ser confirmados.</li>
+            </ul>
+            <p class="mt-3">
+              A empresa informa que não compartilha documentos comerciais de clientes com parceiros ou terceiros para executar os serviços. A exclusão de arquivos pela empresa não apaga automaticamente registros mantidos pelas plataformas ou pela hospedagem. Cada fornecedor pode conservar informações conforme sua própria operação e as regras aplicáveis.
+            </p>
+            <p class="mt-3">
+              Google, Meta e serviços de hospedagem podem tratar informações em outros países. Os países e as condições específicas aplicáveis a este site ainda não foram confirmados.
+            </p>
+          </section>
+
+          <section aria-labelledby="retention-heading">
+            <h2 id="retention-heading" class="text-xl font-bold text-brand-navy">Conservação das informações</h2>
+            <ul class="mt-3 list-disc space-y-3 pl-6 marker:text-brand-navy">
+              <li><strong>Preferência de privacidade:</strong> sua escolha vale por até 180 dias no armazenamento do navegador. Se ela vencer, deixa de ser considerada válida e o registro é removido quando você voltar ao site.</li>
+              <li><strong>Dados de análise:</strong> a propriedade do Google Analytics 4 está configurada para dois meses de retenção dos dados de eventos e de usuários sujeitos a esses controles, sem reinício do prazo por nova atividade. Esse ajuste não significa que todos os relatórios ou informações agregadas sejam apagados após dois meses.</li>
+              <li><strong>Propostas não aceitas:</strong> quando o atendimento é encerrado sem aceite da proposta, a empresa definiu que os dados relacionados devem ser excluídos em até 30 dias. Se o encerramento ocorrer por inatividade, o prazo começa após o registro formal feito pela empresa. A medida abrange a conversa correspondente no WhatsApp e seus anexos, contas de energia, documentos recebidos e arquivos ou registros relacionados em computadores e planilhas. Dados cuja conservação seja necessária para cumprir obrigações legais ou exercer regularmente direitos podem ser mantidos.</li>
+              <li><strong>Contratos e projetos concluídos:</strong> durante a contratação e a instalação, a empresa conserva os dados necessários para realizar os serviços e mantém arquivados contratos, documentos e informações do projeto após a instalação. Depois da conclusão, podem ser mantidos documentos necessários para cumprir obrigações legais ou fiscais, atender garantias ou exercer regularmente direitos. Dados que não forem mais necessários deverão ser avaliados para eliminação. Não há um prazo único de exclusão para todos os documentos contratuais.</li>
+              <li><strong>Revisão da conservação:</strong> a empresa aprovou uma revisão semestral para avaliar se os dados ainda precisam ser mantidos. Essa revisão está em implantação e deverá incluir documentos de projetos concluídos, respeitando os casos em que a conservação for necessária por lei, para garantias ou para exercer direitos. A implantação do procedimento de exclusão em até 30 dias também está em andamento.</li>
+              <li><strong>Registros mantidos por fornecedores:</strong> a exclusão feita pela empresa não remove automaticamente registros que já estejam com Google, WhatsApp, Instagram ou HostGator. O tempo de conservação nesses serviços depende de cada fornecedor e das regras aplicáveis.</li>
+              <li><strong>Registros técnicos da hospedagem:</strong> a HostGator pode manter registros relacionados à operação do site. Os tipos de registro e o tempo de conservação ainda precisam ser confirmados.</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="rights-heading">
+            <h2 id="rights-heading" class="text-xl font-bold text-brand-navy">Seus direitos</h2>
+            <p class="mt-3">Nos termos da LGPD, você pode solicitar, conforme aplicável:</p>
+            <ul class="mt-3 list-disc space-y-2 pl-6 marker:text-brand-navy">
+              <li>confirmação de que seus dados são tratados e acesso a eles;</li>
+              <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+              <li>anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a lei;</li>
+              <li>portabilidade, observadas as regras da autoridade nacional e os segredos comercial e industrial;</li>
+              <li>eliminação de dados tratados com consentimento, exceto nas hipóteses legais de conservação;</li>
+              <li>informações sobre as entidades com as quais seus dados foram compartilhados e as finalidades desse compartilhamento;</li>
+              <li>informações sobre a possibilidade de não fornecer consentimento e as consequências da recusa;</li>
+              <li>revogação do consentimento por procedimento gratuito e facilitado;</li>
+              <li>oposição a tratamento realizado sem consentimento quando houver descumprimento da LGPD; e</li>
+              <li>petição à Autoridade Nacional de Proteção de Dados (ANPD), nos termos da lei.</li>
+            </ul>
+            <p class="mt-3">
+              Para encaminhar uma solicitação relacionada à privacidade, escreva para <a class="font-medium text-brand-navy underline underline-offset-2" href="mailto:mcsparintins@gmail.com">mcsparintins@gmail.com</a>.
+            </p>
+          </section>
+        </div>
+      </article>
+    </PageContainer>
+  </main>
+
+  <SiteFooter />
+</SiteLayout>

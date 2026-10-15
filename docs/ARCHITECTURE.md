@@ -18,7 +18,8 @@ Estrutura atual. Arquivos `.gitkeep` mantêm diretórios ainda vazios no Git; ti
 ```text
 src/
   pages/
-    index.astro          # Única página institucional
+    index.astro          # Página institucional principal
+    privacidade.astro    # Política preparada localmente para revisão
   layouts/
     site-layout.astro    # Documento HTML e metadados
   components/
@@ -55,7 +56,7 @@ Fluxo: dados locais → props e utilitários no build → HTML/CSS e imagens est
 
 ## 4. Arquitetura da página e das seções
 
-Uma rota pública `/`, com navegação por fragmentos:
+Uma homepage `/` com navegação por fragmentos e uma rota `/privacidade/` preparada localmente para revisão:
 
 | Bloco | Identificador | Responsabilidade |
 | --- | --- | --- |
@@ -66,6 +67,7 @@ Uma rota pública `/`, com navegação por fragmentos:
 | Sobre | `sobre` | Apresentação institucional aprovada |
 | FAQ | `duvidas` | Perguntas e respostas em controles nativos |
 | Contato | `contato` | WhatsApp e localização confirmada |
+| Política de Privacidade | — | Informações de privacidade e canal para solicitações; página local ainda depende de aprovação |
 | Rodapé | — | Identificação e links pertinentes |
 
 Preservar os identificadores das seções que permanecem no site. Cada serviço tem uma foto no respectivo bloco. Em Sobre, a introdução institucional fica à esquerda e a galeria assimétrica com duas fotos à direita no desktop; em celular e tablet, a introdução fica acima das imagens. A foto do inversor ocupa três quintos da galeria e a placa ocupa dois quintos. Não afirmar que as imagens representam clientes ou projetos específicos nem alegar conformidade ou certificação com base na sinalização. Não criar páginas de projetos, carrossel com JavaScript ou coleção de conteúdo antes de existir necessidade. Os controles nativos de menu e FAQ serão preservados.
@@ -97,8 +99,10 @@ Informações pendentes:
 | Informação | Estado |
 | --- | --- |
 | Segmentos especializados e serviços adicionais | TBD |
-| Endereço físico, horários, e-mail e outros perfis sociais | TBD |
-| Razão social, CNPJ e outros identificadores não fornecidos | TBD |
+| Endereço comercial para exibição, horários, e-mail comercial e outros perfis sociais | TBD; o endereço informado para a minuta de privacidade não está aprovado como endereço comercial público |
+| Dados jurídicos fornecidos para a política | M C SILVA LTDA; CNPJ 10.676.289/0001-17; endereço Rua Arquiteto Renato Braga, nº 67, Manaus – AM, CEP 69054-699. O responsável confirmou M C SILVA LTDA como controladora do site e dos atendimentos comerciais; os dados cadastrais foram fornecidos, mas não verificados em cadastro público |
+| Atendimento de privacidade | `mcsparintins@gmail.com` tem monitoramento regular confirmado e está autorizado a receber solicitações LGPD; falta documentar quem executa a triagem e o procedimento de resposta/conclusão |
+| Dados e conservação comercial | Origem direta por WhatsApp, e-mail e entrega; categorias e finalidades confirmadas na minuta. Exclusão em até 30 dias para proposta não aceita com atendimento encerrado e revisão semestral estão aprovadas, mas ambas estão em implantação. A empresa arquiva contratos, documentos e informações de projetos após as instalações; não há prazo único para os registros contratuais. A empresa informou não realizar backups dos arquivos comerciais atualmente |
 | Cobertura além de Manaus | TBD |
 | Procedimentos técnicos adicionais, prazos e diferenciais comprovados | TBD |
 | Anos de atuação, estatísticas e certificações | TBD |
@@ -173,23 +177,26 @@ Não presumir o estado de produção a partir do preview ou do GitHub. A substit
 | SEO, canonical, Open Graph, robots, sitemap e JSON-LD `WebSite` | Saída estática para `https://mcssollar.com.br/` |
 | Favicon SVG e PNG de 96 × 96 | Incluídos na saída estática |
 | Consentimento e GA4 | Tag carregada somente após autorização analítica explícita; Consent Mode v2 inicia com quatro sinais negados |
-| Eventos GA4 | Page view automático pela configuração única; medição otimizada da conta para views, scrolls e cliques de saída; evento próprio somente para clique de orçamento |
+| Eventos GA4 | Page view automático pela configuração única; medição otimizada inclui `click` automático para cliques externos; `whatsapp_quote_click` próprio somente nos botões de orçamento. Só esse evento próprio está planejado para futura importação como conversão no Ads |
+| Vínculo GA4–Google Ads | Propriedade GA4 `495470593` (`G-DN2JNCM7VC`) vinculada à conta `471-587-7960`; importação de métricas de aplicativos e Web habilitada; importação de públicos desativada |
 | Revogação | Após o tag já ter sido carregado, aplica `ga-disable`, atualiza o Consent Mode, limpa cookies GA acessíveis, restringe conexões externas do documento por CSP e recarrega a página para descartar hits adiados e o tag em memória |
 | Publicidade e remarketing | Google Signals, dados fornecidos por usuários e personalização de anúncios desativados; sem GTM, pixels ou remarketing |
 
 JavaScript no cliente fica limitado ao gerenciador de consentimento e à medição autorizada. Sem consentimento, a tag externa não é solicitada e a navegação, o vídeo e os links continuam disponíveis. Não adicionar roteador SPA ou framework de UI.
 
-GA4 está autorizado nesta versão de código com Consent Mode v2 básico. A propriedade `mcssollar` está configurada, conforme informado para este trabalho, com retenção de eventos e usuários por dois meses e sem renovação por atividade; Google Signals, recolha de dados fornecidos por usuários e personalização de anúncios estão desativados. Personalização está desativada nas 307 regiões. A medição otimizada ativa visualizações, deslocamentos e cliques externos; pesquisa interna, formulários, vídeos e downloads estão desativados. A coleta detalhada de localização e dispositivo está ativada. O compartilhamento de dados está limitado a apoio técnico. GTM, pixels e remarketing permanecem fora do escopo. Essas definições da conta devem ser conferidas na propriedade GA4 antes da publicação.
+GA4 está autorizado nesta versão de código com Consent Mode v2 básico. As configurações administrativas da propriedade `mcssollar` foram verificadas manualmente em 2026-10-15: retenção de eventos e usuários por dois meses, sem renovação por atividade; visualizações, rolagens e cliques externos ativados; pesquisa interna, formulários, vídeos e downloads desativados; Google Signals, coleta de dados fornecidos por usuários e personalização de anúncios desativados; personalização desativada nas 307 regiões; coleta detalhada de dispositivo e localização permitida somente no Brasil (1 de 307 regiões); compartilhamento da conta limitado a apoio técnico. O responsável confirmou que a propriedade GA4 `495470593` (`G-DN2JNCM7VC`) está vinculada à conta Google Ads `471-587-7960`, com importação de métricas de aplicativos e da Web habilitada e importação de públicos desativada. Somente `whatsapp_quote_click` está planejado para futura importação como conversão; nenhuma conversão foi configurada neste trabalho. GTM, tags de publicidade, pixels, remarketing e personalização de anúncios permanecem fora do escopo. A existência do vínculo de contas não significa uso de remarketing. Essa conferência administrativa não comprova coleta real nem comportamento de consentimento em produção: a integração ainda não foi publicada.
+
+A interface do GA4 ainda informa que os sinais de consentimento estão inativos. Como o código não está publicado, esse aviso isolado não comprova falha nem funcionamento correto do Consent Mode. A validação deverá ser feita após a publicação, em ambiente controlado, observando as requisições antes e depois da escolha e após a revogação.
 
 ## Riscos e verificações futuras
 
 - **Marca recebida:** a logo oficial é um JPEG; revisar sua legibilidade em tamanhos móveis e desktop antes da publicação.
 - **Contraste:** o dourado aproximado da imagem não tem contraste suficiente sobre creme para texto funcional; foco e marcadores usam navy.
 - **Compatibilidade:** manter o lockfile e conferir versões Astro/Tailwind/Node ao atualizar dependências.
-- **Configuração da conta GA4:** confirmar na interface da propriedade os valores informados antes de publicar; o código não verifica configurações administrativas da conta.
+- **Comportamento de GA4 em produção:** as configurações administrativas da propriedade foram verificadas em 2026-10-15, mas a integração ainda não foi publicada. Verificar em ambiente controlado bloqueio antes do aceite, carregamento único após aceite, eventos, recusa e revogação; o aviso de sinais inativos na interface não substitui esse teste.
 - **SEO de página única:** limita páginas dedicadas a serviços; manter conteúdo útil sem prometer ranking.
 - **WhatsApp:** número confirmado não comprova disponibilidade da conta; testar destino e mensagem em dispositivos reais.
-- **Privacidade e analytics:** os dados jurídicos do controlador e a aprovação da política continuam pendentes. O contato informado é `mcsparintins@gmail.com`; o prazo de 180 dias para a preferência ainda requer aprovação. A minuta permanece em `docs/` e não possui rota pública no build local. Confirmar também registros da hospedagem e parâmetros da propriedade GA4.
+- **Privacidade e analytics:** o responsável confirmou M C SILVA LTDA como controladora; recebimento direto por WhatsApp, e-mail e entrega; categorias e finalidades comerciais; restrição de acesso a proprietários/responsáveis autorizados; computadores protegidos por senha; ausência atual de backups dos arquivos comerciais; não uso de contas para consultar distribuidoras nem de contatos para publicidade não solicitada; e não compartilhamento de documentos com parceiros/terceiros para executar serviços. A exclusão em até 30 dias para propostas não aceitas após encerramento e a revisão semestral foram aprovadas, mas estão em implantação e não foram integralmente executadas ou auditadas. A empresa também confirmou que arquiva contratos, documentos e informações de projetos após as instalações. Não há prazo único para todos os registros contratuais; a revisão semestral deve avaliar a necessidade de conservação, respeitando obrigações legais/fiscais, garantias e exercício de direitos. A rota `/privacidade/` existe localmente, mas aguarda revisão jurídica; não publicar ainda. Pendências: validar bases legais, implantar e verificar os procedimentos, definir critérios de retenção e eliminação por finalidade, concluir procedimento para pedidos de titulares, confirmar logs da hospedagem e transferências e validar consentimento/coleta em produção. As configurações administrativas da propriedade GA4 foram verificadas, mas não o comportamento de produção. Dados cadastrais foram fornecidos pelo responsável, mas não conferidos independentemente.
 - **Mídias:** disponibilidade de um arquivo não comprova autoria ou autorização; aplicar curadoria, revisão de privacidade e confirmação antes de divulgar.
 - **Qualidade:** rodar `npm run check`, `npm run build` e verificações responsivas/de teclado após alterações. Auditorias automáticas devem ser complementadas por inspeção manual de contraste, conteúdo e interação.
 

@@ -6,13 +6,15 @@ import PageContainer from "../ui/page-container.astro";
 import InstagramLink from "../ui/instagram-link.astro";
 
 const currentYear = new Date().getFullYear();
+const homeSectionHref = (href: string) =>
+  Astro.url.pathname === "/" ? href : `/${href}`;
 ---
 
 <footer class="bg-brand-navy text-white">
   <PageContainer>
     <div class="grid gap-8 border-b border-white/20 py-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-10">
       <div>
-        <a href="#inicio" class="footer-link inline-flex min-h-11 items-center font-bold tracking-wide text-white">
+        <a href={homeSectionHref("#inicio")} class="footer-link inline-flex min-h-11 items-center font-bold tracking-wide text-white">
           {business.name}
         </a>
         <p class="mt-2 text-sm text-white/80">{business.locationDisplay}</p>
@@ -24,13 +26,21 @@ const currentYear = new Date().getFullYear();
           {pageContent.navigation.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={homeSectionHref(item.href)}
                 class="footer-link inline-flex min-h-11 items-center text-sm text-white/85 underline-offset-4 hover:text-white hover:underline"
               >
                 {item.label}
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="/privacidade/"
+              class="footer-link inline-flex min-h-11 items-center text-sm text-white/85 underline-offset-4 hover:text-white hover:underline"
+            >
+              Política de Privacidade
+            </a>
+          </li>
         </ul>
       </nav>
 

@@ -51,6 +51,12 @@
     >
       Personalizar preferências
     </button>
+    <a
+      class="ml-2 inline-flex min-h-11 items-center rounded-md px-2 text-sm font-semibold text-brand-navy underline underline-offset-2 hover:bg-white/70"
+      href="/privacidade/"
+    >
+      Política de Privacidade
+    </a>
   </div>
 
   <div data-consent-settings hidden>
@@ -78,6 +84,12 @@
         Voltar
       </button>
     </div>
+    <a
+      class="mt-2 inline-flex min-h-11 items-center rounded-md px-2 text-sm font-semibold text-brand-navy underline underline-offset-2 hover:bg-white/70"
+      href="/privacidade/"
+    >
+      Política de Privacidade
+    </a>
     <p
       class="mt-3 rounded-md border border-brand-navy/20 bg-white/70 p-3 text-sm leading-6 text-brand-navy"
       data-consent-reload-status
@@ -116,6 +128,14 @@
 
     consentPanel.hidden = initialChoice.hasSavedChoice;
     consentCloseButton.hidden = !initialChoice.hasSavedChoice;
+
+    if (!initialChoice.hasSavedChoice) {
+      requestAnimationFrame(() => {
+        consentOverview.querySelector<HTMLButtonElement>("[data-consent-reject]")?.focus({
+          preventScroll: true,
+        });
+      });
+    }
 
     function openPanel(showSettings = false, trigger?: HTMLElement) {
       if (trigger && !consentPanel.contains(trigger)) {
