@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .astro/
+
+# Local configuration and sensitive files
+.env
+.env.*
+!.env.example
+*.local
